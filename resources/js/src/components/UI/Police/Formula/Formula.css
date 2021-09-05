@@ -1,0 +1,79 @@
+.UI.Formula > div {
+    height: 100%;
+    background-position: center;
+    background-size: calc(100% + 8px) calc(100% + 8px);
+    background-repeat: no-repeat;
+    background-image: url("/images/Soustraction 28@2x.png");
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    transition: all 0.25s;
+}
+
+.UI.Formula > div:hover,
+.owl-item.center.active .UI.Formula > div {
+    background-image: url("/images/Soustraction 4@2x.png");
+}
+
+.UI.Formula > div .title {
+    color: var(--darkblue);
+    transition: all 0.25s;
+}
+
+.UI.Formula > div:hover .title,
+.owl-item.center.active .UI.Formula > div .title {
+    color: var(--soft);
+}
+
+.UI.Formula > div .icon {
+    color: var(--blue);
+    transition: all 0.25s;
+}
+
+.UI.Formula > div:hover .icon,
+.owl-item.center.active .UI.Formula > div .icon {
+    color: var(--lightblue);
+}
+
+.UI.Formula > div > div:first {
+    border-color: var(--border);
+    transition: all 0.25s;
+}
+
+.UI.Formula > div:hover > div:first,
+.owl-item.center.active .UI.Formula > div > div:first {
+    border-color: var(--soft);
+}
+
+.UI.Formula > div .description {
+    color: var(--border);
+    transition: all 0.25s;
+}
+
+.UI.Formula > div:hover .description,
+.owl-item.center.active .UI.Formula > div .description {
+    color: var(--soft);
+}
+
+.UI.Formula > div .btn {
+    background: var(--blue);
+    color: white;
+}
+
+.UI.Formula > div .btn-icon {
+    color: white;
+}
+
+.UI.Formula > div:hover .btn,
+.owl-item.center.active .UI.Formula > div .btn {
+    background: white;
+    color: var(--darkblue);
+}
+
+.UI.Formula > div:hover .btn-icon,
+.owl-item.center.active .UI.Formula > div .btn-icon {
+    color: var(--red);
+}
+
+

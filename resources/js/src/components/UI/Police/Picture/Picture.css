@@ -1,0 +1,14 @@
+.UI.Picture .background {
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.25s;
+}
+
+.UI.Picture > div:hover .background {
+    transform: scale(1.21) rotate(10deg);
+}

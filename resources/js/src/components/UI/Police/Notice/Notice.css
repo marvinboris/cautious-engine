@@ -1,0 +1,77 @@
+.UI.Notice {
+    height: auto;
+    transition: all 0.25s;
+}
+
+.UI.Notice > div {
+    background-color: var(--lightblue-35);
+    border: 8px solid transparent;
+    box-shadow: 0 0.125rem 0.25rem transparent;
+    transition: all 0.25s;
+}
+
+.owl-item.center.active .UI.Notice > div {
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+    border: 8px solid var(--lightblue);
+}
+
+.UI.Notice > div .text-block {
+    margin: 0.5rem;
+    font-size: 18px !important;
+    font-weight: 400;
+    transition: all 0.25s;
+}
+
+.owl-item.center.active .UI.Notice > div .text-block {
+    margin: 0.5rem 0;
+    font-size: 20px !important;
+    font-weight: 500;
+}
+
+.UI.Notice .line-circle {
+    opacity: 0;
+    height: 0;
+    transition: all 0.25s;
+}
+
+.owl-item.center.active .UI.Notice .line-circle {
+    opacity: 1;
+    height: auto;
+}
+
+@media (min-width: 800px) {
+    .owl-item.center.active .UI.Notice {
+        height: 412px;
+    }
+
+    .owl-item.center.active .UI.Notice > div {
+        top: -8px;
+    }
+
+    .UI.Notice > div .text-block {
+        margin: 1rem;
+        font-size: 21px !important;
+    }
+
+    .owl-item.center.active .UI.Notice > div .text-block {
+        margin: 1rem 0;
+        font-size: 25px !important;
+    }
+}
+
+@media (min-width: 1900px) {
+    .owl-item.center.active .UI.Notice > div {
+        top: -32px;
+    }
+
+    .UI.Notice > div .text-block {
+        font-size: 25px !important;
+    }
+
+    .owl-item.center.active .UI.Notice > div .text-block {
+        margin: 1.5rem 0;
+        font-size: 30px !important;
+    }
+}

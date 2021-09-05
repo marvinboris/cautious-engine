@@ -1,0 +1,29 @@
+.Input ::placeholder {
+    color: var(--light);
+    opacity: 1;
+}
+
+.Input label {
+    position: absolute;
+    left: 101px;
+    top: 1rem;
+    z-index: 1;
+    max-width: calc(100% - 102px - 1rem);
+}
+
+.Input input[required] + label::after,
+.Input textarea[required] + label::after {
+    content: "*";
+    color: red;
+}
+
+.Input input[readonly] + label,
+.Input textarea[readonly] + label,
+.Input input[disabled] + label,
+.Input textarea[disabled] + label,
+.Input input[required]:valid + label,
+.Input textarea[required]:valid + label,
+.Input input:not([value=""]) + label,
+.Input textarea:not(:invalid) + label {
+    display: none;
+}

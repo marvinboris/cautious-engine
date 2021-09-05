@@ -1,0 +1,31 @@
+.UI.Member > div {
+    background-color: white;
+    transition: all 0.25s;
+}
+
+.UI.Member > div .rank {
+    color: var(--soft);
+    transition: all 0.25s;
+}
+
+.UI.Member > div .title {
+    background-color: transparent;
+    color: var(--border);
+    transition: all 0.25s;
+}
+
+.UI.Member > div:hover,
+.owl-item.center.active .UI.Member > div {
+    background-color: var(--lightblue-35);
+}
+
+.UI.Member > div:hover .rank,
+.owl-item.center.active .UI.Member > div .rank {
+    color: var(--blue);
+}
+
+.UI.Member > div:hover .title,
+.owl-item.center.active .UI.Member > div .title {
+    background-color: var(--blue);
+    color: white;
+}

@@ -1,0 +1,32 @@
+.UI.Personality > div {
+    height: 100%;
+    background-color: var(--lightblue-25);
+    transition: all 0.25s;
+}
+
+.UI.Personality .embed-responsive {
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+}
+
+.UI.Personality .share-border {
+    border-color: var(--lightblue-25) !important;
+    transition: all 0.25s;
+}
+
+.UI.Personality > div:hover,
+.owl-item.center.active .UI.Personality > div {
+    background-color: white;
+}
+
+.UI.Personality > div:hover .embed-responsive,
+.owl-item.center.active .UI.Personality > div .embed-responsive {
+    background-size: auto calc(100% + 6px);
+}
+
+.UI.Personality > div:hover .share-border,
+.owl-item.center.active .UI.Personality > div .share-border {
+    border-color: white !important;
+}

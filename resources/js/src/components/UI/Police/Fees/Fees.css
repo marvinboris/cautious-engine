@@ -1,0 +1,35 @@
+.UI.Fees .block {
+    background-color: var(--border-10);
+    color: var(--border);
+    height: 100%;
+    transition: all 0.25s;
+}
+
+.UI.Fees .block:hover {
+    background-color: var(--lightblue-10);
+    color: var(--blue);
+}
+
+.UI.Fees .block .position-relative {
+    background-color: var(--border);
+    height: 0.5px;
+    transition: all 0.25s;
+}
+
+.UI.Fees .block:hover .position-relative {
+    background-color: var(--blue);
+}
+
+.UI.Fees .block .position-absolute {
+    background-color: var(--border);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 6px;
+    transition: all 0.25s;
+}
+
+.UI.Fees .block:hover .position-absolute {
+    background-color: var(--blue);
+    width: 52px;
+}

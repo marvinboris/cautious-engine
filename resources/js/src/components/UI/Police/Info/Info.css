@@ -1,0 +1,9 @@
+.UI.Info .block-container {
+    width: 240px;
+}
+
+@media (min-width: 800px) {
+    .UI.Info .block-container {
+        width: 300px;
+    }
+}

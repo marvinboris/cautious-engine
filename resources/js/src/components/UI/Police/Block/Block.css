@@ -1,0 +1,88 @@
+.UI.Block {
+    margin-top: -66px;
+    padding-top: 66px;
+}
+
+.UI.Block .points {
+    width: 29.7px;
+}
+
+.UI.Block .points img {
+    width: 100%;
+}
+
+.UI.Block .points.center {
+    top: 0;
+    display: none;
+}
+
+.UI.Block .points.white.center {
+    left: 36px;
+    display: block;
+}
+
+.UI.Block .points.soft.center {
+    right: 36px;
+    display: block;
+}
+
+@media (min-width: 800px) {
+    .UI.Block {
+        margin-top: -87px;
+        padding-top: 87px;
+    }
+
+    .UI.Block .points {
+        width: 46.4px;
+    }
+    
+    .UI.Block .points.white.center {
+        left: 72px;
+    }
+    
+    .UI.Block .points.soft.center {
+        right: 72px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .UI.Block {
+        margin-top: -100px;
+        padding-top: 100px;
+    }
+
+    .UI.Block .points {
+        width: 65px;
+    }
+    
+    .UI.Block .points.white.center {
+        left: 107px;
+    }
+    
+    .UI.Block .points.soft.center {
+        right: 107px;
+    }
+}
+
+.chevron-down {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    animation: chevron-down ease-out 1s infinite;
+}
+
+.chevron-down .up {
+    opacity: 0.5;
+    position: relative;
+    top: 1rem;
+}
+
+@keyframes chevron-down {
+    from {
+        transform: translate(-50%, 0);
+    }
+    to {
+        transform: translate(-50%, 10px);
+    }
+}

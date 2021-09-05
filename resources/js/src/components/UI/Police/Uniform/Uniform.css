@@ -1,0 +1,8 @@
+.UI.Uniform .block {
+    background-color: white;
+}
+
+.UI.Uniform .block:hover,
+.owl-item.center.active .UI.Uniform .block {
+    background-color: var(--lightblue-20);
+}

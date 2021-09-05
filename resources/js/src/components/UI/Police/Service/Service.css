@@ -1,0 +1,54 @@
+.UI.Service .block {
+    display: block;
+    background-color: var(--lightblue-35);
+    border: 6px solid transparent;
+    box-shadow: 0 0 10px 0 transparent;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 42px;
+    padding-left: calc(3rem - 6px);
+    padding-right: calc(3rem - 6px);
+    transition: all 0.25s;
+}
+
+.UI.Service .block:hover,
+.owl-item.center.active .UI.Service .block {
+    background-color: white;
+    border: 6px solid var(--soft-45);
+    box-shadow: 0 0 20px 0 var(--black-10);
+    padding-top: 1rem;
+    margin-bottom: -20px;
+}
+
+.UI.Service .icon {
+    color: var(--blue);
+}
+
+.UI.Service .block:hover .icon,
+.owl-item.center.active .UI.Service .block .icon {
+    color: var(--nightblue);
+}
+
+.UI.Service .bubble {
+    width: 100px;
+    opacity: 0;
+    box-shadow: 0 0 0 15px var(--lightblue-15);
+    transition: all 0.25s;
+}
+
+.UI.Service .block:hover .bubble,
+.owl-item.center.active .UI.Service .block .bubble {
+    width: 147px;
+    opacity: 1;
+}
+
+.UI.Service .bubble-wrapper {
+    margin-bottom: 3rem;
+    transition: all 0.25s;
+}
+
+.UI.Service .block:hover .bubble-wrapper,
+.owl-item.center.active .UI.Service .block .bubble-wrapper {
+    margin-bottom: 2rem;
+}

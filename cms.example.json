@@ -1,0 +1,1440 @@
+{
+    "global": {
+        "app_name": "E-menu",
+        "company_name": "Briluce Services",
+        "company_logo": "\/images\/company-logo.png",
+        "logo": "\/images\/logo.png"
+    },
+    "pages": {
+        "en": {
+            "general": {
+                "date": "Date",
+                "time": "Time",
+                "home": "Home",
+                "loading": "Loading",
+                "days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "months": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Save",
+                    "save_add": "Save & Add",
+                    "selected_file": "File selected",
+                    "active": "Active",
+                    "inactive": "Inactive"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "All",
+                    "first": "First",
+                    "last": "Last",
+                    "loading": "Loading",
+                    "print": "Print",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Search",
+                    "see": "See",
+                    "show": "Show",
+                    "sl": "SL",
+                    "showing": "Showing",
+                    "from": "from",
+                    "entries": {
+                        "singular": "entry",
+                        "plural": "entries"
+                    }
+                },
+                "food": {
+                    "ratings": "Ratings"
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "user": {
+                    "login": {
+                        "dont_be_late": "Don't be late",
+                        "get_in": "Get In",
+                        "sign_in": "Sign In",
+                        "email_address": "E-mail address",
+                        "password": "Password"
+                    }
+                },
+                "restaurant": {
+                    "login": {
+                        "welcome": "Welcome back, Please login, to get started !",
+                        "forgot": "Forgot password",
+                        "reset": "Reset here",
+                        "send": "Send link",
+                        "sign_in": "Sign In To Portal",
+                        "no_account": "Don't have an account",
+                        "sign_up": "Sign up",
+                        "token": "Restaurant Token",
+                        "password": "Password"
+                    },
+                    "register": {
+                        "welcome": "Sign Up today and start using E-menu !",
+                        "owner": "Restaurant Owner's Name",
+                        "email": "Enter Email",
+                        "phone": "Enter Phone Number",
+                        "select_country": "Select country",
+                        "sign_in": "Sign in",
+                        "terms": "Accept terms and conditions & Privacy policies",
+                        "already": "Already a user",
+                        "sign_up": "Sign Up"
+                    },
+                    "success": {
+                        "good_job": "Good Job !",
+                        "thank_you": "Thank you ! Your account was successfully created. Please check your mail to get login credentials :",
+                        "sign_in": "Sign In"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Sign In to",
+                        "sign_in": "Sign In",
+                        "admin_panel": "Admin Panel",
+                        "email_address": "E-mail address",
+                        "password": "Password",
+                        "sms": "SMS",
+                        "email": "E-mail",
+                        "otp_method": "OTP Method"
+                    },
+                    "verify": {
+                        "enter": "Enter",
+                        "verification_code": "Verification code",
+                        "continue": "Continue",
+                        "didnt_receive_code": "Didn't receive code",
+                        "resend": "Resend"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "These credentials do not match our records.",
+                        "invalid": "Verification code is invalid.",
+                        "sent": "Verification code successfully sent."
+                    },
+                    "user": {
+                        "inactive": "Your account is not active. Please, contact the administrator.",
+                        "unauthorized": "Unauthorized",
+                        "sent": "Reset password link successfully sent.",
+                        "reset": "Your password has been successfully reset.",
+                        "failure": "Failure."
+                    }
+                },
+                "admins": {
+                    "not_found": "Admin not found.",
+                    "created": "Admin successfully created.",
+                    "updated": "Admin successfully updated.",
+                    "deleted": "Admin successfully deleted."
+                },
+                "users": {
+                    "not_found": "User not found.",
+                    "created": "User successfully created.",
+                    "updated": "User successfully updated.",
+                    "deleted": "User successfully deleted."
+                },
+                "roles": {
+                    "not_found": "Role not found.",
+                    "created": "Role successfully created.",
+                    "updated": "Role successfully updated.",
+                    "deleted": "Role successfully deleted."
+                },
+                "features": {
+                    "not_found": "Feature not found.",
+                    "created": "Feature successfully created.",
+                    "updated": "Feature successfully updated.",
+                    "deleted": "Feature successfully deleted."
+                },
+                "languages": {
+                    "not_found": "Language not found.",
+                    "created": "Language successfully created.",
+                    "updated": "Language successfully updated.",
+                    "deleted": "Language successfully deleted."
+                },
+                "notifications": {
+                    "not_found": "Notification not found."
+                },
+                "cms": {
+                    "not_found": "Content not found.",
+                    "updated": "Content successfully updated."
+                },
+                "settings": {
+                    "restaurant": "Restaurant settings successfully updated.",
+                    "account": "Account settings successfully updated.",
+                    "cms": "CMS settings successfully updated.",
+                    "calendar": "Calendar settings successfully updated.",
+                    "password": "Incorrect password.",
+                    "not_found": "Setting not found.",
+                    "created": "Setting successfully created.",
+                    "updated": "Setting successfully updated.",
+                    "deleted": "Setting successfully deleted."
+                },
+                "restaurants": {
+                    "not_found": "Restaurant not found.",
+                    "created": "Restaurant succesfully created.",
+                    "updated": "Restaurant successfully updated.",
+                    "deleted": "Restaurant successfully deleted."
+                },
+                "methods": {
+                    "not_found": "Method not found.",
+                    "created": "Method successfully created.",
+                    "updated": "Method successfully updated.",
+                    "deleted": "Method successfully deleted."
+                },
+                "categories": {
+                    "not_found": "Category not found.",
+                    "created": "Category successfully created.",
+                    "updated": "Category successfully updated.",
+                    "deleted": "Category successfully deleted."
+                },
+                "meals": {
+                    "reference": "Meal with this reference already exists.",
+                    "not_found": "Meal not found.",
+                    "created": "Meal successfully created.",
+                    "updated": "Meal successfully updated.",
+                    "deleted": "Meal successfully deleted.",
+                    "reached": "Maximum number of meals reached"
+                },
+                "addons": {
+                    "reference": "Addon with this reference already exists.",
+                    "not_found": "Addon not found.",
+                    "created": "Addon successfully created.",
+                    "updated": "Addon successfully updated.",
+                    "deleted": "Addon successfully deleted."
+                },
+                "plans": {
+                    "not_found": "Plan not found.",
+                    "balance": "Insufficient balance.",
+                    "purchased": "Plan successfully purchased.",
+                    "created": "Plan successfully created.",
+                    "updated": "Plan successfully updated.",
+                    "deleted": "Plan successfully deleted."
+                },
+                "recharges": {
+                    "not_found": "Recharge not found.",
+                    "amount": "Invalid amount.",
+                    "created": "Recharge successfully created."
+                }
+            },
+            "backend": {
+                "header": {
+                    "sign_out": "Sign out",
+                    "no_message": "No message",
+                    "no_notification": "No notification",
+                    "logout": "Logout",
+                    "close": "Close",
+                    "sure_logout": "Are you sure you want to logout",
+                    "you_have": "You have",
+                    "messages": "messages",
+                    "view_all_messages": "View all messages",
+                    "unread_notification": "unread notification",
+                    "unread_notifications": "unread notifications",
+                    "view_all_notifications": "View all notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "sidebar": {
+                    "admin": "Administrator",
+                    "user": "User",
+                    "restaurant": "Restaurant",
+                    "menu": {
+                        "dashboard": "Dashboard",
+                        "admins": {
+                            "title": "Admins",
+                            "add": "Add admin",
+                            "index": "Admin list"
+                        },
+                        "users": {
+                            "title": "Users",
+                            "add": "Add user",
+                            "index": "User list"
+                        },
+                        "roles": {
+                            "title": "Roles",
+                            "add": "Add role",
+                            "index": "Role list"
+                        },
+                        "features": {
+                            "title": "Features",
+                            "add": "Add feature",
+                            "index": "Feature list"
+                        },
+                        "languages": {
+                            "title": "Languages",
+                            "add": "Add language",
+                            "index": "Language list"
+                        },
+                        "cms": {
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "General",
+                            "components": "Components",
+                            "auth": "Auth",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": "Notifications",
+                        "settings": {
+                            "title": "Settings",
+                            "cms": "CMS",
+                            "language": "Language settings"
+                        },
+                        "restaurants": {
+                            "title": "Restaurants",
+                            "add": "Add restaurant",
+                            "index": "Restaurant list"
+                        },
+                        "categories": {
+                            "title": "Categories",
+                            "add": "Add category",
+                            "index": "Category list"
+                        },
+                        "meals": {
+                            "title": "Meals",
+                            "add": "Create new meal",
+                            "index": "Meal list"
+                        },
+                        "addons": {
+                            "title": "Addons",
+                            "add": "Add addon",
+                            "index": "Addon list"
+                        },
+                        "comments": "Customer Review",
+                        "history": "Order History",
+                        "plans": {
+                            "title": "Plans",
+                            "add": "Deposit plan",
+                            "subscription": "Subscription plan",
+                            "purchase": "Purchase plan",
+                            "index": "Plan list",
+                            "bought": "Purchase list"
+                        },
+                        "recharges": {
+                            "title": "Recharges",
+                            "add": "Add recharge",
+                            "balance": "Recharge Balance",
+                            "index": "Recharge list"
+                        },
+                        "methods": {
+                            "title": "Methods",
+                            "add": "Add method",
+                            "index": "Method list"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "title": "Admin panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        },
+                        "user": {
+                            "title": "User panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        },
+                        "restaurant": {
+                            "welcome": "Welcome",
+                            "subtitle": "Dashboard",
+                            "go_live": "Go Live",
+                            "customer_reviews": "Customer reviews",
+                            "customer_ratings": "customer ratings",
+                            "most_viewed": "Most Viewed Meals",
+                            "qr_code": "Restaurant QR Code",
+                            "download": "Download a print this code",
+                            "subscription_plan": "Subscription Plan",
+                            "monthly": "Monthly",
+                            "yearly": "Yearly",
+                            "stars": {
+                                "singular": "Star",
+                                "plural": "Stars"
+                            },
+                            "general_overview": "General Overview",
+                            "blocks": {
+                                "customer_review": "Customer Review",
+                                "credit_balance": "Credit Balance",
+                                "recharge": "Recharge",
+                                "total_meals": "Total Meals",
+                                "total_categories": "Total Categories",
+                                "total_addons": "Total Addons"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "App name",
+                            "company_name": "Company name"
+                        }
+                    },
+                    "admins": {
+                        "title": "Administrators",
+                        "add": "Add admin",
+                        "edit": "Edit admin",
+                        "index": "Admin list",
+                        "form": {
+                            "name": "Admin name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "admin_photo": "Admin photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "title": "Users",
+                        "add": "Add user",
+                        "edit": "Edit user",
+                        "index": "User list",
+                        "form": {
+                            "name": "User name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "role": "Role",
+                            "select_role": "Select role",
+                            "user_photo": "User photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "add": "Add role",
+                        "edit": "Edit role",
+                        "index": "Role list",
+                        "form": {
+                            "name": "Name",
+                            "description": "Description",
+                            "features": "Features",
+                            "created_at": "Created at",
+                            "create": "Create",
+                            "update": "Update",
+                            "delete": "Delete"
+                        }
+                    },
+                    "features": {
+                        "title": "Features",
+                        "add": "Add feature",
+                        "edit": "Edit feature",
+                        "index": "Feature list",
+                        "form": {
+                            "name": "Name",
+                            "prefix": "Prefix",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "add": "Add language",
+                        "edit": "Edit language",
+                        "index": "Language list",
+                        "form": {
+                            "name": "Name",
+                            "abbr": "Abbreviation",
+                            "flag": "Flag",
+                            "select_flag": "Select flag",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "notifications": {
+                        "title": "Notifications",
+                        "show": "Notification details",
+                        "index": "Notification list",
+                        "form": {
+                            "you_have_no_notification": "You have no notification."
+                        }
+                    },
+                    "settings": {
+                        "title": "Settings",
+                        "form": {
+                            "restaurant_settings": "RESTAURANT SETTINGS",
+                            "account_settings": "ACCOUNT SETTINGS",
+                            "cms_settings": "CMS SETTINGS",
+                            "translatable_settings": "TRANSLATABLE SETTINGS",
+                            "language_settings": "LANGUAGE SETTINGS",
+                            "name": "Restaurant's Name",
+                            "owner": "Restaurant Owner's Name",
+                            "phone": "Restaurant's Phone Number",
+                            "whatsapp": "Restaurant's WhatsApp NO",
+                            "location": "Restaurant's Location (Gmaps)",
+                            "address": "Restaurant's Address",
+                            "caution": "Restaurant's Addon Intro Text",
+                            "must_read": "Restaurant's Must Read",
+                            "disclaimer": "Restaurant's Additional Info",
+                            "currency": "Restaurant's Currency",
+                            "select_currency": "Select currency ",
+                            "select_position": "Select currency position",
+                            "select_language": "Select language",
+                            "languages": "Languages",
+                            "left": "Left",
+                            "right": "Right",
+                            "email": "Email Address",
+                            "country": "Country",
+                            "token": "Restaurant Token",
+                            "password": "Password",
+                            "new_password": "New Password",
+                            "new_password_confirmation": "Confirm New Password",
+                            "upload": "Upload Profile Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "locked_banner1": "Buy a plan to have access.",
+                            "locked_banner2": "Upgrade the standard plan to have access.",
+                            "locked_banner3": "Upgrade the premium plan to have access.",
+                            "days": "Opening Days",
+                            "hours": "Opening Hours"
+                        },
+                        "language": {
+                            "title": "Language settings",
+                            "form": {
+                                "select_language": "Select a language"
+                            }
+                        }
+                    },
+                    "categories": {
+                        "title": "Categories",
+                        "subtitle": "Please follow the instructions carefully",
+                        "instructions": "Please fill the form below, All fields are required",
+                        "add": "Add category",
+                        "edit": "Edit category",
+                        "index": "Category list",
+                        "form": {
+                            "name": "Category's Name",
+                            "description": "Category's Description",
+                            "upload": "Upload Category Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_status": "Please select category status"
+                        }
+                    },
+                    "meals": {
+                        "title": "Meals",
+                        "subtitle": "Set your meals here. Edit and update.",
+                        "welcome": "Welcome",
+                        "filter": "Filter",
+                        "most_liked": "Most liked",
+                        "counted": "Counted Meals",
+                        "total_meals": "Total Meals available in the system",
+                        "watching": "Watching list",
+                        "check": "Check the monitored meal",
+                        "all_categories": "All Categories",
+                        "viewing": "Viewing Now",
+                        "add": "Add meal",
+                        "edit": "Edit meal",
+                        "index": "Meal list",
+                        "form": {
+                            "name": "Meal's Name",
+                            "description": "Meal's Description",
+                            "price": "Meal's Price",
+                            "reference": "Meal's ID Number",
+                            "time": "Meal's Preparation Time (in minutes)",
+                            "total_addons": "Total Addons Selected",
+                            "upload": "Upload Meal Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_category": "Select category",
+                            "select_addon": "Select addon",
+                            "select_status": "Please select meal status"
+                        }
+                    },
+                    "addons": {
+                        "title": "Addons",
+                        "subtitle": "Please follow the instructions carefully",
+                        "add": "Add addon",
+                        "edit": "Edit addon",
+                        "index": "Addon list",
+                        "form": {
+                            "name": "Addon's Name",
+                            "description": "Addon's Description",
+                            "price": "Addon's Price",
+                            "reference": "Addon's ID Number",
+                            "upload": "Upload Addon Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_status": "Please select addon status"
+                        }
+                    },
+                    "comments": {
+                        "title": "Customer Review",
+                        "subtitle": "Here are your customers comments",
+                        "index": "Review list",
+                        "form": {
+                            "name": "Customer's Name",
+                            "body": "Comment's Body",
+                            "meal": "Meal's Name",
+                            "mark": "Assigned Mark",
+                            "created_at": "Posted On"
+                        }
+                    },
+                    "plans": {
+                        "title": "Plans",
+                        "subscription": "Subscription plan",
+                        "subtitle": "Purchase plan",
+                        "instructions": "Please fill the form below to purchase or upgrade plan",
+                        "add": "Deposit plan",
+                        "edit": "Edit plan",
+                        "purchase": "Purchase plan",
+                        "index": "Plan list",
+                        "bought": "Purchase list",
+                        "form": {
+                            "purchase": "Purchase Plan",
+                            "name": "Plan Name",
+                            "plan": "Plan Name",
+                            "restaurant": "Restaurant Name",
+                            "amount": "Amount",
+                            "status": "Status",
+                            "type": "Purchase Type",
+                            "terms": "Accept terms and conditions & Privacy policies",
+                            "price": "Cost",
+                            "token": "Restaurant Token",
+                            "expiry_date": "Expiry Date",
+                            "created_at": "Purchase Date",
+                            "select_plan_id": "Select plan",
+                            "select_type": "Purchase Type",
+                            "meals": "Meals",
+                            "actions": "Actions",
+                            "support": "Support",
+                            "banners": "Banners",
+                            "reviews": "Reviews"
+                        }
+                    },
+                    "recharges": {
+                        "title": "Recharge Balance",
+                        "subtitle": "Deposit funds in your E-menu account to purchase plans",
+                        "instructions": "Please fill the form below to recharge balance",
+                        "add": "Add recharge",
+                        "index": "Recharge list",
+                        "recharge": "Recharge",
+                        "form": {
+                            "process": "Process Payment",
+                            "amount": "Amount",
+                            "status": "Status",
+                            "method": "Payment Gateway",
+                            "terms": "Accept terms and conditions & Privacy policies",
+                            "created_at": "Date",
+                            "select_method": "Select payment gateway",
+                            "token": "Restaurant Token",
+                            "restaurant": "Restaurant Name"
+                        }
+                    },
+                    "restaurants": {
+                        "title": "Restaurants",
+                        "add": "Add restaurant",
+                        "index": "Restaurant list",
+                        "form": {
+                            "name": "Restaurant's Name",
+                            "owner": "Restaurant Owner's Name",
+                            "email": "E-mail address",
+                            "phone": "Restaurant's Phone Number",
+                            "token": "Restaurant Token",
+                            "country": "Country",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "methods": {
+                        "title": "Methods",
+                        "add": "Add method",
+                        "edit": "Edit method",
+                        "index": "Method list",
+                        "form": {
+                            "name": "Method name",
+                            "text": "Method description",
+                            "select_status": "Select status",
+                            "is_active": "Status",
+                            "created_at": "Created at"
+                        }
+                    }
+                }
+            },
+            "frontend": {
+                "restaurants": {
+                    "home": {
+                        "you_are_on_category": "You are on category",
+                        "select_category": "Select category",
+                        "search": "Search"
+                    },
+                    "meals": {
+                        "price": "Price",
+                        "compose": "Compose your meal to know the cost",
+                        "addons": {
+                            "title": "Food Addons",
+                            "dear_customers": "Dear customers, this item comes with an addon of your choice. If you would like extra addon, please select below",
+                            "your_cart_cost_is": "Your cart cost is"
+                        },
+                        "description": "Description",
+                        "must_read": "Must Read",
+                        "dear_customers": "Dear customers, we would love to make available more food items but unfortunately kindly note that some of the addons mentioned below might not be available. For special request, please contact us. Thanks for understanding.",
+                        "comments": {
+                            "title": "Comments",
+                            "post_comment": "Post comment",
+                            "name": "Full name",
+                            "body": "Type something here"
+                        }
+                    }
+                }
+            }
+        },
+        "fr": {
+            "general": {
+                "date": "Date",
+                "time": "Time",
+                "home": "Home",
+                "loading": "Loading",
+                "days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "months": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Save",
+                    "save_add": "Save & Add",
+                    "selected_file": "File selected",
+                    "active": "Active",
+                    "inactive": "Inactive"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "All",
+                    "first": "First",
+                    "last": "Last",
+                    "loading": "Loading",
+                    "print": "Print",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Search",
+                    "see": "See",
+                    "show": "Show",
+                    "sl": "SL",
+                    "showing": "Showing",
+                    "from": "from",
+                    "entries": {
+                        "singular": "entry",
+                        "plural": "entries"
+                    }
+                },
+                "food": {
+                    "ratings": "Ratings"
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "user": {
+                    "login": {
+                        "dont_be_late": "Don't be late",
+                        "get_in": "Get In",
+                        "sign_in": "Sign In",
+                        "email_address": "E-mail address",
+                        "password": "Password"
+                    }
+                },
+                "restaurant": {
+                    "login": {
+                        "welcome": "Welcome back, Please login, to get started !",
+                        "forgot": "Forgot password",
+                        "reset": "Reset here",
+                        "send": "Send link",
+                        "sign_in": "Sign In To Portal",
+                        "no_account": "Don't have an account",
+                        "sign_up": "Sign up",
+                        "token": "Restaurant Token",
+                        "password": "Password"
+                    },
+                    "register": {
+                        "welcome": "Sign Up today and start using E-menu !",
+                        "owner": "Restaurant Owner's Name",
+                        "email": "Enter Email",
+                        "phone": "Enter Phone Number",
+                        "select_country": "Select country",
+                        "sign_in": "Sign in",
+                        "terms": "Accept terms and conditions & Privacy policies",
+                        "already": "Already a user",
+                        "sign_up": "Sign Up"
+                    },
+                    "success": {
+                        "good_job": "Good Job !",
+                        "thank_you": "Thank you ! Your account was successfully created. Please check your mail to get login credentials :",
+                        "sign_in": "Sign In"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Sign In to",
+                        "sign_in": "Sign In",
+                        "admin_panel": "Admin Panel",
+                        "email_address": "E-mail address",
+                        "password": "Password",
+                        "sms": "SMS",
+                        "email": "E-mail",
+                        "otp_method": "OTP Method"
+                    },
+                    "verify": {
+                        "enter": "Enter",
+                        "verification_code": "Verification code",
+                        "continue": "Continue",
+                        "didnt_receive_code": "Didn't receive code",
+                        "resend": "Resend"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "These credentials do not match our records.",
+                        "invalid": "Verification code is invalid.",
+                        "sent": "Verification code successfully sent."
+                    },
+                    "user": {
+                        "inactive": "Your account is not active. Please, contact the administrator.",
+                        "unauthorized": "Unauthorized",
+                        "sent": "Reset password link successfully sent.",
+                        "reset": "Your password has been successfully reset.",
+                        "failure": "Failure."
+                    }
+                },
+                "admins": {
+                    "not_found": "Admin not found.",
+                    "created": "Admin successfully created.",
+                    "updated": "Admin successfully updated.",
+                    "deleted": "Admin successfully deleted."
+                },
+                "users": {
+                    "not_found": "User not found.",
+                    "created": "User successfully created.",
+                    "updated": "User successfully updated.",
+                    "deleted": "User successfully deleted."
+                },
+                "roles": {
+                    "not_found": "Role not found.",
+                    "created": "Role successfully created.",
+                    "updated": "Role successfully updated.",
+                    "deleted": "Role successfully deleted."
+                },
+                "features": {
+                    "not_found": "Feature not found.",
+                    "created": "Feature successfully created.",
+                    "updated": "Feature successfully updated.",
+                    "deleted": "Feature successfully deleted."
+                },
+                "languages": {
+                    "not_found": "Language not found.",
+                    "created": "Language successfully created.",
+                    "updated": "Language successfully updated.",
+                    "deleted": "Language successfully deleted."
+                },
+                "notifications": {
+                    "not_found": "Notification not found."
+                },
+                "cms": {
+                    "not_found": "Content not found.",
+                    "updated": "Content successfully updated."
+                },
+                "settings": {
+                    "restaurant": "Restaurant settings successfully updated.",
+                    "account": "Account settings successfully updated.",
+                    "cms": "CMS settings successfully updated.",
+                    "calendar": "Calendar settings successfully updated.",
+                    "password": "Incorrect password.",
+                    "not_found": "Setting not found.",
+                    "created": "Setting successfully created.",
+                    "updated": "Setting successfully updated.",
+                    "deleted": "Setting successfully deleted."
+                },
+                "restaurants": {
+                    "not_found": "Restaurant not found.",
+                    "created": "Restaurant succesfully created.",
+                    "updated": "Restaurant successfully updated.",
+                    "deleted": "Restaurant successfully deleted."
+                },
+                "methods": {
+                    "not_found": "Method not found.",
+                    "created": "Method successfully created.",
+                    "updated": "Method successfully updated.",
+                    "deleted": "Method successfully deleted."
+                },
+                "categories": {
+                    "not_found": "Category not found.",
+                    "created": "Category successfully created.",
+                    "updated": "Category successfully updated.",
+                    "deleted": "Category successfully deleted."
+                },
+                "meals": {
+                    "reference": "Meal with this reference already exists.",
+                    "not_found": "Meal not found.",
+                    "created": "Meal successfully created.",
+                    "updated": "Meal successfully updated.",
+                    "deleted": "Meal successfully deleted.",
+                    "reached": "Maximum number of meals reached"
+                },
+                "addons": {
+                    "reference": "Addon with this reference already exists.",
+                    "not_found": "Addon not found.",
+                    "created": "Addon successfully created.",
+                    "updated": "Addon successfully updated.",
+                    "deleted": "Addon successfully deleted."
+                },
+                "plans": {
+                    "not_found": "Plan not found.",
+                    "balance": "Insufficient balance.",
+                    "purchased": "Plan successfully purchased.",
+                    "created": "Plan successfully created.",
+                    "updated": "Plan successfully updated.",
+                    "deleted": "Plan successfully deleted."
+                },
+                "recharges": {
+                    "not_found": "Recharge not found.",
+                    "amount": "Invalid amount.",
+                    "created": "Recharge successfully created."
+                }
+            },
+            "backend": {
+                "header": {
+                    "sign_out": "Sign out",
+                    "no_message": "No message",
+                    "no_notification": "No notification",
+                    "logout": "Logout",
+                    "close": "Close",
+                    "sure_logout": "Are you sure you want to logout",
+                    "you_have": "You have",
+                    "messages": "messages",
+                    "view_all_messages": "View all messages",
+                    "unread_notification": "unread notification",
+                    "unread_notifications": "unread notifications",
+                    "view_all_notifications": "View all notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "sidebar": {
+                    "admin": "Administrator",
+                    "user": "User",
+                    "restaurant": "Restaurant",
+                    "menu": {
+                        "dashboard": "Dashboard",
+                        "admins": {
+                            "title": "Admins",
+                            "add": "Add admin",
+                            "index": "Admin list"
+                        },
+                        "users": {
+                            "title": "Users",
+                            "add": "Add user",
+                            "index": "User list"
+                        },
+                        "roles": {
+                            "title": "Roles",
+                            "add": "Add role",
+                            "index": "Role list"
+                        },
+                        "features": {
+                            "title": "Features",
+                            "add": "Add feature",
+                            "index": "Feature list"
+                        },
+                        "languages": {
+                            "title": "Languages",
+                            "add": "Add language",
+                            "index": "Language list"
+                        },
+                        "cms": {
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "General",
+                            "components": "Components",
+                            "auth": "Auth",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": "Notifications",
+                        "settings": {
+                            "title": "Settings",
+                            "cms": "CMS",
+                            "language": "Language settings"
+                        },
+                        "restaurants": {
+                            "title": "Restaurants",
+                            "add": "Add restaurant",
+                            "index": "Restaurant list"
+                        },
+                        "categories": {
+                            "title": "Categories",
+                            "add": "Add category",
+                            "index": "Category list"
+                        },
+                        "meals": {
+                            "title": "Meals",
+                            "add": "Create new meal",
+                            "index": "Meal list"
+                        },
+                        "addons": {
+                            "title": "Addons",
+                            "add": "Add addon",
+                            "index": "Addon list"
+                        },
+                        "comments": "Customer Review",
+                        "history": "Order History",
+                        "plans": {
+                            "title": "Plans",
+                            "add": "Deposit plan",
+                            "subscription": "Subscription plan",
+                            "purchase": "Purchase plan",
+                            "index": "Plan list",
+                            "bought": "Purchase list"
+                        },
+                        "recharges": {
+                            "title": "Recharges",
+                            "add": "Add recharge",
+                            "balance": "Recharge Balance",
+                            "index": "Recharge list"
+                        },
+                        "methods": {
+                            "title": "Methods",
+                            "add": "Add method",
+                            "index": "Method list"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "title": "Admin panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        },
+                        "user": {
+                            "title": "User panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        },
+                        "restaurant": {
+                            "welcome": "Welcome",
+                            "subtitle": "Dashboard",
+                            "go_live": "Go Live",
+                            "customer_reviews": "Customer reviews",
+                            "customer_ratings": "customer ratings",
+                            "most_viewed": "Most Viewed Meals",
+                            "qr_code": "Restaurant QR Code",
+                            "download": "Download a print this code",
+                            "subscription_plan": "Subscription Plan",
+                            "monthly": "Monthly",
+                            "yearly": "Yearly",
+                            "stars": {
+                                "singular": "Star",
+                                "plural": "Stars"
+                            },
+                            "general_overview": "General Overview",
+                            "blocks": {
+                                "customer_review": "Customer Review",
+                                "credit_balance": "Credit Balance",
+                                "recharge": "Recharge",
+                                "total_meals": "Total Meals",
+                                "total_categories": "Total Categories",
+                                "total_addons": "Total Addons"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "App name",
+                            "company_name": "Company name"
+                        }
+                    },
+                    "admins": {
+                        "title": "Administrators",
+                        "add": "Add admin",
+                        "edit": "Edit admin",
+                        "index": "Admin list",
+                        "form": {
+                            "name": "Admin name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "admin_photo": "Admin photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "title": "Users",
+                        "add": "Add user",
+                        "edit": "Edit user",
+                        "index": "User list",
+                        "form": {
+                            "name": "User name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "role": "Role",
+                            "select_role": "Select role",
+                            "user_photo": "User photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "add": "Add role",
+                        "edit": "Edit role",
+                        "index": "Role list",
+                        "form": {
+                            "name": "Name",
+                            "description": "Description",
+                            "features": "Features",
+                            "created_at": "Created at",
+                            "create": "Create",
+                            "update": "Update",
+                            "delete": "Delete"
+                        }
+                    },
+                    "features": {
+                        "title": "Features",
+                        "add": "Add feature",
+                        "edit": "Edit feature",
+                        "index": "Feature list",
+                        "form": {
+                            "name": "Name",
+                            "prefix": "Prefix",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "add": "Add language",
+                        "edit": "Edit language",
+                        "index": "Language list",
+                        "form": {
+                            "name": "Name",
+                            "abbr": "Abbreviation",
+                            "flag": "Flag",
+                            "select_flag": "Select flag",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "notifications": {
+                        "title": "Notifications",
+                        "show": "Notification details",
+                        "index": "Notification list",
+                        "form": {
+                            "you_have_no_notification": "You have no notification."
+                        }
+                    },
+                    "settings": {
+                        "title": "Settings",
+                        "form": {
+                            "restaurant_settings": "RESTAURANT SETTINGS",
+                            "account_settings": "ACCOUNT SETTINGS",
+                            "cms_settings": "CMS SETTINGS",
+                            "translatable_settings": "TRANSLATABLE SETTINGS",
+                            "language_settings": "LANGUAGE SETTINGS",
+                            "name": "Restaurant's Name",
+                            "owner": "Restaurant Owner's Name",
+                            "phone": "Restaurant's Phone Number",
+                            "whatsapp": "Restaurant's WhatsApp NO",
+                            "location": "Restaurant's Location (Gmaps)",
+                            "address": "Restaurant's Address",
+                            "caution": "Restaurant's Addon Intro Text",
+                            "must_read": "Restaurant's Must Read",
+                            "disclaimer": "Restaurant's Additional Info",
+                            "currency": "Restaurant's Currency",
+                            "select_currency": "Select currency ",
+                            "select_position": "Select currency position",
+                            "select_language": "Select language",
+                            "language": "Language",
+                            "left": "Left",
+                            "right": "Right",
+                            "email": "Email Address",
+                            "country": "Country",
+                            "token": "Restaurant Token",
+                            "password": "Password",
+                            "new_password": "New Password",
+                            "new_password_confirmation": "Confirm New Password",
+                            "upload": "Upload Profile Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "locked_banner1": "Buy a plan to have access.",
+                            "locked_banner2": "Upgrade the standard plan to have access.",
+                            "locked_banner3": "Upgrade the premium plan to have access.",
+                            "days": "Opening Days",
+                            "hours": "Opening Hours"
+                        },
+                        "language": {
+                            "title": "Language settings",
+                            "form": {
+                                "select_language": "Select a language"
+                            }
+                        }
+                    },
+                    "categories": {
+                        "title": "Categories",
+                        "subtitle": "Please follow the instructions carefully",
+                        "instructions": "Please fill the form below, All fields are required",
+                        "add": "Add category",
+                        "edit": "Edit category",
+                        "index": "Category list",
+                        "form": {
+                            "name": "Category's Name",
+                            "description": "Category's Description",
+                            "upload": "Upload Category Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_status": "Please select category status"
+                        }
+                    },
+                    "meals": {
+                        "title": "Meals",
+                        "subtitle": "Set your meals here. Edit and update.",
+                        "welcome": "Welcome",
+                        "filter": "Filter",
+                        "most_liked": "Most liked",
+                        "counted": "Counted Meals",
+                        "total_meals": "Total Meals available in the system",
+                        "watching": "Watching list",
+                        "check": "Check the monitored meal",
+                        "all_categories": "All Categories",
+                        "viewing": "Viewing Now",
+                        "add": "Add meal",
+                        "edit": "Edit meal",
+                        "index": "Meal list",
+                        "form": {
+                            "name": "Meal's Name",
+                            "description": "Meal's Description",
+                            "price": "Meal's Price",
+                            "reference": "Meal's ID Number",
+                            "time": "Meal's Preparation Time (in minutes)",
+                            "total_addons": "Total Addons Selected",
+                            "upload": "Upload Meal Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_category": "Select category",
+                            "select_addon": "Select addon",
+                            "select_status": "Please select meal status"
+                        }
+                    },
+                    "addons": {
+                        "title": "Addons",
+                        "subtitle": "Please follow the instructions carefully",
+                        "add": "Add addon",
+                        "edit": "Edit addon",
+                        "index": "Addon list",
+                        "form": {
+                            "name": "Addon's Name",
+                            "description": "Addon's Description",
+                            "price": "Addon's Price",
+                            "reference": "Addon's ID Number",
+                            "upload": "Upload Addon Image",
+                            "size": "Max Size : 3 MB Format : 250 x 250",
+                            "select_status": "Please select addon status"
+                        }
+                    },
+                    "comments": {
+                        "title": "Customer Review",
+                        "subtitle": "Here are your customers comments",
+                        "index": "Review list",
+                        "form": {
+                            "name": "Customer's Name",
+                            "body": "Comment's Body",
+                            "meal": "Meal's Name",
+                            "mark": "Assigned Mark",
+                            "created_at": "Posted On"
+                        }
+                    },
+                    "plans": {
+                        "title": "Plans",
+                        "subscription": "Subscription plan",
+                        "subtitle": "Purchase plan",
+                        "instructions": "Please fill the form below to purchase or upgrade plan",
+                        "add": "Deposit plan",
+                        "edit": "Edit plan",
+                        "purchase": "Purchase plan",
+                        "index": "Plan list",
+                        "bought": "Purchase list",
+                        "form": {
+                            "purchase": "Purchase Plan",
+                            "name": "Plan Name",
+                            "plan": "Plan Name",
+                            "restaurant": "Restaurant Name",
+                            "amount": "Amount",
+                            "status": "Status",
+                            "type": "Purchase Type",
+                            "terms": "Accept terms and conditions & Privacy policies",
+                            "price": "Cost",
+                            "token": "Restaurant Token",
+                            "expiry_date": "Expiry Date",
+                            "created_at": "Purchase Date",
+                            "select_plan_id": "Select plan",
+                            "select_type": "Purchase Type",
+                            "meals": "Meals",
+                            "actions": "Actions",
+                            "support": "Support",
+                            "banners": "Banners",
+                            "reviews": "Reviews"
+                        }
+                    },
+                    "recharges": {
+                        "title": "Recharge Balance",
+                        "subtitle": "Deposit funds in your E-menu account to purchase plans",
+                        "instructions": "Please fill the form below to recharge balance",
+                        "add": "Add recharge",
+                        "index": "Recharge list",
+                        "recharge": "Recharge",
+                        "form": {
+                            "process": "Process Payment",
+                            "amount": "Amount",
+                            "status": "Status",
+                            "method": "Payment Gateway",
+                            "terms": "Accept terms and conditions & Privacy policies",
+                            "created_at": "Date",
+                            "select_method": "Select payment gateway",
+                            "token": "Restaurant Token",
+                            "restaurant": "Restaurant Name"
+                        }
+                    },
+                    "restaurants": {
+                        "title": "Restaurants",
+                        "add": "Add restaurant",
+                        "index": "Restaurant list",
+                        "form": {
+                            "name": "Restaurant's Name",
+                            "owner": "Restaurant Owner's Name",
+                            "email": "E-mail address",
+                            "phone": "Restaurant's Phone Number",
+                            "token": "Restaurant Token",
+                            "country": "Country",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "methods": {
+                        "title": "Methods",
+                        "add": "Add method",
+                        "edit": "Edit method",
+                        "index": "Method list",
+                        "form": {
+                            "name": "Method name",
+                            "text": "Method description",
+                            "select_status": "Select status",
+                            "is_active": "Status",
+                            "created_at": "Created at"
+                        }
+                    }
+                }
+            },
+            "frontend": {
+                "restaurants": {
+                    "home": {
+                        "you_are_on_category": "Vous \u00eates dans la cat\u00e9gorie",
+                        "select_category": "Choisir une cat\u00e9gorie",
+                        "search": "Rechercher"
+                    },
+                    "meals": {
+                        "price": "Prix",
+                        "compose": "Composez votre repas pour conna\u00eetre le co\u00fbt",
+                        "addons": {
+                            "title": "Accompagnements",
+                            "dear_customers": "Chers clients, cet article est livr\u00e9 avec un addon de votre choix. Si vous souhaitez un compl\u00e9ment suppl\u00e9mentaire, veuillez s\u00e9lectionner ci-dessous",
+                            "your_cart_cost_is": "Le co\u00fbt de votre panier est"
+                        },
+                        "description": "Description",
+                        "must_read": "A Lire",
+                        "dear_customers": "Chers clients, nous serions ravis de rendre disponibles plus de produits alimentaires, mais malheureusement, veuillez noter que certains des addons mentionn\u00e9s ci-dessous pourraient ne pas \u00eatre disponibles. Pour toute demande sp\u00e9ciale, veuillez nous contacter. Merci de votre compr\u00e9hension.",
+                        "comments": {
+                            "title": "Commentaires",
+                            "post_comment": "Poster un commentaire",
+                            "name": "Nom et pr\u00e9nom",
+                            "body": "Tapez quelque chose ici"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

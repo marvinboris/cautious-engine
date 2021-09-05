@@ -1,0 +1,40 @@
+.UI.Post > div {
+    height: 100%;
+    background-color: var(--lightblue-25);
+    transition: all 0.25s;
+}
+
+.UI.Post > div.soft {
+    background-color: var(--soft);
+}
+
+.UI.Post .embed-responsive {
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    transition: all 0.25s;
+}
+
+.UI.Post .share-border {
+    border-color: var(--lightblue-25) !important;
+    transition: all 0.25s;
+}
+
+.UI.Post > div.soft .share-border {
+    border-color: var(--soft) !important;
+}
+
+.UI.Post > div:hover,
+.owl-item.center.active .UI.Post > div {
+    background-color: white;
+}
+
+.UI.Post > div:hover .embed-responsive,
+.owl-item.center.active .UI.Post > div .embed-responsive {
+    background-size: auto calc(100% + 6px);
+}
+
+.UI.Post > div:hover .share-border,
+.owl-item.center.active .UI.Post > div .share-border {
+    border-color: white !important;
+}
