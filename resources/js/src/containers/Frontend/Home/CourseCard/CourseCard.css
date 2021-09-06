@@ -19,7 +19,6 @@
 
 .Frontend .Home .CourseCard .Detail li {
     font-weight: 300;
-    font-size: 10px;
 }
 
 .Frontend .Home .CourseCard .Detail li::before {

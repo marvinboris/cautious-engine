@@ -9,7 +9,7 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $courses = Course::latest()->limit(3)->get();
+        $courses = Course::get();
 
         return response()->json([
             'courses' => $courses,

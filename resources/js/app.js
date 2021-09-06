@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 $(function () {
+    $.getScript('/js/jquery.star-rating-svg.js');
     $.getScript("https://kit.fontawesome.com/762c591422.js");
 
     window.CORS = "https://jsonp.afeld.me/?url=";

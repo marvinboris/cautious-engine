@@ -90,7 +90,7 @@ class Home extends Component {
 
 
             <Block id="enrolments" color="soft" title={enrolments.title} subtitle={course && (<>{enrolments.you_have_selected_the_course} <strong>{course.name[lang]}</strong></>)}>
-                {course && <div className="row align-items-center">
+                {course && <div className="row">
                     <div className="col-md-5 overflow-hidden px-3 px-md-4 px-xxl-5">
                         <CourseCard countries={countries} enrolments={enrolments} cms={cms} course={course} lang={lang} />
                     </div>

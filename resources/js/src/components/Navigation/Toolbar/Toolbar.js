@@ -60,7 +60,7 @@ class Toolbar extends Component {
         const {
             content: {
                 cms: {
-                    pages: { frontend: { header: { tel, menu } } }
+                    pages: { frontend: { header: { call_me, tel, menu } } }
                 }, languages
             },
         } = this.props;
@@ -76,19 +76,15 @@ class Toolbar extends Component {
                         <a href={`tel:${tel}`} className="d-inline-flex align-items-center ml-xl-5 pl-2 pl-md-3 pr-3 pr-md-4 py-1 py-md-2">
                             <div className="pr-2 pr-xl-3 py-0 py-xl-1"><i className="fad fa-phone-office text-yellow text-18 text-md-24 text-xxl-30" /></div>
 
-                            <div className="text-500 text-14 text-md-17 text-xxl-20">{tel}</div>
+                            <div className="text-500 text-14 text-md-17 text-xxl-20">{call_me}</div>
                         </a>
-
-                        <div className="pl-3 d-md-none">
-                            <Languages languages={languages} set={this.setLanguage} language={language} />
-                        </div>
                     </div>
 
                     <div className="pl-3 h-100 d-none d-md-flex align-items-center">
                         <a href={`tel:${tel}`} className="text-white d-inline-flex align-items-center ml-xl-5 pl-2 pl-md-3 pr-3 pr-md-4 py-1 py-md-2">
                             <div className="pr-2 pr-xl-3 py-0 py-xl-1"><i className="fad fa-phone-office text-yellow text-18 text-md-24 text-xxl-30" /></div>
 
-                            <div className="text-500 text-14 text-md-17 text-xxl-20">{tel}</div>
+                            <div className="text-500 text-14 text-md-17 text-xxl-20">{call_me}</div>
                         </a>
 
                         <div className="d-none d-xl-block pl-5">
@@ -99,10 +95,6 @@ class Toolbar extends Component {
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="mx-2 mx-md-3 d-xl-none">
                             <i onClick={this.toggleNavbar} className="fad fa-th-large text-21 text-md-40" style={{ cursor: 'pointer' }} />
-                        </div>
-
-                        <div className="pl-3 d-none d-xl-block">
-                            <Languages languages={languages} set={this.setLanguage} language={language} />
                         </div>
                     </div>
                 </div>

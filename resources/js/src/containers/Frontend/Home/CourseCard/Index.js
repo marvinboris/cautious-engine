@@ -13,9 +13,9 @@ const Info = ({ name, icon, info }) => <div>
 </div>;
 
 const Detail = ({ name, children }) => <div className="Detail mt-2 mt-md-3 mt-xxl-4">
-    <div className="text-secondary text-700 text-8 text-md-10 text-xxl-12">{name + " >"}</div>
+    <div className="text-secondary text-700 text-10 text-md-12 text-xxl-14">{name + " >"}</div>
 
-    <div>
+    <div className="text-8 text-md-10 text-xxl-12">
         {children}
     </div>
 </div>;

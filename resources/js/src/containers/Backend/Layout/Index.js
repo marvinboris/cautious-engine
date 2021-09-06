@@ -95,10 +95,6 @@ class Layout extends Component {
                                 <button className="fas fa-search text-greenblue text-15 text-md-19 text-xxl-23 border-0 bg-transparent p-0 mr-2 mr-md-3 mr-xxl-4 position-absolute" style={{ top: '50%', right: 0, transform: 'translateY(-50%)' }} />
                             </div>
                         </div>
-
-                        <div className="text-16 text-md-20 text-xxl-24">
-                            <Languages languages={languages} set={this.setLanguage} language={language} />
-                        </div>
                     </div>
 
                     <div className="col-4 border-left border-light d-flex align-items-center pl-3 pl-md-4 pl-xxl-5 pr-2 pr-md-3 pr-xxl-4">

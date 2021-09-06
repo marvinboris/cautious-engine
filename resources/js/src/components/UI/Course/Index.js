@@ -3,12 +3,12 @@ import React from 'react';
 import './Course.css';
 
 const Info = ({ name, icon, info }) => <div>
-    <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 px-1 px-md-2 px-xxl-3">
+    <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3">
         <div className="mb-1 mb-md-2"><i className={"fad fa-" + icon + " text-13 text-md-15 text-xxl-17"} /></div>
 
-        <div className="text-6 text-md-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
+        <div className="text-10 text-md-12 text-xxl-14 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
 
-        <div className="text-6 text-md-7 text-xxl-8 text-700 text-montserrat text-truncate">{info}</div>
+        <div className="text-8 text-md-10 text-xxl-12 text-700 text-montserrat text-truncate">{info}</div>
     </div>
 </div>;
 
@@ -19,11 +19,11 @@ const Block = ({ children, className = "" }) => <div className={"px-1 px-md-2 px
 </div>;
 
 export default ({ cms, name, description, training, internship, enroled, level, photo, selected, onClick }) => {
-    const difficulty = <div className="d-flex justify-content-between">
-        <div><div className={"rounded-2 bg-" + (level > 0 ? "green" : level === 0 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
-        <div><div className={"rounded-2 bg-" + (level > 1 ? "green" : level === 1 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
-        <div><div className={"rounded-2 bg-" + (level > 2 ? "green" : level === 2 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
-        <div><div className={"rounded-2 bg-" + (level > 3 ? "green" : level === 3 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
+    const difficulty = <div className="d-flex justify-content-around">
+        <div><div className={"rounded-1 bg-" + (level > 0 ? "green" : level === 0 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
+        <div><div className={"rounded-1 bg-" + (level > 1 ? "green" : level === 1 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
+        <div><div className={"rounded-1 bg-" + (level > 2 ? "green" : level === 2 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
+        <div><div className={"rounded-1 bg-" + (level > 3 ? "green" : level === 3 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
     </div>;
 
     return <div className="UI Course col-xxl-3 col-lg-4 col-md-6">

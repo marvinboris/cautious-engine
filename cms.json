@@ -476,6 +476,7 @@
             },
             "frontend": {
                 "header": {
+                    "call_me": "Call me",
                     "tel": "+23769900660044",
                     "menu": {
                         "home": "Home",
@@ -538,7 +539,29 @@
                                         }
                                     },
                                     "lingual_skills": {
-                                        "title": "Lingual skills"
+                                        "title": "Lingual skills",
+                                        "fields": {
+                                            "select": "Select",
+                                            "english_level": "English level :",
+                                            "subjects": {
+                                                "writing": {
+                                                    "name": "Writing",
+                                                    "color": "green"
+                                                },
+                                                "speaking": {
+                                                    "name": "Speaking",
+                                                    "color": "red"
+                                                },
+                                                "reading": {
+                                                    "name": "Reading",
+                                                    "color": "orange"
+                                                },
+                                                "comprehension": {
+                                                    "name": "Comprehension",
+                                                    "color": "orange"
+                                                }
+                                            }
+                                        }
                                     },
                                     "payment": {
                                         "title": "Payment"

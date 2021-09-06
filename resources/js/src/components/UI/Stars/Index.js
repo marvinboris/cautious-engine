@@ -4,14 +4,16 @@ import '../../../assets/css/star-rating-svg.css';
 
 export default class Stars extends Component {
     stars = () => {
-        $(".ranking-stars").starRating({
-            strokeColor: '#894A00',
+        $(".ranking-stars.stars-" + this.props.color + ".target-" + this.props.target).starRating({
+            strokeColor: this.props.color,
+            activeColor: this.props.color,
             strokeWidth: 10,
             starSize: 25,
             useFullStars: true,
             disableAfterRate: false,
-            callback: function (currentRating) {
-                $('input[name="mark"]').val(currentRating);
+            callback: currentRating => {
+                $('input[name="' + this.props.target + '"]').val(currentRating);
+                $('.mark-' + this.props.target).html(currentRating);
             }
         });
 
@@ -38,10 +40,10 @@ export default class Stars extends Component {
     }
 
     render() {
-        const { mark, readOnly, lg } = this.props;
+        const { mark, readOnly, lg, className = "", color, target } = this.props;
 
         return <div className="overflow-hidden" style={readOnly && { height: 15 }}>
-            <div style={readOnly && { top: -6 }} className={`position-relative ${lg ? "stars-14" : "stars-10"} ${readOnly ? "stars" : "ranking-stars"}`} data-rating={mark} />
+            <div style={readOnly && { top: -6 }} className={`position-relative ${lg ? "stars-14" : "stars-10"} ${readOnly ? "stars" : "ranking-stars"} stars-${color} target-${target} ${className}`} data-rating={mark} />
         </div>;
     }
 }
