@@ -123,8 +123,6 @@ class Toolbar extends Component {
 
                 <div id="progress-bar" />
             </div>
-
-            <SocialNetworks />
         </div >;
     }
 }

@@ -514,33 +514,44 @@
                                 "months_training": "months training",
                                 "months_internship": "months internship",
                                 "prizes": "Prizes",
-                                "country": "Country of training"
+                                "country": "Country of training",
+                                "enrolments": "Enrolments",
+                                "fees": "Registration fees"
                             },
                             "form": {
-                                "user_identification": {
-                                    "title": "User identification",
-                                    "data": {
-                                        "selected_course": "Selected course",
-                                        "background": "Education background",
-                                        "name": "Full name",
-                                        "region": "Region",
-                                        "country": "Country",
-                                        "phone": "Phone",
-                                        "email": "E-mail address",
-                                        "address": "Address",
-                                        "upload_cv": "Upload CV"
+                                "sections": {
+                                    "user_identification": {
+                                        "title": "User identification",
+                                        "fields": {
+                                            "selected_course": "Selected course",
+                                            "background": "Education background",
+                                            "name": "Full name",
+                                            "region": "Region",
+                                            "country": "Country",
+                                            "phone": "Phone",
+                                            "email": "E-mail address",
+                                            "passport": "Passport number",
+                                            "last_institute": "Last institute",
+                                            "recent_degree": "Recent degree",
+                                            "degree_score": "Degree score",
+                                            "upload_cv": "Upload CV"
+                                        }
+                                    },
+                                    "lingual_skills": {
+                                        "title": "Lingual skills"
+                                    },
+                                    "payment": {
+                                        "title": "Payment"
+                                    },
+                                    "finished": {
+                                        "title": "Finished"
                                     }
                                 },
-                                "lingual_skills": {
-                                    "title": "Lingual skills"
-                                },
-                                "payment": {
-                                    "title": "Payment"
-                                },
-                                "finished": {
-                                    "title": "Finished"
-                                },
-                                "next": "Next page"
+                                "nav": {
+                                    "previous": "Previous page",
+                                    "next": "Next page",
+                                    "submit": "Submit"
+                                }
                             }
                         }
                     },

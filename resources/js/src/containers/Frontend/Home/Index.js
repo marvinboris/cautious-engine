@@ -6,29 +6,13 @@ import OwlCarousel from 'react-owl-carousel2';
 import Block from '../../../components/UI/Police/Block';
 import Course from '../../../components/UI/Course';
 import Carousel from './Carousel';
+import CourseCard from './CourseCard';
+import EnrolmentForm from './EnrolmentForm';
 
 import { convertDate, updateObject } from '../../../shared/utility';
 import { getHome, resetHome } from '../../../store/actions/frontend/home';
 
 import './Home.css';
-
-const Info = ({ name, icon, info }) => <div>
-    <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 px-1 px-md-2 px-xxl-3">
-        <div className="mb-1 mb-md-2"><i className={"fad fa-" + icon + " text-13 text-md-15 text-xxl-17"} /></div>
-
-        <div className="text-6 text-md-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
-
-        <div className="text-6 text-md-7 text-xxl-8 text-700 text-montserrat text-truncate">{info}</div>
-    </div>
-</div>;
-
-const Detail = ({ name, children }) => <div className="Detail mt-2 mt-md-3 mt-xxl-4">
-    <div className="text-secondary text-700 text-8 text-md-10 text-xxl-12">{name + " >"}</div>
-
-    <div>
-        {children}
-    </div>
-</div>;
 
 class Home extends Component {
     state = {
@@ -40,13 +24,13 @@ class Home extends Component {
 
 
 
-    next = () => {
+    next = items => {
         if (this.state.animating) return;
         const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
-    previous = () => {
+    previous = items => {
         if (this.state.animating) return;
         const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
@@ -92,7 +76,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <Carousel items={banner.carousel} activeIndex={activeIndex} animating={animating} next={this.next} previous={this.previous} goToIndex={this.goToIndex} onExiting={() => this.setState({ animating: true })} onExited={() => this.setState({ animating: false })} />
+                <Carousel items={banner.carousel} activeIndex={activeIndex} animating={animating} next={() => this.next(banner.carousel)} previous={() => this.previous(banner.carousel)} goToIndex={this.goToIndex} onExiting={() => this.setState({ animating: true })} onExited={() => this.setState({ animating: false })} />
             </div>
 
 
@@ -107,52 +91,16 @@ class Home extends Component {
 
             <Block id="enrolments" color="soft" title={enrolments.title} subtitle={course && (<>{enrolments.you_have_selected_the_course} <strong>{course.name[lang]}</strong></>)}>
                 {course && <div className="row align-items-center">
-                    <div className="col-md-5 position-relative px-3 px-md-4 px-xxl-5">
-                        <div className="position-relative">
-                            <div className="bg-white shadow rounded-10 p-3 p-md-4 p-xxl-5">
-                                <div className="p-1 p-md-2 p-xxl-3">
-                                    <div className="course-summary position-relative d-flex align-items-center mb-1 mb-md-2 mb-xxl-3">
-                                        <div className="pr-2 pr-md-3 pr-xxl-4">
-                                            <div className="course-photo embed-responsive embed-responsive-4by3 rounded-15 overflow-hidden position-relative">
-                                                <div className="position-absolute w-100 h-100 bg-img" style={{ top: 0, backgroundImage: `url("${course.photo}")` }} />
-                                            </div>
-                                        </div>
+                    <div className="col-md-5 overflow-hidden px-3 px-md-4 px-xxl-5">
+                        <CourseCard countries={countries} enrolments={enrolments} cms={cms} course={course} lang={lang} />
+                    </div>
 
-                                        <div>
-                                            <div className="text-700 text-greenblue text-10 text-md-12 text-xxl-14 mb-2 mb-md-3 mb-xxl-4 pb-md-1 pb-xxl-2">{course.name[lang]}</div>
-
-                                            <div className="d-flex align-items-stretch justify-content-between">
-                                                <Info name={cms.duration} icon="clock text-greenblue" info={course.training + " " + cms.days} />
-                                                <Info name={cms.enroled} icon="users text-yellow" info={course.enroled} />
-                                                <Info name={cms.internship} icon="building text-green" info={course.internship + " " + cms.days} />
-                                                <Info name={cms.difficulty} icon="tools text-yellow" info={course.difficulty} />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <Detail name={enrolments.card.requirements}>
-                                        <div dangerouslySetInnerHTML={{ __html: course.requirements[lang] }} />
-                                    </Detail>
-
-                                    <Detail name={enrolments.card.duration}>
-                                        <ul>
-                                            <li>{course.months_training} {enrolments.card.months_training}</li>
-                                            <li>{course.months_internship} {enrolments.card.months_internship}</li>
-                                        </ul>
-                                    </Detail>
-
-                                    <Detail name={enrolments.card.prizes}>
-                                        <div dangerouslySetInnerHTML={{ __html: course.prizes[lang] }} />
-                                    </Detail>
-
-                                    <Detail name={enrolments.card.country}>
-                                        <ul>
-                                            <li>{countries.find(c => c.country === course.country).name}</li>
-                                        </ul>
-                                    </Detail>
-                                </div>
-                            </div>
+                    <div className="col-md-7 position-relative px-3 px-md-4 px-xxl-5">
+                        <div className="thin-line">
+                            <div className="thick-line" />
                         </div>
+
+                        <EnrolmentForm enrolments={enrolments} course={course} />
                     </div>
                 </div>}
             </Block>

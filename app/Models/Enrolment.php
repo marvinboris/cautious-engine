@@ -12,7 +12,7 @@ class Enrolment extends Model
     protected $directory = '/files/enrolments/';
 
     protected $fillable = [
-        'course_id', 'background', 'name', 'region', 'country', 'phone', 'email', 'address', 'cv',
+        'course_id', 'background', 'name', 'region', 'country', 'phone', 'email', 'passport', 'last_institute', 'recent_degree', 'degree_score', 'cv',
     ];
 
     public function course()

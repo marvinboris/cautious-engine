@@ -36,8 +36,8 @@ export default ({ cms, name, description, training, internship, enroled, level, 
 
             <div className="bg-greenblue-10 text-secondary position-relative">
                 {selected && <>
-                    <div className="bg-green rounded-left-10 h-100" style={{ top: 0, right: '100%', width: 10 }} />
-                    <div className="bg-green rounded-right-10 h-100" style={{ top: 0, left: '100%', width: 10 }} />
+                    <div className="position-absolute bg-green rounded-left-10 h-100" style={{ top: 0, right: '100%', width: 10 }} />
+                    <div className="position-absolute bg-green rounded-right-10 h-100" style={{ top: 0, left: '100%', width: 10 }} />
                 </>}
 
                 <Block>

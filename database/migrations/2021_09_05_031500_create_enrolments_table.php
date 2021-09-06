@@ -22,7 +22,10 @@ class CreateEnrolmentsTable extends Migration
             $table->string('country');
             $table->string('phone');
             $table->string('email');
-            $table->text('address');
+            $table->string('passport');
+            $table->string('last_institute');
+            $table->string('recent_degree');
+            $table->float('degree_score');
             $table->text('cv')->nullable();
             $table->timestamps();
         });

@@ -11,39 +11,23 @@
     padding: 60px 0;
 }
 
-.Frontend .Home .course-summary {
-    left: -125px;
+.Frontend .Home #enrolments .thin-line {
+    height: 500px;
+    width: 0.5px;
+    background-color: var(--border);
+    position: absolute;
+    top: 25px;
+    left: 0;
 }
 
-.Frontend .Home .course-photo {
-    width: 200px;
-}
-
-.Frontend .Home .Detail ul {
-    margin: 0;
-    padding-top: 4px;
-    padding-left: 4px;
-    list-style: none;
-}
-
-.Frontend .Home .Detail li {
-    font-weight: 300;
-    font-size: 10px;
-}
-
-.Frontend .Home .Detail li::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-
-    content: "\f111";
-    color: var(--green);
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 400;
-    font-size: 5px;
-    margin-right: 4.5px;
+.Frontend .Home #enrolments .thin-line .thick-line {
+    height: 150px;
+    width: 5px;
+    background-color: var(--greenblue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 992px) {

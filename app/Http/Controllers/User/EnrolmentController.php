@@ -18,7 +18,10 @@ class EnrolmentController extends Controller
         'country' => 'required|string',
         'phone' => 'required|string',
         'email' => 'required|email',
-        'address' => 'required|string',
+        'passport' => 'required|string',
+        'last_institute' => 'required|string',
+        'recent_degree' => 'required|string',
+        'degree_score' => 'required|numeric',
         'cv' => 'nullable|file',
     ];
 
@@ -46,7 +49,10 @@ class EnrolmentController extends Controller
                         ->orWhere('enrolments.country', 'LIKE', "%$search%")
                         ->orWhere('enrolments.phone', 'LIKE', "%$search%")
                         ->orWhere('enrolments.email', 'LIKE', "%$search%")
-                        ->orWhere('enrolments.address', 'LIKE', "%$search%");
+                        ->orWhere('enrolments.passport', 'LIKE', "%$search%")
+                        ->orWhere('enrolments.last_institute', 'LIKE', "%$search%")
+                        ->orWhere('enrolments.recent_degree', 'LIKE', "%$search%")
+                        ->orWhere('enrolments.degree_score', 'LIKE', "%$search%");
             });
 
         $total = $filteredData->count();
