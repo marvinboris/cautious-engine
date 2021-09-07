@@ -127,7 +127,8 @@ class UserController extends Controller
         $input['language_id'] = 1;
 
         if ($file = $request->file('photo')) {
-            $fileName = UtilController::resize($file, 'users');
+            $fileName = time() . $file->getClientOriginalName();
+            $file->move('images/users', $fileName);
             $input['photo'] = htmlspecialchars($fileName);
         }
 
