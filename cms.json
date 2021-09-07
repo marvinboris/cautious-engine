@@ -422,6 +422,7 @@
                         "edit": "Edit enrolment",
                         "index": "Enrolment list",
                         "form": {
+                            "ref": "User reference",
                             "course": "Course",
                             "select_course": "Select course",
                             "background": "Educational background",
@@ -431,6 +432,9 @@
                             "phone": "Phone",
                             "email": "E-mail address",
                             "address": "Address",
+                            "nid": "Certified NID copy",
+                            "diploma": "Certified diploma copy",
+                            "photo": "Photo 4x4",
                             "cv": "CV",
                             "created_at": "Created at"
                         }

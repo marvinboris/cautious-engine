@@ -20,11 +20,6 @@ class LanguageSeeder extends Seeder
                 'abbr' => 'en',
                 'flag' => 'GB'
             ],
-            [
-                'name' => 'Français',
-                'abbr' => 'fr',
-                'flag' => 'FR'
-            ],
         ];
 
         foreach ($languages as $language) {

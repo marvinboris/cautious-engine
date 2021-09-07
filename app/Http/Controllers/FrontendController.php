@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Method\MonetbilController;
+use App\Http\Controllers\Method\Cinetpaycontroller;
 use App\Models\Course;
 use App\Models\Enrolment;
 use App\Models\Method;
@@ -103,25 +103,25 @@ class FrontendController extends Controller
         $input['phone'] = $request->code . $request->phone;
         $input['ref'] = Enrolment::generateNewRef();
 
-        Enrolment::create($input);
+        // Enrolment::create($input);
 
         $course = Course::find($request->course_id);
 
         $method = Method::find($request->method_id);
-        $link = null;
-        switch ($method->name) {
-            case 'Mobile money':
-                new MonetbilController();
-                $monetbil = MonetbilController::generateWidgetData([
-                    'amount' => $course->fees,
-                    'ref' => $input['ref'],
-                ]);
-                $link = $monetbil['link'];
-                break;
-        }
+        $response = null;
 
+        if (strpos($method->slug, 'mobile') !== false) {
+            new CinetpayController();
+            $cinetpay = CinetpayController::generateWidgetData([
+                'amount' => $course->fees,
+                'ref' => $input['ref'],
+                'designation' => $course->name,
+                'course_id' => $course->id,
+            ]);
+            $response = $cinetpay['response'];
+        }
         return response()->json([
-            'link' => $link,
+            'response' => $response,
         ]);
     }
 }

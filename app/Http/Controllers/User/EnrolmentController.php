@@ -61,9 +61,32 @@ class EnrolmentController extends Controller
 
         $filteredData = $filteredData->get();
 
+        $regions = [
+            ['name' => 'Center', 'value' => 'CE'],
+            ['name' => 'Littoral', 'value' => 'LT'],
+            ['name' => 'Adamaoua', 'value' => 'AD'],
+            ['name' => 'East', 'value' => 'ES'],
+            ['name' => 'Extrem North', 'value' => 'EN'],
+            ['name' => 'North', 'value' => 'NO'],
+            ['name' => 'North-West', 'value' => 'NW'],
+            ['name' => 'West', 'value' => 'OU'],
+            ['name' => 'South', 'value' => 'SU'],
+            ['name' => 'South-West', 'value' => 'SW'],
+        ];
+
+        $backgrounds = [
+            ['name' => 'Secondary', 'value' => 'SE'],
+            ['name' => 'BAC/GCE A', 'value' => 'BA'],
+            ['name' => 'BTS/HND/DSEP/DEUG', 'value' => 'BA2'],
+            ['name' => 'Licence/Bachelor', 'value' => 'BA3'],
+            ['name' => 'Master', 'value' => 'BA5'],
+        ];
+
         foreach ($filteredData as $enrolment) {
             $enrolments[] = array_merge($enrolment->toArray(), [
                 'course' => $enrolment->course->name,
+                'region' => $regions[array_search($enrolment->region, array_column($regions, 'value'))]['name'],
+                'background' => $regions[array_search($enrolment->background, array_column($backgrounds, 'value'))]['name'],
             ]);
         }
 

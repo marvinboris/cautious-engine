@@ -53,6 +53,9 @@ const asyncUserUsersAdd = asyncComponent(() => import('./containers/Backend/User
 const asyncUserUsersEdit = asyncComponent(() => import('./containers/Backend/User/Users/Edit'));
 
 
+const asyncUserEnrolments = asyncComponent(() => import('./containers/Backend/User/Enrolments'));
+
+
 const asyncUserCourses = asyncComponent(() => import('./containers/Backend/User/Courses'));
 
 
@@ -192,6 +195,8 @@ class App extends Component {
                                 <Route path="/user/methods/:id/edit" component={asyncUserMethodsEdit} />
                                 <Route path="/user/methods/add" component={asyncUserMethodsAdd} />
                                 <Route path="/user/methods" component={asyncUserMethods} />
+
+                                <Route path="/user/enrolments" component={asyncUserEnrolments} />
 
                                 <Route path="/user/courses" component={asyncUserCourses} />
                             </Switch>

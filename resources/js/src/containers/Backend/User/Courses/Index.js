@@ -27,7 +27,7 @@ const initialState = {
     prizes: {},
     training: '',
     internship: '',
-    country: '',
+    country: 'BD',
     fees: '',
     photo: null,
     level: '',

@@ -174,4 +174,7 @@ Route::prefix('content')->name('content.')->group(function () {
 Route::namespace('Method')->group(function () {
     Route::get('monetbil/notify', 'MonetbilController@notify')->name('monetbil.notify.get');
     Route::post('monetbil/notify', 'MonetbilController@notify')->name('monetbil.notify.post');
+    
+    Route::get('cinetpay/notify', 'CinetpayController@notify')->name('cinetpay.notify.get');
+    Route::post('cinetpay/notify', 'CinetpayController@notify')->name('cinetpay.notify.post');
 });
