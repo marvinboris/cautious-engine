@@ -43,9 +43,9 @@ export default ({ cms, name, description, training, internship, enroled, level, 
                 <Block>
                     <div className="d-flex align-items-center">
                         <div>
-                            <div className="text-500 text-12 text-md-15 text-xxl-18">{name}</div>
+                            <div className="text-500 text-12 text-md-15 text-xxl-18 text-truncate">{name}</div>
 
-                            <div className="text-300 text-10 text-md-12 text-xxl-14">{description}</div>
+                            <div className="text-300 text-10 text-md-12 text-xxl-14 text-truncate">{description}</div>
                         </div>
 
                         <div className="ml-auto">
