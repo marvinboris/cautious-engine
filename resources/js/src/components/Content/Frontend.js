@@ -1,26 +1,121 @@
 export default {
-    "restaurants": {
+    "header": {
+        "call_me": "Call me",
+        "tel": "+23769900660044",
+        "menu": {
+            "home": "Home",
+            "results": "Results",
+            "faq": "FAQ"
+        }
+    },
+    "footer": {
+        "made_with_love": "Made with love",
+        "by": "by"
+    },
+    "pages": {
         "home": {
-            "you_are_on_category": "You are on category",
-            "select_category": "Select category",
-            "search": "Search"
-        },
-        "meals": {
-            "price": "Price",
-            "compose": "Compose your meal to know the cost",
-            "addons": {
-                "title": "Food Addons",
-                "dear_customers": "Dear customers, this item comes with an addon of your choice. If you would like extra addon, please select below",
-                "your_cart_cost_is": "Your cart cost is"
+            "banner": {
+                "carousel": [
+                    {
+                        "text": {
+                            "your_career_is_planned": "Your career is planned !",
+                            "welcome": "Welcome to the enrolment",
+                            "details": "Please select a course below and proceed with the pre-registration"
+                        },
+                        "src": "/images/study-abroad@2x.png"
+                    }
+                ]
             },
-            "description": "Description",
-            "must_read": "Must Read",
-            "dear_customers": "Dear customers, we would love to make available more food items but unfortunately kindly note that some of the addons mentioned below might not be available. For special request, please contact us. Thanks for understanding.",
-            "comments": {
-                "title": "Comments",
-                "post_comment": "Post comment",
-                "name": "Full name",
-                "body": "Type something here"
+            "courses": {
+                "title": "Select a course below",
+                "subtitle": "Find your favorite course below and get started."
+            },
+            "enrolments": {
+                "title": "Enroll now",
+                "you_have_selected_the_course": "You have selected the course :",
+                "card": {
+                    "requirements": "Requirements",
+                    "duration": "Duration of course",
+                    "months_training": "months training",
+                    "months_internship": "months internship",
+                    "prizes": "Prizes",
+                    "country": "Country of training",
+                    "enrolments": "Enrolments",
+                    "fees": "Registration fees"
+                },
+                "form": {
+                    "sections": {
+                        "user_identification": {
+                            "title": "User identification",
+                            "fields": {
+                                "selected_course": "Selected course",
+                                "background": "Education background",
+                                "select_background": "Select education background",
+                                "name": "Full name",
+                                "region": "Region",
+                                "select_region": "Select region",
+                                "birthdate": "Date of birth",
+                                "country": "Country",
+                                "phone": "Phone",
+                                "email": "E-mail address",
+                                "passport": "Passport number",
+                                "last_institute": "Last institute",
+                                "recent_degree": "Recent degree",
+                                "degree_score": "Degree score"
+                            }
+                        },
+                        "lingual_skills": {
+                            "title": "Lingual skills",
+                            "fields": {
+                                "select": "Select",
+                                "english_level": "English level :",
+                                "reason": "Why are you applying for this course ?",
+                                "subjects": {
+                                    "writing": "Writing",
+                                    "speaking": "Speaking",
+                                    "reading": "Reading",
+                                    "comprehension": "Comprehension"
+                                }
+                            }
+                        },
+                        "documents": {
+                            "title": "Documents",
+                            "fields": {
+                                "upload_documents": "Upload documents",
+                                "documents": {
+                                    "nid": "Upload certified NID",
+                                    "photo": "Upload photo 4x4",
+                                    "diploma": "Upload certified diploma copy",
+                                    "cv": "Upload CV"
+                                }
+                            }
+                        },
+                        "finished": {
+                            "title": "Finished",
+                            "fields": {
+                                "select_payment_method": "Select payment method",
+                                "please_select_payment_method": "Please select a payment method",
+                                "terms": "Accept terms and conditions",
+                                "policies": "Accept Privacy policies"
+                            }
+                        }
+                    },
+                    "nav": {
+                        "previous": "Previous page",
+                        "next": "Next page",
+                        "finish": "Finish payment"
+                    }
+                }
+            }
+        },
+        "results": {
+            "banner": {
+                "title": "Test results"
+            }
+        },
+        "faq": {
+            "banner": {
+                "title": "FAQ"
             }
         }
     }

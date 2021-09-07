@@ -4,7 +4,8 @@ export default {
         "save_add": "Save & Add",
         "selected_file": "File selected",
         "active": "Active",
-        "inactive": "Inactive"
+        "inactive": "Inactive",
+        "check": "Check"
     },
     "list": {
         "action": "Action",
@@ -27,7 +28,11 @@ export default {
             "plural": "entries"
         }
     },
-    "food": {
-        "ratings": "Ratings"
+    "course": {
+        "duration": "Duration",
+        "enroled": "Enroled",
+        "internship": "Internship",
+        "difficulty": "Difficulty",
+        "days": "days"
     }
 };

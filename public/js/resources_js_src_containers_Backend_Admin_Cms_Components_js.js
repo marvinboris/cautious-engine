@@ -501,7 +501,8 @@ __webpack_require__.r(__webpack_exports__);
     "save_add": "Save & Add",
     "selected_file": "File selected",
     "active": "Active",
-    "inactive": "Inactive"
+    "inactive": "Inactive",
+    "check": "Check"
   },
   "list": {
     "action": "Action",
@@ -524,8 +525,12 @@ __webpack_require__.r(__webpack_exports__);
       "plural": "entries"
     }
   },
-  "food": {
-    "ratings": "Ratings"
+  "course": {
+    "duration": "Duration",
+    "enroled": "Enroled",
+    "internship": "Internship",
+    "difficulty": "Difficulty",
+    "days": "days"
   }
 });
 

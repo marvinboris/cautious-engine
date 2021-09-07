@@ -331,49 +331,35 @@ __webpack_require__.r(__webpack_exports__);
     "updated": "Content successfully updated."
   },
   "settings": {
-    "restaurant": "Restaurant settings successfully updated.",
-    "account": "Account settings successfully updated.",
-    "cms": "CMS settings successfully updated.",
-    "calendar": "Calendar settings successfully updated.",
     "password": "Incorrect password.",
     "not_found": "Setting not found.",
     "created": "Setting successfully created.",
     "updated": "Setting successfully updated.",
     "deleted": "Setting successfully deleted."
   },
-  "categories": {
-    "not_found": "Category not found.",
-    "created": "Category successfully created.",
-    "updated": "Category successfully updated.",
-    "deleted": "Category successfully deleted."
+  "methods": {
+    "not_found": "Method not found.",
+    "created": "Method successfully created.",
+    "updated": "Method successfully updated.",
+    "deleted": "Method successfully deleted."
   },
-  "meals": {
-    "reference": "Meal with this reference already exists.",
-    "not_found": "Meal not found.",
-    "created": "Meal successfully created.",
-    "updated": "Meal successfully updated.",
-    "deleted": "Meal successfully deleted.",
-    "reached": "Maximum number of meals reached"
+  "enrolments": {
+    "not_found": "Enrolment not found.",
+    "created": "Enrolment successfully created.",
+    "updated": "Enrolment successfully updated.",
+    "deleted": "Enrolment successfully deleted."
   },
-  "addons": {
-    "reference": "Addon with this reference already exists.",
-    "not_found": "Addon not found.",
-    "created": "Addon successfully created.",
-    "updated": "Addon successfully updated.",
-    "deleted": "Addon successfully deleted."
+  "payments": {
+    "not_found": "Payment not found.",
+    "created": "Payment successfully created.",
+    "updated": "Payment successfully updated.",
+    "deleted": "Payment successfully deleted."
   },
-  "plans": {
-    "not_found": "Plan not found.",
-    "balance": "Insufficient balance.",
-    "purchased": "Plan successfully purchased.",
-    "created": "Plan successfully created.",
-    "updated": "Plan successfully updated.",
-    "deleted": "Plan successfully deleted."
-  },
-  "recharges": {
-    "not_found": "Recharge not found.",
-    "amount": "Invalid amount.",
-    "created": "Recharge successfully created."
+  "courses": {
+    "not_found": "Course not found.",
+    "created": "Course successfully created.",
+    "updated": "Course successfully updated.",
+    "deleted": "Course successfully deleted."
   }
 });
 
