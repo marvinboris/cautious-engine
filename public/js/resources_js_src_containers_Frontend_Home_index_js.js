@@ -145,7 +145,7 @@ var Block = function Block(_ref2) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "d-flex align-items-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "flex-fill",
+              className: "flex-fill overflow-hidden",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 className: "text-500 text-12 text-md-15 text-xxl-18 text-truncate mw-100",
                 children: name

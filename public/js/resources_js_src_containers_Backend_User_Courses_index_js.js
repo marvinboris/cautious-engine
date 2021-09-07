@@ -543,11 +543,14 @@ var Table = /*#__PURE__*/function (_Component) {
         fields.forEach(function (_ref3) {
           var key = _ref3.key,
               minWidth = _ref3.minWidth,
+              _ref3$maxWidth = _ref3.maxWidth,
+              maxWidth = _ref3$maxWidth === void 0 ? 250 : _ref3$maxWidth,
               fixed = _ref3.fixed;
           inside.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
             className: "align-middle text-nowrap",
             style: (0,_shared_utility__WEBPACK_IMPORTED_MODULE_4__.updateObject)({
               minWidth: minWidth,
+              maxWidth: maxWidth,
               borderColor: dark ? '#606060' : '#DEE2E6'
             }, fixed ? {
               position: 'sticky',

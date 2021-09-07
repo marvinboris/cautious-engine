@@ -150,8 +150,8 @@ class Table extends Component {
             if (select) inside.unshift(<th className="text-center align-middle" key={`secondary${index}`}>
                 <input type="checkbox" value={item._id} />
             </th>);
-            fields.forEach(({ key, minWidth, fixed }) => {
-                inside.push(<td className="align-middle text-nowrap" style={updateObject({ minWidth, borderColor: dark ? '#606060' : '#DEE2E6' }, fixed ? { position: 'sticky', right: 0, backgroundColor: dark ? '#1B223F' : '#F4F4F4' } : {})} key={key}>{item[key]}</td>);
+            fields.forEach(({ key, minWidth, maxWidth = 250, fixed }) => {
+                inside.push(<td className="align-middle text-truncate overflow-hidden" style={updateObject({ minWidth, maxWidth, borderColor: dark ? '#606060' : '#DEE2E6' }, fixed ? { position: 'sticky', right: 0, backgroundColor: dark ? '#1B223F' : '#F4F4F4' } : {})} key={key}>{item[key]}</td>);
             });
 
             return <tr className="align-middle" key={index + 1}>{inside}</tr>;
