@@ -1,9 +1,15 @@
 .Frontend .Home .banner {
-    height: 320px;
+    height: 50vh;
 }
 
 .Frontend .Home .carousel-inner {
     height: 100% !important;
+}
+
+.Frontend .Home .carousel-indicators li {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
 }
 
 .Frontend .Home .text {

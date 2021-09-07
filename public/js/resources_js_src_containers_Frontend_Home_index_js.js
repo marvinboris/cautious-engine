@@ -153,9 +153,10 @@ var Block = function Block(_ref2) {
                 className: "text-300 text-10 text-md-12 text-xxl-14 text-truncate mw-100",
                 children: description
               })]
-            }), file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                 href: file,
+                target: "_blank",
                 className: "fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24"
               })
             })]
@@ -766,7 +767,6 @@ __webpack_require__.r(__webpack_exports__);
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
       items: items,
       activeIndex: activeIndex,
-      className: "d-lg-flex flex-column align-items-center",
       onClickHandler: goToIndex
     }), slides]
   });
@@ -1803,7 +1803,7 @@ var Home = /*#__PURE__*/function (_Component) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
           className: "banner position-relative",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-            className: "text position-absolute w-100 h-100",
+            className: "text position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
               className: "text-white text-center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
@@ -2240,7 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .banner {\r\n    height: 320px;\r\n}\r\n\r\n.Frontend .Home .carousel-inner {\r\n    height: 100% !important;\r\n}\r\n\r\n.Frontend .Home .text {\r\n    z-index: 10;\r\n    padding: 60px 0;\r\n}\r\n\r\n.Frontend .Home #enrolments .thin-line {\r\n    height: 500px;\r\n    width: 0.5px;\r\n    background-color: var(--border);\r\n    position: absolute;\r\n    top: 25px;\r\n    left: 0;\r\n}\r\n\r\n.Frontend .Home #enrolments .thin-line .thick-line {\r\n    height: 150px;\r\n    width: 5px;\r\n    background-color: var(--greenblue);\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n@media screen and (max-width: 992px) {\r\n    .Frontend .Home .text {\r\n        min-height: auto;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .banner {\r\n    height: 50vh;\r\n}\r\n\r\n.Frontend .Home .carousel-inner {\r\n    height: 100% !important;\r\n}\r\n\r\n.Frontend .Home .carousel-indicators li {\r\n    width: 13px;\r\n    height: 13px;\r\n    border-radius: 50%;\r\n}\r\n\r\n.Frontend .Home .text {\r\n    z-index: 10;\r\n    padding: 60px 0;\r\n}\r\n\r\n.Frontend .Home #enrolments .thin-line {\r\n    height: 500px;\r\n    width: 0.5px;\r\n    background-color: var(--border);\r\n    position: absolute;\r\n    top: 25px;\r\n    left: 0;\r\n}\r\n\r\n.Frontend .Home #enrolments .thin-line .thick-line {\r\n    height: 150px;\r\n    width: 5px;\r\n    background-color: var(--greenblue);\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n@media screen and (max-width: 992px) {\r\n    .Frontend .Home .text {\r\n        min-height: auto;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

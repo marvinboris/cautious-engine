@@ -547,7 +547,7 @@ var Table = /*#__PURE__*/function (_Component) {
               maxWidth = _ref3$maxWidth === void 0 ? 250 : _ref3$maxWidth,
               fixed = _ref3.fixed;
           inside.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-            className: "align-middle text-nowrap",
+            className: "align-middle text-truncate overflow-hidden",
             style: (0,_shared_utility__WEBPACK_IMPORTED_MODULE_4__.updateObject)({
               minWidth: minWidth,
               maxWidth: maxWidth,

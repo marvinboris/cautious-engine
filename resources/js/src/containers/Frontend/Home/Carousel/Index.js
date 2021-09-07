@@ -10,7 +10,7 @@ export default ({ items, activeIndex, next, previous, goToIndex, onExiting, onEx
 
     return (
         <Carousel id="carousel" activeIndex={activeIndex} next={next} previous={previous} className="h-100 carousel-fade HomeCarousel">
-            <CarouselIndicators items={items} activeIndex={activeIndex} className="d-lg-flex flex-column align-items-center" onClickHandler={goToIndex} />
+            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
 
             {slides}
         </Carousel>

@@ -70,7 +70,7 @@ class Home extends Component {
 
         return <div className="Home">
             <div className="banner position-relative">
-                <div className="text position-absolute w-100 h-100">
+                <div className="text position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
                     <div className="text-white text-center">
                         <div className="text-25 text-md-30 text-xxl-35 text-pacifico">{banner.carousel[activeIndex].text.your_career_is_planned}</div>
 
