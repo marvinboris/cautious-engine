@@ -102,7 +102,6 @@ class FrontendController extends Controller
 
         $input['phone'] = $request->code . $request->phone;
         $input['ref'] = Enrolment::generateNewRef();
-        $input['address'] = $request->region;
 
         Enrolment::create($input);
 
