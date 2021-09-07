@@ -62,6 +62,11 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
                 Route::get('{user}', 'UserController@show')->name('show');
             });
 
+            Route::prefix('methods')->name('methods.')->group(function () {
+                Route::get('info', 'MethodController@info')->name('info');
+                Route::get('{method}', 'MethodController@show')->name('show');
+            });
+
 
 
             Route::prefix('enrolments')->name('enrolments.')->group(function () {
@@ -86,6 +91,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
                 'roles' => 'RoleController',
                 'features' => 'FeatureController',
                 'languages' => 'LanguageController',
+                'methods' => 'MethodController',
 
                 'enrolments' => 'EnrolmentController',
                 'payments' => 'PaymentController',
@@ -96,6 +102,7 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
 });
 
 Route::name('frontend.')->group(function () {
+    Route::post('home', 'FrontendController@enrolment')->name('enrolment');
     Route::get('home', 'FrontendController@home')->name('home');
 });
 

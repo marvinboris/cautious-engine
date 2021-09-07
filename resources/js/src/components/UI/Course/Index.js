@@ -26,7 +26,7 @@ export default ({ cms, name, description, training, internship, enroled, level, 
         <div><div className={"rounded-1 bg-" + (level > 3 ? "green" : level === 3 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
     </div>;
 
-    return <div className="UI Course col-xxl-3 col-lg-4 col-md-6">
+    return <div className="UI Course col-xxl-3 col-lg-4 col-md-6 pb-4">
         <div className={"bg-white rounded-30 shadow " + (onClick ? "cursor-pointer" : "")} onClick={onClick}>
             <Block className="rounded-top-30 py-1 py-md-2 py-xxl-3">
                 <div className="embed-responsive embed-responsive-4by3 rounded-20 position-relative overflow-hidden">

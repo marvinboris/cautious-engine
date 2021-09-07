@@ -106,7 +106,7 @@ var Block = function Block(_ref2) {
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "UI Course col-xxl-3 col-lg-4 col-md-6",
+    className: "UI Course col-xxl-3 col-lg-4 col-md-6 pb-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "bg-white rounded-30 shadow " + (onClick ? "cursor-pointer" : ""),
       onClick: onClick,
@@ -408,7 +408,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             max: max,
             step: step,
             className: (icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-small text-secondary h-100 px-4 py-3"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+          }), placeholder && type !== 'date' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
             className: "text-small text-light text-truncate m-0",
             htmlFor: id ? id : name,
             children: placeholder
@@ -594,8 +594,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -606,72 +604,41 @@ var Stars = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(Stars);
 
   function Stars() {
-    var _this;
-
     _classCallCheck(this, Stars);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this), "stars", function () {
-      $(".ranking-stars").starRating({
-        strokeColor: _this.props.color,
-        activeColor: _this.props.color,
-        strokeWidth: 10,
-        starSize: 25,
-        useFullStars: true,
-        disableAfterRate: false,
-        callback: function callback(currentRating) {
-          $('input[name="' + _this.props.target + '"]').val(currentRating);
-          $('.mark-' + _this.props.target).html(currentRating);
-        }
-      });
-      $(".stars").starRating({
-        readOnly: true,
-        strokeWidth: 9,
-        starSize: 12,
-        strokeColor: 'orange',
-        activeColor: 'orange',
-        emptyColor: 'transparent'
-      });
-      $(".stars.stars-10").starRating({
-        starSize: 10
-      });
-      $(".stars.stars-14").starRating({
-        starSize: 14
-      });
-    });
-
-    return _this;
+    return _super.apply(this, arguments);
   }
 
   _createClass(Stars, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.stars();
+      var _this = this;
+
+      $(".ranking-stars.target-" + this.props.target).starRating({
+        hoverColor: "#e98809",
+        ratedColors: ['#ff0b33', '#ff0b33', '#e98809', '#439100', '#439100'],
+        strokeWidth: 0,
+        starSize: 25,
+        initalRating: 2.5,
+        disableAfterRate: false,
+        callback: function callback(currentRating) {
+          var onChange = _this.props.onChange;
+          onChange(currentRating);
+        }
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           mark = _this$props.mark,
-          readOnly = _this$props.readOnly,
-          lg = _this$props.lg,
           _this$props$className = _this$props.className,
-          className = _this$props$className === void 0 ? "" : _this$props$className;
+          className = _this$props$className === void 0 ? "" : _this$props$className,
+          target = _this$props.target;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "overflow-hidden",
-        style: readOnly && {
-          height: 15
-        },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          style: readOnly && {
-            top: -6
-          },
-          className: "position-relative ".concat(lg ? "stars-14" : "stars-10", " ").concat(readOnly ? "stars" : "ranking-stars", " ").concat(className),
+          className: "position-relative ranking-stars target-".concat(target, " ").concat(className),
           "data-rating": mark
         })
       });
@@ -869,7 +836,7 @@ var Detail = function Detail(_ref2) {
       lang = _ref3.lang,
       countries = _ref3.countries;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "CourseCard position-relative pb-2 pr-2",
+    className: "CourseCard position-relative pb-3 pr-3",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "polygon text-white",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -1025,11 +992,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/FormGroup.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/FormGroup.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Input.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Label.js");
 /* harmony import */ var _components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../components/UI/Input/Input */ "./resources/js/src/components/UI/Input/Input.js");
 /* harmony import */ var _components_UI_Stars__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../components/UI/Stars */ "./resources/js/src/components/UI/Stars/index.js");
-/* harmony import */ var _EnrolmentForm_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EnrolmentForm.css */ "./resources/js/src/containers/Frontend/Home/EnrolmentForm/EnrolmentForm.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../store/actions/frontend/home */ "./resources/js/src/store/actions/frontend/home.js");
+/* harmony import */ var _EnrolmentForm_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EnrolmentForm.css */ "./resources/js/src/containers/Frontend/Home/EnrolmentForm/EnrolmentForm.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
@@ -1067,6 +1037,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var EnrolmentForm = /*#__PURE__*/function (_Component) {
   _inherits(EnrolmentForm, _Component);
 
@@ -1087,6 +1058,7 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       background: '',
       name: '',
       region: '',
+      birthdate: '',
       country: 'CM',
       code: '237',
       phone: '',
@@ -1095,19 +1067,34 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       last_institute: '',
       recent_degree: '',
       degree_score: '',
+      writing: 2.5,
+      speaking: 2.5,
+      reading: 2.5,
+      comprehension: 2.5,
+      reason: '',
       cv: null,
+      nid: null,
+      photo: null,
+      diploma: null,
+      method_id: '',
+      terms: false,
+      policies: false,
       selectedPage: ''
     });
 
     _defineProperty(_assertThisInitialized(_this), "submitHandler", function (e) {
       e.preventDefault();
+
+      _this.props.post(e.target);
     });
 
     _defineProperty(_assertThisInitialized(_this), "inputChangeHandler", function (e) {
       var _e$target = e.target,
           name = _e$target.name,
           value = _e$target.value,
-          files = _e$target.files;
+          files = _e$target.files,
+          checked = _e$target.checked;
+      if (['terms', 'policies'].includes(name)) return _this.setState(_defineProperty({}, name, checked));
       if (name === 'country') return _this.setState({
         country: value,
         code: _this.props.content.countries.find(function (_ref) {
@@ -1119,8 +1106,8 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       _this.setState(_defineProperty({}, name, files ? files[0] : value));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "fileUpload", function () {
-      return document.getElementById('cv').click();
+    _defineProperty(_assertThisInitialized(_this), "fileUpload", function (key) {
+      return document.getElementById(key).click();
     });
 
     _defineProperty(_assertThisInitialized(_this), "next", function () {
@@ -1143,6 +1130,10 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "starRating", function (key, value) {
+      _this.setState(_defineProperty({}, key, value));
+    });
+
     return _this;
   }
 
@@ -1154,15 +1145,26 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (this.props.frontend.home.link) window.location.href = this.props.frontend.home.link;
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           enrolments = _this$props.enrolments,
-          course = _this$props.course;
+          course = _this$props.course,
+          methods = _this$props.methods,
+          regions = _this$props.regions,
+          backgrounds = _this$props.backgrounds;
       var _this$state = this.state,
           selectedPage = _this$state.selectedPage,
           background = _this$state.background,
           name = _this$state.name,
+          birthdate = _this$state.birthdate,
           region = _this$state.region,
           country = _this$state.country,
           code = _this$state.code,
@@ -1172,12 +1174,15 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
           last_institute = _this$state.last_institute,
           recent_degree = _this$state.recent_degree,
           degree_score = _this$state.degree_score,
-          cv = _this$state.cv;
+          reason = _this$state.reason,
+          terms = _this$state.terms,
+          policies = _this$state.policies,
+          method_id = _this$state.method_id;
       var countriesOptions = this.props.content.countries.map(function (_ref2) {
         var country = _ref2.country,
             code = _ref2.code,
             name = _ref2.name;
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
           value: country,
           code: code,
           children: name
@@ -1186,274 +1191,403 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       var keys = Object.keys(enrolments.form.sections);
       var lang = localStorage.getItem('lang');
       var sections = enrolments.form.sections;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("form", {
-        className: "EnrolmentForm row justify-content-center",
-        onSubmit: this.submitHandler,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "col-xxl-8 col-md-10",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative d-flex align-items-end justify-content-between",
-            children: keys.map(function (item, index) {
-              var element = enrolments.form.sections[item];
-              var isSelected = item === selectedPage;
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "enrolment-form-item" + (isSelected ? " selected" : ""),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                  className: "d-flex flex-column align-items-center",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "pb-1 pb-md-2 pb-xxl-3",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                      className: "text-montserrat text-8 text-md-10 text-xxl-12 title",
-                      children: element.title
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "pt-xxl-1 text-700 text-6 text-md-8 text-xxl-10 position-relative",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                      className: "circle",
-                      children: index + 1
-                    })
-                  })]
-                })
-              }, JSON.stringify(element));
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "row" + (selectedPage === keys[0] ? "" : " d-none"),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "books",
-              value: course.name[lang],
-              placeholder: sections[keys[0]].fields.selected_course,
-              readonly: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-              type: "hidden",
-              name: "course_id",
-              value: course.id
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "diploma",
-              onChange: this.inputChangeHandler,
-              name: "background",
-              value: background,
-              placeholder: sections[keys[0]].fields.background,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "user",
-              onChange: this.inputChangeHandler,
-              name: "name",
-              value: name,
-              placeholder: sections[keys[0]].fields.name,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "location",
-              onChange: this.inputChangeHandler,
-              name: "region",
-              value: region,
-              placeholder: sections[keys[0]].fields.region,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "select",
-              className: "col-md-6",
-              addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "rounded-circle mx-auto overflow-hidden position-relative d-flex justify-content-center align-items-center",
-                  style: {
-                    width: 18,
-                    height: 18
-                  },
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                    className: "flag-icon text-large position-absolute flag-icon-".concat(country.toLowerCase())
+      var methodsContent = methods.map(function (method) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "d-inline-block pr-2 pr-md-3",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            onClick: function onClick() {
+              return _this2.setState({
+                method_id: method.id
+              });
+            },
+            className: "cursor-pointer py-1 py-md-2 px-2 px-md-3 rounded-6 text-" + (method.id === +method_id ? "white text-700" : "secondary") + " bg-" + (method.id === +method_id ? "green" : "white"),
+            children: method.name
+          })
+        }, JSON.stringify(method));
+      });
+      var regionsOptions = regions.map(function (item) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          value: item.value,
+          children: item.name
+        }, JSON.stringify(item));
+      });
+      var backgroundsOptions = backgrounds.map(function (item) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          value: item.value,
+          children: item.name
+        }, JSON.stringify(item));
+      });
+
+      var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "col-xxl-8 col-md-10",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative d-flex align-items-end justify-content-between",
+          children: keys.map(function (item, index) {
+            var element = enrolments.form.sections[item];
+            var isSelected = item === selectedPage;
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "enrolment-form-item" + (isSelected ? " selected" : ""),
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "d-flex flex-column align-items-center",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "pb-1 pb-md-2 pb-xxl-3",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    className: "text-montserrat text-8 text-md-10 text-xxl-12 title",
+                    children: element.title
                   })
-                })
-              }),
-              onChange: this.inputChangeHandler,
-              value: country,
-              name: "country",
-              readonly: true,
-              placeholder: sections[keys[0]].fields.select_country,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-                children: sections[keys[0]].fields.select_country
-              }), countriesOptions]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-              type: "hidden",
-              value: code,
-              name: "code"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "tel",
-              className: "col-md-6",
-              addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "text-center text-light",
-                style: {
-                  margin: '0 -10px'
-                },
-                children: ["+", code]
-              }),
-              onChange: this.inputChangeHandler,
-              name: "phone",
-              value: phone,
-              placeholder: sections[keys[0]].fields.phone,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "email",
-              className: "col-md-6",
-              icon: "envelope",
-              onChange: this.inputChangeHandler,
-              name: "email",
-              value: email,
-              placeholder: sections[keys[0]].fields.email,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "passport",
-              onChange: this.inputChangeHandler,
-              name: "passport",
-              value: passport,
-              placeholder: sections[keys[0]].fields.passport,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "university",
-              onChange: this.inputChangeHandler,
-              name: "last_institute",
-              value: last_institute,
-              placeholder: sections[keys[0]].fields.last_institute,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "text",
-              className: "col-md-6",
-              icon: "diploma",
-              onChange: this.inputChangeHandler,
-              name: "recent_degree",
-              value: recent_degree,
-              placeholder: sections[keys[0]].fields.recent_degree,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-              type: "number",
-              className: "col-md-6",
-              icon: "star-half",
-              onChange: this.inputChangeHandler,
-              name: "degree_score",
-              value: degree_score,
-              placeholder: sections[keys[0]].fields.degree_score,
-              required: true
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              className: "col-md-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                type: "file",
-                id: "cv",
-                name: "cv",
-                className: "d-none",
-                onChange: this.inputChangeHandler,
-                accept: ".pdf"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                onClick: this.fileUpload,
-                className: "cursor-pointer bg-greenblue-10 rounded-6 px-2 px-md-3 px-xxl-4 py-1 py-md-2 py-xxl-3 d-flex align-items-center justify-content-between",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "text-small text-300 text-secondary",
-                  children: sections[keys[0]].fields.upload_cv
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
-                    className: "fas fa-upload text-nightblue text-14 text-md-16 text-xxl-18"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "pt-xxl-1 text-700 text-6 text-md-8 text-xxl-10 position-relative",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    className: "circle cursor-pointer",
+                    onClick: function onClick() {
+                      return _this2.setState({
+                        selectedPage: item
+                      });
+                    },
+                    children: index + 1
                   })
                 })]
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "row" + (selectedPage === keys[1] ? "" : " d-none"),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4",
-              children: sections[keys[1]].fields.select
-            }), Object.keys(sections[keys[1]].fields.subjects).map(function (key) {
-              var subject = sections[keys[1]].fields.subjects[key];
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "col-12 mb-2 mb-md-3 mb-xxl-4 rounded-6 bg-white p-2 p-md-3 p-xxl-4",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              })
+            }, JSON.stringify(element));
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "row" + (selectedPage === keys[0] ? "" : " d-none"),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "text",
+            className: "col-md-6",
+            icon: "books",
+            value: course.name[lang],
+            placeholder: sections[keys[0]].fields.selected_course,
+            readonly: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+            type: "hidden",
+            name: "course_id",
+            value: course.id
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "text",
+            className: "col-md-6",
+            icon: "user",
+            onChange: this.inputChangeHandler,
+            name: "name",
+            value: name,
+            placeholder: sections[keys[0]].fields.name,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "select",
+            className: "col-md-6",
+            icon: "location",
+            onChange: this.inputChangeHandler,
+            name: "region",
+            value: region,
+            placeholder: sections[keys[0]].fields.region,
+            required: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+              value: "",
+              children: sections[keys[0]].fields.select_region
+            }), regionsOptions]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "date",
+            className: "col-md-6",
+            icon: "calendar",
+            onChange: this.inputChangeHandler,
+            name: "birthdate",
+            value: birthdate,
+            placeholder: sections[keys[0]].fields.birthdate,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "select",
+            className: "col-md-6",
+            addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "rounded-circle mx-auto overflow-hidden position-relative d-flex justify-content-center align-items-center",
+                style: {
+                  width: 18,
+                  height: 18
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                  className: "flag-icon text-large position-absolute flag-icon-".concat(country.toLowerCase())
+                })
+              })
+            }),
+            onChange: this.inputChangeHandler,
+            value: country,
+            name: "country",
+            readonly: true,
+            placeholder: sections[keys[0]].fields.select_country,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+              value: "",
+              children: sections[keys[0]].fields.select_country
+            }), countriesOptions]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+            type: "hidden",
+            value: code,
+            name: "code"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "tel",
+            className: "col-md-6",
+            addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              className: "text-center text-light",
+              style: {
+                margin: '0 -10px'
+              },
+              children: ["+", code]
+            }),
+            onChange: this.inputChangeHandler,
+            name: "phone",
+            value: phone,
+            placeholder: sections[keys[0]].fields.phone,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "email",
+            className: "col-md-6",
+            icon: "envelope",
+            onChange: this.inputChangeHandler,
+            name: "email",
+            value: email,
+            placeholder: sections[keys[0]].fields.email,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "text",
+            className: "col-md-6",
+            icon: "passport",
+            onChange: this.inputChangeHandler,
+            name: "passport",
+            value: passport,
+            placeholder: sections[keys[0]].fields.passport,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "select",
+            className: "col-md-6",
+            icon: "diploma",
+            onChange: this.inputChangeHandler,
+            name: "background",
+            value: background,
+            placeholder: sections[keys[0]].fields.background,
+            required: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+              value: "",
+              children: sections[keys[0]].fields.select_background
+            }), backgroundsOptions]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "text",
+            className: "col-md-6",
+            icon: "university",
+            onChange: this.inputChangeHandler,
+            name: "last_institute",
+            value: last_institute,
+            placeholder: sections[keys[0]].fields.last_institute,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "text",
+            className: "col-md-6",
+            icon: "diploma",
+            onChange: this.inputChangeHandler,
+            name: "recent_degree",
+            value: recent_degree,
+            placeholder: sections[keys[0]].fields.recent_degree,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            type: "number",
+            className: "col-md-6",
+            icon: "star-half",
+            onChange: this.inputChangeHandler,
+            name: "degree_score",
+            value: degree_score,
+            placeholder: sections[keys[0]].fields.degree_score,
+            required: true
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "row" + (selectedPage === keys[1] ? "" : " d-none"),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4",
+            children: sections[keys[1]].fields.select
+          }), Object.keys(sections[keys[1]].fields.subjects).map(function (key) {
+            var subject = sections[keys[1]].fields.subjects[key];
+            var value = _this2.state[key];
+            var color = 'orange';
+            if (value < 2.5) color = 'red';else if (value > 3) color = 'green';
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "col-12",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "mb-2 mb-md-3 mb-xxl-4 rounded-6 bg-white p-2 p-md-3 p-xxl-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                   className: "px-md-1 px-xxl-2 d-flex align-items-center justify-content-between",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                     className: "text-10 text-md-12 text-xxl-14",
-                    children: [sections[keys[1]].fields.english_level, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
-                      children: subject.name
+                    children: [sections[keys[1]].fields.english_level, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
+                      children: subject
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                     className: "d-flex align-items-center",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                      className: "text-" + subject.color,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
                         type: "hidden",
-                        name: key
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_UI_Stars__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                        name: key,
+                        value: value
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_UI_Stars__WEBPACK_IMPORTED_MODULE_3__["default"], {
                         target: key,
-                        color: subject.color
+                        mark: value,
+                        onChange: function onChange(value) {
+                          return _this2.starRating(key, value);
+                        }
                       })]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                       className: "pl-3 pl-md-4 pl-xxl-5",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                        className: "ml-1 ml-md-2 ml-xxl-3 py-1 px-2 rounded-4 text-700 text-center mark-" + key + " text-" + subject.color + " bg-" + subject.color + "-25",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                        className: "ml-1 ml-md-2 ml-xxl-3 py-1 px-2 rounded-4 text-700 text-center bg-" + color + '-25 text-' + color,
                         style: {
                           width: 40
                         },
-                        children: "0"
+                        children: value
                       })
                     })]
                   })]
                 })
-              }, key + Math.random());
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: "row mt-3 mt-md-4 mt-5 pt-2 pt-md-3 pt-xxl-4",
-            children: [selectedPage !== keys[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
-                type: "button",
-                onClick: this.previous,
-                className: "btn btn-red btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
-                children: [enrolments.form.nav.previous, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
-                  className: "fad fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute",
-                  style: {
-                    top: '50%',
-                    left: 0,
-                    transform: 'translateY(-50%)'
-                  }
-                })]
               })
-            }), selectedPage !== keys[keys.length - 1] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
-                type: "button",
-                onClick: this.next,
-                className: "btn btn-green btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
-                children: [enrolments.form.nav.next, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
-                  className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
-                  style: {
-                    top: '50%',
-                    right: 0,
-                    transform: 'translateY(-50%)'
-                  }
-                })]
-              })
-            }), selectedPage === keys[keys.length - 1] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "col-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("button", {
-                className: "btn btn-greenblue btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
-                children: [enrolments.form.nav.submit, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
-                  className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
-                  style: {
-                    top: '50%',
-                    right: 0,
-                    transform: 'translateY(-50%)'
-                  }
-                })]
-              })
-            })]
+            }, key + Math.random());
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            className: "col-12",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              type: "textarea",
+              className: "text-10 text-md-12 text-xxl-14 text-secondary border-0 p-2 p-md-3 p-xxl-4",
+              onChange: this.inputChangeHandler,
+              name: "reason",
+              value: reason,
+              placeholder: sections[keys[1]].fields.reason,
+              required: true
+            })
           })]
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "row" + (selectedPage === keys[2] ? "" : " d-none"),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4",
+            children: sections[keys[2]].fields.upload_documents
+          }), Object.keys(sections[keys[2]].fields.documents).map(function (key) {
+            var document = sections[keys[2]].fields.documents[key];
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "col-xxl-4 col-md-6 pb-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                onClick: function onClick() {
+                  return _this2.fileUpload(key);
+                },
+                className: "cursor-pointer d-flex h-100 flex-column align-items-center justify-content-center text-center rounded-6 bg-" + (_this2.state[key] ? "green text-white" : "greenblue-5 text-secondary") + " py-1 py-md-2 py-xxl-3",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "pb-2",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                    className: "fas fa-" + (_this2.state[key] ? "check-circle" : "cloud-upload text-greenblue")
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "text-8 text-md-10 text-xxl-12 text-300",
+                  children: document
+                })]
+              })
+            }, key + Math.random());
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "row" + (selectedPage === keys[3] ? "" : " d-none"),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4",
+            children: sections[keys[3]].fields.select_payment_method
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "col-12 mt-1 mt-md-2 mt-xxl-3 bg-greenblue-10 rounded-10 px-2 px-md-3 px-xxl-4 py-md-1 py-xxl-2 mb-3 mb-md-4 mb-xxl-5",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "position-relative text-14 text-md-17 text-xxl-20 text-500 text-greenblue mb-2 mb-md-3 mb-xxl-4 py-1 py-md-2 py-xxl-3 border-bottom border-border",
+              children: sections[keys[3]].fields.please_select_payment_method
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              type: "hidden",
+              name: "method_id",
+              value: method_id
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+              className: "mb-1 mb-md-2 mb-xxl-3",
+              children: methodsContent
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            check: true,
+            className: "col-12 text-8 text-md-10 text-xxl-12",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              check: true,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                type: "checkbox",
+                onChange: this.inputChangeHandler,
+                name: "terms",
+                checked: terms
+              }), ' ' + sections[keys[3]].fields.terms]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            check: true,
+            className: "col-12 text-8 text-md-10 text-xxl-12",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              check: true,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                type: "checkbox",
+                onChange: this.inputChangeHandler,
+                name: "policies",
+                checked: policies
+              }), ' ' + sections[keys[3]].fields.policies]
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "row mt-3 mt-md-4 mt-5 pt-2 pt-md-3 pt-xxl-4",
+          children: [selectedPage !== keys[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-6",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+              type: "button",
+              onClick: this.previous,
+              className: "btn btn-red btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
+              children: [enrolments.form.nav.previous, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                className: "fad fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute",
+                style: {
+                  top: '50%',
+                  left: 0,
+                  transform: 'translateY(-50%)'
+                }
+              })]
+            })
+          }), selectedPage !== keys[keys.length - 1] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-6",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+              type: "button",
+              onClick: this.next,
+              className: "btn btn-green btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
+              children: [enrolments.form.nav.next, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
+                style: {
+                  top: '50%',
+                  right: 0,
+                  transform: 'translateY(-50%)'
+                }
+              })]
+            })
+          }), selectedPage === keys[keys.length - 1] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "col-6",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("button", {
+              className: "btn btn-greenblue btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
+              children: [enrolments.form.nav.finish, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
+                style: {
+                  top: '50%',
+                  right: 0,
+                  transform: 'translateY(-50%)'
+                }
+              })]
+            })
+          })]
+        })]
+      });
+
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+        className: "EnrolmentForm row justify-content-center",
+        onSubmit: this.submitHandler,
+        children: [Object.keys(sections[keys[2]].fields.documents).map(function (key) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+            type: "file",
+            id: key,
+            name: key,
+            className: "d-none",
+            onChange: _this2.inputChangeHandler,
+            accept: ".pdf,.jpeg,.jpg,.png"
+          }, 'input-file-' + key + Math.random());
+        }), content]
       });
     }
   }]);
@@ -1466,7 +1600,11 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    post: function post(data) {
+      return dispatch((0,_store_actions_frontend_home__WEBPACK_IMPORTED_MODULE_4__.postHome)(data));
+    }
+  };
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(EnrolmentForm));
@@ -1590,6 +1728,14 @@ var Home = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "selectCourse", function (id) {
+      _this.setState({
+        selectedCourse: id
+      }, function () {
+        return document.getElementById('scroll-to-enrolments').click();
+      });
+    });
+
     return _this;
   }
 
@@ -1620,7 +1766,13 @@ var Home = /*#__PURE__*/function (_Component) {
           _this$props$frontend$ = _this$props.frontend.home,
           loading = _this$props$frontend$.loading,
           _this$props$frontend$2 = _this$props$frontend$.courses,
-          coursesData = _this$props$frontend$2 === void 0 ? [] : _this$props$frontend$2;
+          coursesData = _this$props$frontend$2 === void 0 ? [] : _this$props$frontend$2,
+          _this$props$frontend$3 = _this$props$frontend$.methods,
+          methods = _this$props$frontend$3 === void 0 ? [] : _this$props$frontend$3,
+          _this$props$frontend$4 = _this$props$frontend$.regions,
+          regions = _this$props$frontend$4 === void 0 ? [] : _this$props$frontend$4,
+          _this$props$frontend$5 = _this$props$frontend$.backgrounds,
+          backgrounds = _this$props$frontend$5 === void 0 ? [] : _this$props$frontend$5;
       var _this$state = this.state,
           selectedCourse = _this$state.selectedCourse,
           activeIndex = _this$state.activeIndex,
@@ -1629,9 +1781,7 @@ var Home = /*#__PURE__*/function (_Component) {
       var coursesContent = coursesData.map(function (course) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Course__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread({
           onClick: function onClick() {
-            return _this2.setState({
-              selectedCourse: course.id
-            });
+            return _this2.selectCourse(course.id);
           },
           selected: selectedCourse === course.id,
           cms: cms
@@ -1687,14 +1837,18 @@ var Home = /*#__PURE__*/function (_Component) {
               });
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Police_Block__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_components_UI_Police_Block__WEBPACK_IMPORTED_MODULE_3__["default"], {
           id: "courses",
           title: courses.title,
           subtitle: courses.subtitle,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("a", {
+            href: "#enrolments",
+            id: "scroll-to-enrolments",
+            className: "d-none"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
             className: "row",
             children: coursesContent
-          })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_UI_Police_Block__WEBPACK_IMPORTED_MODULE_3__["default"], {
           id: "enrolments",
           color: "soft",
@@ -1724,7 +1878,10 @@ var Home = /*#__PURE__*/function (_Component) {
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_EnrolmentForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
                 enrolments: enrolments,
-                course: course
+                course: course,
+                methods: methods,
+                regions: regions,
+                backgrounds: backgrounds
               })]
             })]
           })
@@ -1765,7 +1922,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "resetHome": () => (/* binding */ resetHome),
-/* harmony export */   "getHome": () => (/* binding */ getHome)
+/* harmony export */   "getHome": () => (/* binding */ getHome),
+/* harmony export */   "postHome": () => (/* binding */ postHome)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -1849,6 +2007,70 @@ var getHome = function getHome() {
 
     return function (_x) {
       return _ref.apply(this, arguments);
+    };
+  }();
+};
+var postHome = function postHome(data) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(dispatch) {
+      var form, res, resData;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch(homeStart());
+              _context2.prev = 1;
+              form = new FormData(data);
+              _context2.next = 5;
+              return fetch("".concat(prefix, "home"), {
+                method: 'POST',
+                body: form
+              });
+
+            case 5:
+              res = _context2.sent;
+              _context2.next = 8;
+              return res.json();
+
+            case 8:
+              resData = _context2.sent;
+
+              if (!(res.status === 422)) {
+                _context2.next = 13;
+                break;
+              }
+
+              throw new Error(Object.values(resData.errors).join('\n'));
+
+            case 13:
+              if (!(res.status !== 200 && res.status !== 201)) {
+                _context2.next = 15;
+                break;
+              }
+
+              throw new Error(resData.error.message);
+
+            case 15:
+              dispatch(homeSuccess(resData));
+              _context2.next = 22;
+              break;
+
+            case 18:
+              _context2.prev = 18;
+              _context2.t0 = _context2["catch"](1);
+              console.log(_context2.t0);
+              dispatch(homeFail(_context2.t0));
+
+            case 22:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 18]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
     };
   }();
 };
@@ -24615,6 +24837,117 @@ var InputGroupText = function InputGroupText(props) {
 InputGroupText.propTypes = propTypes;
 InputGroupText.defaultProps = defaultProps;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InputGroupText);
+
+/***/ }),
+
+/***/ "./node_modules/reactstrap/es/Label.js":
+/*!*********************************************!*\
+  !*** ./node_modules/reactstrap/es/Label.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
+
+
+
+
+
+
+var colWidths = ['xs', 'sm', 'md', 'lg', 'xl'];
+var stringOrNumberProp = prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_3___default().number), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string)]);
+var columnProps = prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string), (prop_types__WEBPACK_IMPORTED_MODULE_3___default().number), prop_types__WEBPACK_IMPORTED_MODULE_3___default().shape({
+  size: stringOrNumberProp,
+  order: stringOrNumberProp,
+  offset: stringOrNumberProp
+})]);
+var propTypes = {
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().node),
+  hidden: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+  check: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+  size: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+  for: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+  tag: _utils__WEBPACK_IMPORTED_MODULE_5__.tagPropType,
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object),
+  xs: columnProps,
+  sm: columnProps,
+  md: columnProps,
+  lg: columnProps,
+  xl: columnProps,
+  widths: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().array)
+};
+var defaultProps = {
+  tag: 'label',
+  widths: colWidths
+};
+
+var getColumnSizeClass = function getColumnSizeClass(isXs, colWidth, colSize) {
+  if (colSize === true || colSize === '') {
+    return isXs ? 'col' : "col-" + colWidth;
+  } else if (colSize === 'auto') {
+    return isXs ? 'col-auto' : "col-" + colWidth + "-auto";
+  }
+
+  return isXs ? "col-" + colSize : "col-" + colWidth + "-" + colSize;
+};
+
+var Label = function Label(props) {
+  var className = props.className,
+      cssModule = props.cssModule,
+      hidden = props.hidden,
+      widths = props.widths,
+      Tag = props.tag,
+      check = props.check,
+      size = props.size,
+      htmlFor = props.for,
+      attributes = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["className", "cssModule", "hidden", "widths", "tag", "check", "size", "for"]);
+
+  var colClasses = [];
+  widths.forEach(function (colWidth, i) {
+    var columnProp = props[colWidth];
+    delete attributes[colWidth];
+
+    if (!columnProp && columnProp !== '') {
+      return;
+    }
+
+    var isXs = !i;
+    var colClass;
+
+    if ((0,_utils__WEBPACK_IMPORTED_MODULE_5__.isObject)(columnProp)) {
+      var _classNames;
+
+      var colSizeInterfix = isXs ? '-' : "-" + colWidth + "-";
+      colClass = getColumnSizeClass(isXs, colWidth, columnProp.size);
+      colClasses.push((0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()((_classNames = {}, _classNames[colClass] = columnProp.size || columnProp.size === '', _classNames["order" + colSizeInterfix + columnProp.order] = columnProp.order || columnProp.order === 0, _classNames["offset" + colSizeInterfix + columnProp.offset] = columnProp.offset || columnProp.offset === 0, _classNames))), cssModule);
+    } else {
+      colClass = getColumnSizeClass(isXs, colWidth, columnProp);
+      colClasses.push(colClass);
+    }
+  });
+  var classes = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()(className, hidden ? 'sr-only' : false, check ? 'form-check-label' : false, size ? "col-form-label-" + size : false, colClasses, colClasses.length ? 'col-form-label' : false), cssModule);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    htmlFor: htmlFor
+  }, attributes, {
+    className: classes
+  }));
+};
+
+Label.propTypes = propTypes;
+Label.defaultProps = defaultProps;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Label);
 
 /***/ }),
 

@@ -157,7 +157,7 @@ class Index extends Component {
                 </div>,
                 action: <div className="text-center">
                     {JSON.parse(feature.permissions).includes('u') && <span onClick={() => this.load(course.id)} className="mx-1 cursor-pointer">
-                        <i className="fas fa-edit text-brokenblue" fixedWidth />
+                        <i className="fas fa-edit text-brokenblue" />
                     </span>}
                     {JSON.parse(feature.permissions).includes('d') && <span className="mx-1"><Delete deleteAction={() => this.props.delete(course.id)}><i className="fas fa-trash text-red" /></Delete></span>}
                 </div>,
@@ -270,12 +270,12 @@ class Index extends Component {
                                                                 <span className={`flag-icon text-xx-large position-absolute flag-icon-${country.toLowerCase()}`} />
                                                             </div>
                                                         </span>} onChange={this.inputChangeHandler} value={country} name="country" required placeholder={form.select_flag}>
-                                                            <option>{form.select_country}</option>
+                                                            <option value="">{form.select_country}</option>
                                                             {countriesOptions}
                                                         </FormInput>
                                                         <FormInput type="number" className="col-md-6" onChange={this.inputChangeHandler} icon="dollar-sign" required value={fees} name="fees" placeholder={form.fees} />
                                                         <FormInput type="select" className="col-md-6" icon="layer-group" onChange={this.inputChangeHandler} value={level} name="level" required>
-                                                            <option>{form.select_level}</option>
+                                                            <option value="">{form.select_level}</option>
                                                             {levelsOptions}
                                                         </FormInput>
                                                     </Row>

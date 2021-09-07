@@ -526,16 +526,18 @@
                                         "fields": {
                                             "selected_course": "Selected course",
                                             "background": "Education background",
+                                            "select_background": "Select education background",
                                             "name": "Full name",
                                             "region": "Region",
+                                            "select_region": "Select region",
+                                            "birthdate": "Date of birth",
                                             "country": "Country",
                                             "phone": "Phone",
                                             "email": "E-mail address",
                                             "passport": "Passport number",
                                             "last_institute": "Last institute",
                                             "recent_degree": "Recent degree",
-                                            "degree_score": "Degree score",
-                                            "upload_cv": "Upload CV"
+                                            "degree_score": "Degree score"
                                         }
                                     },
                                     "lingual_skills": {
@@ -543,37 +545,41 @@
                                         "fields": {
                                             "select": "Select",
                                             "english_level": "English level :",
+                                            "reason": "Why are you applying for this course ?",
                                             "subjects": {
-                                                "writing": {
-                                                    "name": "Writing",
-                                                    "color": "green"
-                                                },
-                                                "speaking": {
-                                                    "name": "Speaking",
-                                                    "color": "red"
-                                                },
-                                                "reading": {
-                                                    "name": "Reading",
-                                                    "color": "orange"
-                                                },
-                                                "comprehension": {
-                                                    "name": "Comprehension",
-                                                    "color": "orange"
-                                                }
+                                                "writing": "Writing",
+                                                "speaking": "Speaking",
+                                                "reading": "Reading",
+                                                "comprehension": "Comprehension"
                                             }
                                         }
                                     },
-                                    "payment": {
-                                        "title": "Payment"
+                                    "documents": {
+                                        "title": "Documents",
+                                        "fields": {
+                                            "upload_documents": "Upload documents",
+                                            "documents": {
+                                                "nid": "Upload certified NID",
+                                                "photo": "Upload photo 4x4",
+                                                "diploma": "Upload certified diploma copy",
+                                                "cv": "Upload CV"
+                                            }
+                                        }
                                     },
                                     "finished": {
-                                        "title": "Finished"
+                                        "title": "Finished",
+                                        "fields": {
+                                            "select_payment_method": "Select payment method",
+                                            "please_select_payment_method": "Please select a payment method",
+                                            "terms": "Accept terms and conditions",
+                                            "policies": "Accept Privacy policies"
+                                        }
                                     }
                                 },
                                 "nav": {
                                     "previous": "Previous page",
                                     "next": "Next page",
-                                    "submit": "Submit"
+                                    "finish": "Finish payment"
                                 }
                             }
                         }

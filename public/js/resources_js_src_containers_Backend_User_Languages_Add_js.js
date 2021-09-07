@@ -1107,6 +1107,7 @@ var Add = /*#__PURE__*/function (_Component) {
                       required: true,
                       placeholder: form.select_flag,
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("option", {
+                        value: "",
                         children: form.select_flag
                       }), countriesOptions]
                     })]

@@ -20,7 +20,7 @@ const Detail = ({ name, children }) => <div className="Detail mt-2 mt-md-3 mt-xx
     </div>
 </div>;
 
-export default ({ enrolments, cms, course, lang, countries }) => <div className="CourseCard position-relative pb-2 pr-2">
+export default ({ enrolments, cms, course, lang, countries }) => <div className="CourseCard position-relative pb-3 pr-3">
     <div className="polygon text-white">
         <div className="enrolments">
             <div className="text-700 text-white-40 text-40 text-md-56 text-xxl-72">{course.enroled}</div>

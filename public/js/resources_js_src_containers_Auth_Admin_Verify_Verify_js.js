@@ -345,7 +345,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             max: max,
             step: step,
             className: (icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-small text-secondary h-100 px-4 py-3"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+          }), placeholder && type !== 'date' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
             className: "text-small text-light text-truncate m-0",
             htmlFor: id ? id : name,
             children: placeholder

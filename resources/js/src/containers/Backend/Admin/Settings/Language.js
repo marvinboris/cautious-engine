@@ -76,7 +76,7 @@ class Edit extends Component {
                                 <Row className="justify-content-center">
                                     <input type="hidden" name="id" value={id} />
                                     <FormInput type="select" className="col-md-6" icon={faLanguage} onChange={this.inputChangeHandler} value={abbr} name="abbr" required placeholder={form.select_language}>
-                                        <option>{form.select_language}</option>
+                                        <option value="">{form.select_language}</option>
                                         {languagesOptions}
                                     </FormInput>
 

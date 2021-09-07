@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Method;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UtilController;
+use App\Models\Enrolment;
 use App\Models\Method;
-use App\Models\Recharge;
-use App\Models\Restaurant;
+use App\Models\Payment;
 use App\Models\Transaction;
-use App\Notifications\RestaurantRecharge;
+use App\Notifications\PaymentProcessed;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
@@ -37,16 +37,14 @@ class MonetbilController extends Controller
             'link' => null
         ];
 
-        $restaurant = UtilController::get(request());
-
         $json = [
             // 'amount' => 1,
-            'amount' => round($input['amount'] * 604),
+            'amount' => $input['amount'],
             'item_ref' => $input['amount'],
             'payment_ref' => time(),
             'country' => 'XAF',
             'logo' => asset('images/email/logo.png'),
-            'email' => $restaurant->email,
+            'email' => $input['ref'],
             'country' => 'CM',
             'return_url' => route('monetbil.notify.get')
         ];
@@ -85,36 +83,36 @@ class MonetbilController extends Controller
             $input[$key] = htmlspecialchars($value);
         }
 
-        $restaurant = Restaurant::where('email', $input['email'])->first();
+        $enrolment = Enrolment::where('ref', $input['email'])->first();
 
-        if (!$restaurant) {
-            error_log('No restaurant found !');
-            die('No restaurant found !');
+        if (!$enrolment) {
+            error_log('No enrolment found !');
+            die('No enrolment found !');
         }
 
         $transaction = Transaction::where("tx_id", $input['payment_ref'])->first();
-        $recharge = null;
+        $payment = null;
 
         if (!$transaction) {
             $transaction = Transaction::create([
-                'amount' => round(+$request->item_ref * 604),
+                'amount' => +$request->item_ref,
                 'tx_id' => $input['payment_ref'],
                 'tx_hash' => $input['transaction_id'],
                 'vendor' => 'monetbil',
                 'method' =>  $request->operator ? $input['operator'] : 'MTN',
-                'type' => 'recharge',
+                'type' => 'payment',
                 'status' => 'pending',
                 'currency' => $request->currency ? $input['current'] : 'XAF',
                 'address' => $request->phone
             ]);
-            $recharge = Recharge::create([
-                'restaurant_id' => $restaurant->id,
-                'method_id' => Method::whereSlug('mobile')->first()->id,
+            $payment = Payment::create([
+                'enrolment_id' => $enrolment->id,
+                'method_id' => Method::whereSlug('LIKE', '%mobile%')->first()->id,
                 'amount' => +$request->item_ref,
                 'status' => 0,
                 'fees' => 0,
             ]);
-            $restaurant->transactions()->save($transaction);
+            $enrolment->transactions()->save($transaction);
         }
 
         if ($request->currency) $transaction->currency = $input['currency'];
@@ -124,29 +122,30 @@ class MonetbilController extends Controller
 
         if ($request->operator) $transaction->method = $input['operator'];
         if ($request->phone) $transaction->address = $input['phone'];
-        if ($request->amount) $transaction->amount = round(+$request->item_ref * 604);
+        if ($request->amount) $transaction->amount = +$request->item_ref;
 
         if ('success' === $input['status']) {
-            $recharge->update([
+            $payment->update([
                 'status' => 2,
             ]);
-            $restaurant->notify(new RestaurantRecharge($recharge));
-            $restaurant->update([
-                'balance' => $restaurant->balance + $transaction->amount
+            $enrolment->notify(new PaymentProcessed($payment));
+            $enrolment->update([
+                'balance' => $enrolment->balance + $transaction->amount
             ]);
             $transaction->status = 'completed';
         } else {
-            if ($recharge) $recharge->update([
+            if ($payment) $payment->update([
                 'status' => 1,
             ]);
+            $enrolment->delete();
             $transaction->status = $input['status'];
         }
 
         $transaction->save();
 
         if ('success' === $input['status'])
-            return redirect('/restaurant/recharges?status=1&amount=' . $request->item_ref);
+            return redirect('/?status=1&amount=' . $request->item_ref);
 
-        return redirect('/restaurant/recharges');
+        return redirect('/');
     }
 }

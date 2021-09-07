@@ -1158,6 +1158,7 @@ var Add = /*#__PURE__*/function (_Component) {
                       required: true,
                       value: role_id,
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("option", {
+                        value: "",
                         children: form.select_role
                       }), rolesOptions]
                     })]

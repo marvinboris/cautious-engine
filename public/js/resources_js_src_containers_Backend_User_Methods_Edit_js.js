@@ -1083,6 +1083,7 @@ var Add = /*#__PURE__*/function (_Component) {
                       name: "is_active",
                       required: true,
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("option", {
+                        value: "",
                         children: form.select_status
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("option", {
                         value: 1,

@@ -1018,6 +1018,7 @@ var Edit = /*#__PURE__*/function (_Component) {
                     required: true,
                     placeholder: form.select_language,
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("option", {
+                      value: "",
                       children: form.select_language
                     }), languagesOptions]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {

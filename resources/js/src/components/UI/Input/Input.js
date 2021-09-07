@@ -33,7 +33,7 @@ export default ({ icon, addon, onChange, className = '', id, name, type = 'text'
                     :
                     <>
                         <Input valid={touched && !!value && checkValidity(value, validation)} invalid={touched && !checkValidity(value, validation)} onChange={inputChangedHandler} id={id ? id : name} type={type} name={name} required={required} readOnly={readonly} disabled={disabled} defaultValue={defaultValue} value={value} min={min} max={max} step={step} className={((icon || addon) ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-small text-secondary h-100 px-4 py-3"} />
-                        <label className="text-small text-light text-truncate m-0" htmlFor={id ? id : name}>{placeholder}</label>
+                        {placeholder && type !== 'date' && <label className="text-small text-light text-truncate m-0" htmlFor={id ? id : name}>{placeholder}</label>}
                     </>
                 }
 

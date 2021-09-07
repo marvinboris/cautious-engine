@@ -10,10 +10,11 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $directory = '/images/courses/';
+    protected $imagesDirectory = '/images/courses/';
+    protected $filesDirectory = '/files/courses/';
 
     protected $fillable = [
-        'name', 'description', 'photo', 'requirements', 'training', 'internship', 'prizes', 'country', 'fees', 'level',
+        'name', 'description', 'photo', 'requirements', 'training', 'internship', 'prizes', 'country', 'fees', 'level', 'file',
     ];
 
     protected $appends = [
@@ -61,7 +62,12 @@ class Course extends Model
 
     public function getPhotoAttribute($value)
     {
-        return $value ? $this->directory . $value : null;
+        return $value ? $this->imagesDirectory . $value : null;
+    }
+
+    public function getFileAttribute($value)
+    {
+        return $value ? $this->filesDirectory . $value : null;
     }
 
     public function getEnroledAttribute()

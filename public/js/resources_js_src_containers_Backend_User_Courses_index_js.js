@@ -1706,8 +1706,7 @@ var Index = /*#__PURE__*/function (_Component) {
               },
               className: "mx-1 cursor-pointer",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("i", {
-                className: "fas fa-edit text-brokenblue",
-                fixedWidth: true
+                className: "fas fa-edit text-brokenblue"
               })
             }), JSON.parse(feature.permissions).includes('d') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("span", {
               className: "mx-1",
@@ -1990,6 +1989,7 @@ var Index = /*#__PURE__*/function (_Component) {
                               required: true,
                               placeholder: form.select_flag,
                               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("option", {
+                                value: "",
                                 children: form.select_country
                               }), countriesOptions]
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Backend_UI_Input_Input__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2010,6 +2010,7 @@ var Index = /*#__PURE__*/function (_Component) {
                               name: "level",
                               required: true,
                               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("option", {
+                                value: "",
                                 children: form.select_level
                               }), levelsOptions]
                             })]

@@ -114,7 +114,7 @@ class Add extends Component {
                                                 <span className={`flag-icon text-xx-large position-absolute flag-icon-${flag.toLowerCase()}`} />
                                             </div>
                                         </span>} onChange={this.inputChangeHandler} value={flag} validation={{ required: true }} name="flag" required placeholder={form.select_flag}>
-                                            <option>{form.select_flag}</option>
+                                            <option value="">{form.select_flag}</option>
                                             {countriesOptions}
                                         </FormInput>
                                     </Row>

@@ -41,6 +41,10 @@ class Home extends Component {
         this.setState({ activeIndex: newIndex });
     }
 
+    selectCourse = id => {
+        this.setState({ selectedCourse: id }, () => document.getElementById('scroll-to-enrolments').click());
+    }
+
 
 
     componentDidMount() {
@@ -56,12 +60,12 @@ class Home extends Component {
             content: { cms: {
                 pages: { components: { course: cms }, frontend: { pages: { home: { banner, courses, enrolments } } } }
             }, countries },
-            frontend: { home: { loading, courses: coursesData = [] } }
+            frontend: { home: { loading, courses: coursesData = [], methods = [], regions = [], backgrounds = [] } }
         } = this.props;
         const { selectedCourse, activeIndex, animating } = this.state;
         const lang = localStorage.getItem('lang');
 
-        const coursesContent = coursesData.map(course => <Course key={JSON.stringify(course)} onClick={() => this.setState({ selectedCourse: course.id })} selected={selectedCourse === course.id} cms={cms} {...updateObject(course, { created_at: convertDate(course.created_at), name: course.name[lang], description: course.description[lang], requirements: course.requirements[lang], prizes: course.prizes[lang] })} />);
+        const coursesContent = coursesData.map(course => <Course key={JSON.stringify(course)} onClick={() => this.selectCourse(course.id)} selected={selectedCourse === course.id} cms={cms} {...updateObject(course, { created_at: convertDate(course.created_at), name: course.name[lang], description: course.description[lang], requirements: course.requirements[lang], prizes: course.prizes[lang] })} />);
         const course = coursesData.find(c => c.id === selectedCourse);
 
         return <div className="Home">
@@ -82,6 +86,8 @@ class Home extends Component {
 
 
             <Block id="courses" title={courses.title} subtitle={courses.subtitle}>
+                <a href="#enrolments" id="scroll-to-enrolments" className="d-none" />
+
                 <div className="row">
                     {coursesContent}
                 </div>
@@ -100,7 +106,7 @@ class Home extends Component {
                             <div className="thick-line" />
                         </div>
 
-                        <EnrolmentForm enrolments={enrolments} course={course} />
+                        <EnrolmentForm enrolments={enrolments} course={course} methods={methods} regions={regions} backgrounds={backgrounds} />
                     </div>
                 </div>}
             </Block>

@@ -86,15 +86,15 @@ class Toolbar extends Component {
 
                             <div className="text-500 text-14 text-md-17 text-xxl-20">{call_me}</div>
                         </a>
-
-                        <div className="d-none d-xl-block pl-5">
-                            <NavigationItems cms={{ menu }} font="white" toggleNavbar={this.toggleNavbar} selectItem={this.selectItem} selectedItem={selectedItem} />
-                        </div>
                     </div>
 
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="mx-2 mx-md-3 d-xl-none">
                             <i onClick={this.toggleNavbar} className="fad fa-th-large text-21 text-md-40" style={{ cursor: 'pointer' }} />
+                        </div>
+
+                        <div className="d-none d-xl-block pl-5">
+                            <NavigationItems cms={{ menu }} font="white" toggleNavbar={this.toggleNavbar} selectItem={this.selectItem} selectedItem={selectedItem} />
                         </div>
                     </div>
                 </div>

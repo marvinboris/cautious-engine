@@ -20,6 +20,7 @@ class CourseController extends Controller
         'fees' => 'required|numeric',
         'level' => 'required|integer',
         'photo' => 'nullable|image',
+        'file' => 'nullable|file',
     ];
 
     private function data()
@@ -122,6 +123,12 @@ class CourseController extends Controller
             $fileName = time() . $file->getClientOriginalName();
             $file->move('images/courses', $fileName);
             $input['photo'] = htmlspecialchars($fileName);
+        }
+
+        if ($file = $request->file('file')) {
+            $fileName = time() . $file->getClientOriginalName();
+            $file->move('files/courses', $fileName);
+            $input['file'] = htmlspecialchars($fileName);
         }
 
         Course::create($input + [

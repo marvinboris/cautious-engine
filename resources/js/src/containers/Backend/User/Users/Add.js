@@ -145,7 +145,7 @@ class Add extends Component {
                                         <FormInput type="password" className="col-md-6" icon="lock" onChange={this.inputChangeHandler} value={password_confirmation} name="password_confirmation" placeholder={form.password_confirmation} />
                                         <FormInput type="email" className="col-md-6" icon="envelope" onChange={this.inputChangeHandler} value={email} name="email" placeholder={form.email} />
                                         <FormInput className="col-lg-6" type="select" name="role_id" placeholder={form.role} onChange={this.inputChangeHandler} icon="user-tag" required value={role_id}>
-                                            <option>{form.select_role}</option>
+                                            <option value="">{form.select_role}</option>
                                             {rolesOptions}
                                         </FormInput>
                                     </Row>

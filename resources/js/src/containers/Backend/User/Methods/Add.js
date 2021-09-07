@@ -111,7 +111,7 @@ class Add extends Component {
                                         <FormInput type="text" className="col-md-6" icon={icon} onChange={this.inputChangeHandler} value={name} name="name" required placeholder={form.name} />
                                         <FormInput type="text" className="col-md-6" icon="paragraph" onChange={this.inputChangeHandler} value={text} name="text" required placeholder={form.text} />
                                         <FormInput type="select" className="col-md-6" icon="pencil-alt" onChange={this.inputChangeHandler} value={is_active} name="is_active" required>
-                                            <option>{form.select_status}</option>
+                                            <option value="">{form.select_status}</option>
                                             <option value={1}>{active}</option>
                                             <option value={0}>{inactive}</option>
                                         </FormInput>
