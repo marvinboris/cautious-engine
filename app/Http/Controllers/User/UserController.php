@@ -160,7 +160,8 @@ class UserController extends Controller
 
         if ($file = $request->file('photo')) {
             if ($user_->photo && is_file(public_path($user_->photo))) unlink(public_path($user_->photo));
-            $fileName = UtilController::resize($file, 'users');
+            $fileName = time() . $file->getClientOriginalName();
+            $file->move('images/users', $fileName);
             $input['photo'] = htmlspecialchars($fileName);
         }
 
