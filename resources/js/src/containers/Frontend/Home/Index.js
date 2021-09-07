@@ -97,15 +97,15 @@ class Home extends Component {
 
             <Block id="enrolments" color="soft" title={enrolments.title} subtitle={course && (<>{enrolments.you_have_selected_the_course} <strong>{course.name[lang]}</strong></>)}>
                 {course && <div className="row">
-                    <div className="col-md-5 overflow-hidden px-3 px-md-4 px-xxl-5">
+                    <div className="col-md-5 overflow-hidden px-4 px-xxl-5 pb-4">
                         <CourseCard countries={countries} enrolments={enrolments} cms={cms} course={course} lang={lang} />
-                    </div>
 
-                    <div className="col-md-7 position-relative px-3 px-md-4 px-xxl-5">
-                        <div className="thin-line">
+                        <div className="thin-line d-none d-md-block">
                             <div className="thick-line" />
                         </div>
+                    </div>
 
+                    <div className="col-md-7 position-relative px-4 px-xxl-5">
                         <EnrolmentForm enrolments={enrolments} course={course} methods={methods} regions={regions} backgrounds={backgrounds} />
                     </div>
                 </div>}

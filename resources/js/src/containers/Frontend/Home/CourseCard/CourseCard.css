@@ -50,12 +50,22 @@
 .Frontend .Home .CourseCard .polygon .enrolments {
     position: absolute;
     top: 50%;
-    right: 40px;
+    right: 20px;
     transform: translateY(-50%);
 }
 
 .Frontend .Home .CourseCard .polygon .fees {
     position: absolute;
-    right: 44px;
+    right: 24px;
     bottom: 13px;
+}
+
+@media (min-width: 1900px) {
+    .Frontend .Home .CourseCard .polygon .enrolments {
+        right: 40px;
+    }
+
+    .Frontend .Home .CourseCard .polygon .fees {
+        right: 44px;
+    }
 }

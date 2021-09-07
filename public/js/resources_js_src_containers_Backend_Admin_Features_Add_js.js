@@ -527,7 +527,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     name: name,
     required: required,
     readOnly: readonly,
-    className: "w-100 d-flex text-small h-100",
+    className: "w-100 d-flex text-10 text-md-12 text-xxl-14 h-100",
     value: value,
     defaultValue: !value && defaultValue,
     placeholder: placeholder
@@ -566,7 +566,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           disabled: disabled,
           defaultValue: defaultValue,
           value: value,
-          className: "bg-".concat(dark ? "grayblue" : "", " ").concat(icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "", " rounded-right-6 text-small text-secondary h-100 px-4 py-3"),
+          className: "bg-".concat(dark ? "grayblue" : "", " ").concat(icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "", " rounded-right-6 text-10 text-md-12 text-xxl-14 text-secondary h-100 px-4 py-3"),
           children: children
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -584,16 +584,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             min: min,
             max: max,
             step: step,
-            className: (icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-small text-secondary h-100 px-4 py-3"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-            className: "text-small text-light text-truncate m-0",
+            className: (icon || addon ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-10 text-md-12 text-xxl-14 text-secondary h-100 px-4 py-3"
+          }), placeholder && type !== 'date' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: "text-10 text-md-12 text-xxl-14 text-light text-truncate m-0",
             htmlFor: id ? id : name,
             children: placeholder
           })]
         }), append && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
           addonType: "append",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
-            className: "bg-transparent border-0 text-secondary text-small px-4",
+            className: "bg-transparent border-0 text-secondary text-10 text-md-12 text-xxl-14 px-4",
             children: append
           })
         })]

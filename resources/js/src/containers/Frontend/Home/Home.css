@@ -23,7 +23,7 @@
     background-color: var(--border);
     position: absolute;
     top: 25px;
-    left: 0;
+    right: 0;
 }
 
 .Frontend .Home #enrolments .thin-line .thick-line {

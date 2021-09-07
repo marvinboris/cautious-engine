@@ -18,7 +18,7 @@ export default ({ icon, addon, onChange, className = '', id, name, type = 'text'
 
     let content;
 
-    if (type === 'datetime-local') content = <DateTimeInput id={id} name={name} required={required} readOnly={readonly} className={"w-100 d-flex text-small h-100"} value={value} defaultValue={!value && defaultValue} placeholder={placeholder} />
+    if (type === 'datetime-local') content = <DateTimeInput id={id} name={name} required={required} readOnly={readonly} className={"w-100 d-flex text-10 text-md-12 text-xxl-14 h-100"} value={value} defaultValue={!value && defaultValue} placeholder={placeholder} />
     else content = <>
         <WithTooltip content={placeholder && <>{placeholder}{required && <span className="text-red">*</span>}</>} id={'tooltip-' + (id ? id : name)}>
             <InputGroup className={`bg-${dark ? "grayblue" : "white border border-soft"} rounded-6 d-flex align-items-center`} size="lg">
@@ -29,16 +29,16 @@ export default ({ icon, addon, onChange, className = '', id, name, type = 'text'
                 </InputGroupAddon>}
 
                 {children ?
-                    <CustomInput valid={touched && !!value && checkValidity(value, validation)} invalid={touched && !checkValidity(value, validation)} onChange={inputChangedHandler} type={type} id={name} name={name} required={required} readOnly={readonly} disabled={disabled} defaultValue={defaultValue} value={value} className={`bg-${dark ? "grayblue" : ""} ${((icon || addon) ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "")} rounded-right-6 text-small text-secondary h-100 px-4 py-3`}>{children}</CustomInput>
+                    <CustomInput valid={touched && !!value && checkValidity(value, validation)} invalid={touched && !checkValidity(value, validation)} onChange={inputChangedHandler} type={type} id={name} name={name} required={required} readOnly={readonly} disabled={disabled} defaultValue={defaultValue} value={value} className={`bg-${dark ? "grayblue" : ""} ${((icon || addon) ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "")} rounded-right-6 text-10 text-md-12 text-xxl-14 text-secondary h-100 px-4 py-3`}>{children}</CustomInput>
                     :
                     <>
-                        <Input valid={touched && !!value && checkValidity(value, validation)} invalid={touched && !checkValidity(value, validation)} onChange={inputChangedHandler} id={id ? id : name} type={type} name={name} required={required} readOnly={readonly} disabled={disabled} defaultValue={defaultValue} value={value} min={min} max={max} step={step} className={((icon || addon) ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-small text-secondary h-100 px-4 py-3"} />
-                        {placeholder && type !== 'date' && <label className="text-small text-light text-truncate m-0" htmlFor={id ? id : name}>{placeholder}</label>}
+                        <Input valid={touched && !!value && checkValidity(value, validation)} invalid={touched && !checkValidity(value, validation)} onChange={inputChangedHandler} id={id ? id : name} type={type} name={name} required={required} readOnly={readonly} disabled={disabled} defaultValue={defaultValue} value={value} min={min} max={max} step={step} className={((icon || addon) ? "border-top-0 border-right-0 border-bottom-0 border-soft" : "border-0") + " rounded-right-6 text-10 text-md-12 text-xxl-14 text-secondary h-100 px-4 py-3"} />
+                        {placeholder && type !== 'date' && <label className="text-10 text-md-12 text-xxl-14 text-light text-truncate m-0" htmlFor={id ? id : name}>{placeholder}</label>}
                     </>
                 }
 
                 {append && <InputGroupAddon addonType="append">
-                    <InputGroupText className="bg-transparent border-0 text-secondary text-small px-4">
+                    <InputGroupText className="bg-transparent border-0 text-secondary text-10 text-md-12 text-xxl-14 px-4">
                         {append}
                     </InputGroupText>
                 </InputGroupAddon>}

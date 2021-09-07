@@ -96,7 +96,7 @@ class EnrolmentForm extends Component {
         const { sections } = enrolments.form;
 
         const methodsContent = methods.map(method => <div key={JSON.stringify(method)} className="d-inline-block pr-2 pr-md-3">
-            <div onClick={() => this.setState({ method_id: method.id })} className={"cursor-pointer py-1 py-md-2 px-2 px-md-3 rounded-6 text-" + (method.id === +method_id ? "white text-700" : "secondary") + " bg-" + (method.id === +method_id ? "green" : "white")}>{method.name}</div>
+            <div onClick={() => this.setState({ method_id: method.id })} className={"cursor-pointer py-1 py-md-2 px-2 px-md-3 rounded-6 text-10 text-md-12 text-xxl-14 text-" + (method.id === +method_id ? "white text-700" : "secondary") + " bg-" + (method.id === +method_id ? "green" : "white")}>{method.name}</div>
         </div>);
 
         const regionsOptions = regions.map(item => <option value={item.value} key={JSON.stringify(item)}>{item.name}</option>);
@@ -111,10 +111,10 @@ class EnrolmentForm extends Component {
                     return <div key={JSON.stringify(element)} className={"enrolment-form-item" + (isSelected ? " selected" : "")}>
                         <div className="d-flex flex-column align-items-center">
                             <div className="pb-1 pb-md-2 pb-xxl-3">
-                                <div className="text-montserrat text-8 text-md-10 text-xxl-12 title">{element.title}</div>
+                                <div className="text-montserrat text-10 text-xxl-12 title">{element.title}</div>
                             </div>
 
-                            <div className="pt-xxl-1 text-700 text-6 text-md-8 text-xxl-10 position-relative">
+                            <div className="pt-xxl-1 text-700 text-8 text-xxl-10 position-relative">
                                 <div className="circle cursor-pointer" onClick={() => this.setState({ selectedPage: item })}>{index + 1}</div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@ class EnrolmentForm extends Component {
 
 
             <div className={"row" + (selectedPage === keys[1] ? "" : " d-none")}>
-                <div className="col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[1]].fields.select}</div>
+                <div className="col-12 text-montserrat text-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[1]].fields.select}</div>
 
                 {Object.keys(sections[keys[1]].fields.subjects).map(key => {
                     const subject = sections[keys[1]].fields.subjects[key];
@@ -170,8 +170,8 @@ class EnrolmentForm extends Component {
                     if (value < 2.5) color = 'red';
                     else if (value > 3) color = 'green';
 
-                    return <div key={key + Math.random()} className="col-12">
-                        <div className="mb-2 mb-md-3 mb-xxl-4 rounded-6 bg-white p-2 p-md-3 p-xxl-4">
+                    return <FormGroup key={key + Math.random()} className="col-12">
+                        <div className="rounded-6 bg-white p-2 p-md-3 p-xxl-4">
                             <div className="px-md-1 px-xxl-2 d-flex align-items-center justify-content-between">
                                 <div className="text-10 text-md-12 text-xxl-14">
                                     {sections[keys[1]].fields.english_level} <strong>{subject}</strong>
@@ -189,7 +189,7 @@ class EnrolmentForm extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </FormGroup>
                 })}
 
                 <FormGroup className="col-12">
@@ -200,46 +200,46 @@ class EnrolmentForm extends Component {
 
 
             <div className={"row" + (selectedPage === keys[2] ? "" : " d-none")}>
-                <div className="col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[2]].fields.upload_documents}</div>
+                <div className="col-12 text-montserrat text-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[2]].fields.upload_documents}</div>
 
                 {Object.keys(sections[keys[2]].fields.documents).map(key => {
                     const document = sections[keys[2]].fields.documents[key];
 
-                    return <div key={key + Math.random()} className="col-xxl-4 col-md-6 pb-3">
+                    return <FormGroup key={key + Math.random()} className="col-xxl-4 col-md-6">
                         <div onClick={() => this.fileUpload(key)} className={"cursor-pointer d-flex h-100 flex-column align-items-center justify-content-center text-center rounded-6 bg-" + (this.state[key] ? "green text-white" : "greenblue-5 text-secondary") + " py-1 py-md-2 py-xxl-3"}>
                             <div className="pb-2">
                                 <i className={"fas fa-" + (this.state[key] ? "check-circle" : "cloud-upload text-greenblue")} />
                             </div>
 
-                            <div className="text-8 text-md-10 text-xxl-12 text-300">
+                            <div className="text-10 text-xxl-12 text-300">
                                 {document}
                             </div>
                         </div>
-                    </div>
+                    </FormGroup>
                 })}
             </div>
 
 
 
             <div className={"row" + (selectedPage === keys[3] ? "" : " d-none")}>
-                <div className="col-12 text-montserrat text-8 text-md-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[3]].fields.select_payment_method}</div>
+                <div className="col-12 text-montserrat text-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[3]].fields.select_payment_method}</div>
 
-                <div className="col-12 mt-1 mt-md-2 mt-xxl-3 bg-greenblue-10 rounded-10 px-2 px-md-3 px-xxl-4 py-md-1 py-xxl-2 mb-3 mb-md-4 mb-xxl-5">
-                    <div className="position-relative text-14 text-md-17 text-xxl-20 text-500 text-greenblue mb-2 mb-md-3 mb-xxl-4 py-1 py-md-2 py-xxl-3 border-bottom border-border">
+                <div className="col-12 mt--2 mt-xxl-3 bg-greenblue-10 rounded-10 px--3 px-xxl-4 py-1 py-xxl-2 mb-4 mb-xxl-5">
+                    <div className="position-relative text-14 text-md-17 text-xxl-20 text-500 text-greenblue mb-3 mb-xxl-4 py-2 py-xxl-3 border-bottom border-border">
                         {sections[keys[3]].fields.please_select_payment_method}
                     </div>
 
                     <input type="hidden" name="method_id" value={method_id} />
 
-                    <div className="mb-1 mb-md-2 mb-xxl-3">{methodsContent}</div>
+                    <div className="mb-2 mb-xxl-3">{methodsContent}</div>
                 </div>
 
-                <FormGroup check className="col-12 text-8 text-md-10 text-xxl-12">
+                <FormGroup check className="col-12 text-10 text-xxl-12">
                     <Label check>
                         <Input type="checkbox" onChange={this.inputChangeHandler} name="terms" checked={terms} />{' ' + sections[keys[3]].fields.terms}
                     </Label>
                 </FormGroup>
-                <FormGroup check className="col-12 text-8 text-md-10 text-xxl-12">
+                <FormGroup check className="col-12 text-10 text-xxl-12">
                     <Label check>
                         <Input type="checkbox" onChange={this.inputChangeHandler} name="policies" checked={policies} />{' ' + sections[keys[3]].fields.policies}
                     </Label>

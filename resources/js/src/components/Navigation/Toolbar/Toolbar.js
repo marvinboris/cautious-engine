@@ -73,7 +73,7 @@ class Toolbar extends Component {
                     </div>
 
                     <div className="pl-3 d-flex align-items-center d-md-none">
-                        <a href={`tel:${tel}`} className="d-inline-flex align-items-center ml-xl-5 pl-2 pl-md-3 pr-3 pr-md-4 py-1 py-md-2">
+                        <a href={`tel:${tel}`} className="text-white d-inline-flex align-items-center ml-xl-5 pl-2 pl-md-3 pr-3 pr-md-4 py-1 py-md-2">
                             <div className="pr-2 pr-xl-3 py-0 py-xl-1"><i className="fad fa-phone-office text-yellow text-18 text-md-24 text-xxl-30" /></div>
 
                             <div className="text-500 text-14 text-md-17 text-xxl-20">{call_me}</div>
