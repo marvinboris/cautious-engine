@@ -48,9 +48,9 @@ export default ({ cms, name, description, training, internship, enroled, level, 
                             <div className="text-300 text-10 text-md-12 text-xxl-14 text-truncate mw-100">{description}</div>
                         </div>
 
-                        {file && <div>
-                            <a href={file} className="fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24" />
-                        </div>}
+                        <div>
+                            <a href={file} target="_blank" className="fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24" />
+                        </div>
                     </div>
                 </Block>
             </div>
