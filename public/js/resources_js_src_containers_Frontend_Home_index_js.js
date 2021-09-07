@@ -65,6 +65,7 @@ var Block = function Block(_ref2) {
       enroled = _ref3.enroled,
       level = _ref3.level,
       photo = _ref3.photo,
+      file = _ref3.file,
       selected = _ref3.selected,
       onClick = _ref3.onClick;
 
@@ -144,16 +145,17 @@ var Block = function Block(_ref2) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "d-flex align-items-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "flex-fill",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "text-500 text-12 text-md-15 text-xxl-18",
+                className: "text-500 text-12 text-md-15 text-xxl-18 text-truncate mw-100",
                 children: name
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "text-300 text-10 text-md-12 text-xxl-14",
+                className: "text-300 text-10 text-md-12 text-xxl-14 text-truncate mw-100",
                 children: description
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              className: "ml-auto",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+            }), file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                href: file,
                 className: "fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24"
               })
             })]

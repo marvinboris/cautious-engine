@@ -1771,7 +1771,8 @@ var Index = /*#__PURE__*/function (_Component) {
               key: 'photo'
             }, {
               name: action,
-              key: 'action'
+              key: 'action',
+              fixed: true
             }],
             containerClassName: "col-xl-6",
             addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {

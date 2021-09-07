@@ -180,7 +180,7 @@ class Index extends Component {
                             { name: form.fees, key: 'fees' },
                             { name: form.level, key: 'level' },
                             { name: form.photo, key: 'photo' },
-                            { name: action, key: 'action' }
+                            { name: action, key: 'action', fixed: true }
                         ]}
                         containerClassName="col-xl-6"
                         addon={<div className="col-xl-6 pt-4 pt-xl-0">

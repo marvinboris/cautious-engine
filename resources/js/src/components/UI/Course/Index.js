@@ -18,7 +18,7 @@ const Block = ({ children, className = "" }) => <div className={"px-1 px-md-2 px
     </div>
 </div>;
 
-export default ({ cms, name, description, training, internship, enroled, level, photo, selected, onClick }) => {
+export default ({ cms, name, description, training, internship, enroled, level, photo, file, selected, onClick }) => {
     const difficulty = <div className="d-flex justify-content-around">
         <div><div className={"rounded-1 bg-" + (level > 0 ? "green" : level === 0 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
         <div><div className={"rounded-1 bg-" + (level > 1 ? "green" : level === 1 ? "green-40" : "soft")} style={{ height: 5, width: 9 }} /></div>
@@ -42,15 +42,15 @@ export default ({ cms, name, description, training, internship, enroled, level, 
 
                 <Block>
                     <div className="d-flex align-items-center">
-                        <div className="flex-fill">
-                            <div className="text-500 text-12 text-md-15 text-xxl-18 text-truncate">{name}</div>
+                        <div className="flex-fill overflow-hidden">
+                            <div className="text-500 text-12 text-md-15 text-xxl-18 text-truncate mw-100">{name}</div>
 
-                            <div className="text-300 text-10 text-md-12 text-xxl-14 text-truncate">{description}</div>
+                            <div className="text-300 text-10 text-md-12 text-xxl-14 text-truncate mw-100">{description}</div>
                         </div>
 
-                        <div className="ml-auto">
-                            <i className="fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24" />
-                        </div>
+                        {file && <div>
+                            <a href={file} className="fas fa-cloud-download text-green text-16 text-md-20 text-xxl-24" />
+                        </div>}
                     </div>
                 </Block>
             </div>
