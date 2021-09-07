@@ -24,22 +24,20 @@ var Info = function Info(_ref) {
   var name = _ref.name,
       icon = _ref.icon,
       info = _ref.info;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "mb-2",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-          className: "fad fa-" + icon + " text-13 text-md-15 text-xxl-17"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "text-12 text-xxl-14 mb-2 text-500 text-montserrat",
-        children: name
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "text-10 text-xxl-12 text-700 text-montserrat text-truncate",
-        children: info
-      })]
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "d-flex flex-column align-items-stretch text-center pt-1 pt-md-2 pb-2 pb-md-3",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "mb-1 mb-xxl-2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+        className: "fad fa-" + icon + " text-17"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "text-12 text-xxl-14 mb-1 mb-xxl-2 text-500 text-montserrat",
+      children: name
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "text-10 text-xxl-12 text-700 text-montserrat text-truncate mt-auto",
+      children: info
+    })]
   });
 };
 
@@ -48,7 +46,7 @@ var Block = function Block(_ref2) {
       _ref2$className = _ref2.className,
       className = _ref2$className === void 0 ? "" : _ref2$className;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "px-1 px-md-2 px-xxl-3 " + className,
+    className: "px-2 px-xxl-3 " + className,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "px-2 px-xxl-3 py-1 py-xxl-2",
       children: children
@@ -72,6 +70,9 @@ var Block = function Block(_ref2) {
   var difficulty = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "d-flex justify-content-around",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        margin: '5px 0px'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "rounded-1 bg-" + (level > 0 ? "green" : level === 0 ? "green-40" : "soft"),
         style: {
@@ -80,6 +81,9 @@ var Block = function Block(_ref2) {
         }
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        margin: '5px 0px'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "rounded-1 bg-" + (level > 1 ? "green" : level === 1 ? "green-40" : "soft"),
         style: {
@@ -88,6 +92,9 @@ var Block = function Block(_ref2) {
         }
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        margin: '5px 0px'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "rounded-1 bg-" + (level > 2 ? "green" : level === 2 ? "green-40" : "soft"),
         style: {
@@ -96,6 +103,9 @@ var Block = function Block(_ref2) {
         }
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        margin: '5px 0px'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "rounded-1 bg-" + (level > 3 ? "green" : level === 3 ? "green-40" : "soft"),
         style: {
@@ -107,14 +117,14 @@ var Block = function Block(_ref2) {
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "UI Course col-xxl-3 col-lg-4 col-md-6 pb-4",
+    className: "UI Course col-xxl-3 col-lg-4 col-md-6 px-5 px-md-3 pb-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "bg-white rounded-30 shadow " + (onClick ? "cursor-pointer" : ""),
       onClick: onClick,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Block, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Block, {
         className: "rounded-top-30 py-2 py-xxl-3",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "embed-responsive embed-responsive-4by3 rounded-20 position-relative overflow-hidden",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "embed-responsive embed-responsive-4by3 d-none d-md-block rounded-20 position-relative overflow-hidden",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "position-absolute w-100 h-100 bg-img",
             style: {
@@ -122,7 +132,16 @@ var Block = function Block(_ref2) {
               top: 0
             }
           })
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "embed-responsive embed-responsive-16by9 d-md-none rounded-20 position-relative overflow-hidden",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "position-absolute w-100 h-100 bg-img",
+            style: {
+              backgroundImage: "url(\"".concat(photo, "\")"),
+              top: 0
+            }
+          })
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "bg-greenblue-10 text-secondary position-relative",
         children: [selected && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -163,7 +182,7 @@ var Block = function Block(_ref2) {
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Block, {
-        className: "rounded-bottom-30 pb-2 pb-xxl-3",
+        className: "rounded-bottom-30 py-2 pb-xxl-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "d-flex align-items-stretch justify-content-between",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Info, {
@@ -799,17 +818,17 @@ var Info = function Info(_ref) {
       info = _ref.info;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 px-1 px-md-2 px-xxl-3",
+      className: "rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 pr-1 pr-md-2 pr-xxl-3",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "mb-1 mb-md-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
           className: "fad fa-" + icon + " text-13 text-md-15 text-xxl-17"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "text-6 text-md-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat",
+        className: "text-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat",
         children: name
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "text-6 text-md-7 text-xxl-8 text-700 text-montserrat text-truncate",
+        className: "text-7 text-xxl-8 text-700 text-montserrat text-truncate",
         children: info
       })]
     })
@@ -882,10 +901,10 @@ var Detail = function Detail(_ref2) {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                className: "text-700 text-greenblue text-10 text-md-12 text-xxl-14 mb-2 mb-md-3 mb-xxl-4 pb-md-1 pb-xxl-2",
+                className: "text-700 text-greenblue text-10 text-md-12 text-xxl-14 mb-2 mb-md-3 mb-xxl-4 pb-md-1 pb-xxl-2 text-left",
                 children: course.name[lang]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "d-flex align-items-stretch justify-content-between",
+                className: "d-flex align-items-stretch flex-wrap",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Info, {
                   name: cms.duration,
                   icon: "clock text-greenblue",
@@ -1221,14 +1240,14 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       });
 
       var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "col-xxl-8 col-md-10",
+        className: "col-xxl-8 col-xl-10",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative d-flex align-items-end justify-content-between",
+          className: "mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative row mx-0 align-items-end",
           children: keys.map(function (item, index) {
             var element = enrolments.form.sections[item];
             var isSelected = item === selectedPage;
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              className: "enrolment-form-item" + (isSelected ? " selected" : ""),
+              className: "col-3 px-0 text-center enrolment-form-item" + (isSelected ? " selected" : ""),
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                 className: "d-flex flex-column align-items-center",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -1861,9 +1880,9 @@ var Home = /*#__PURE__*/function (_Component) {
             })]
           }),
           children: course && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-            className: "row",
+            className: "row justify-content-center",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-              className: "col-md-5 overflow-hidden px-4 px-xxl-5 pb-4",
+              className: "col-sm-10 col-md-8 col-lg-6 col-xl-5 overflow-hidden px-4 px-xxl-5 pb-5",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_CourseCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 countries: countries,
                 enrolments: enrolments,
@@ -1871,13 +1890,13 @@ var Home = /*#__PURE__*/function (_Component) {
                 course: course,
                 lang: lang
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-                className: "thin-line d-none d-md-block",
+                className: "thin-line d-none d-lg-block",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
                   className: "thick-line"
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("div", {
-              className: "col-md-7 position-relative px-4 px-xxl-5",
+              className: "col-sm-10 col-md-8 col-lg-6 col-xl-7 position-relative px-4 px-xxl-5",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_EnrolmentForm__WEBPACK_IMPORTED_MODULE_7__["default"], {
                 enrolments: enrolments,
                 course: course,
@@ -2192,7 +2211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .CourseCard .course-card {\r\n    margin-left: 70px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .course-summary {\r\n    left: -100px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .course-photo {\r\n    width: 200px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail ul {\r\n    margin: 0;\r\n    padding-top: 4px;\r\n    padding-left: 4px;\r\n    list-style: none;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail li {\r\n    font-weight: 300;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail li::before {\r\n    display: inline-block;\r\n    font-style: normal;\r\n    font-variant: normal;\r\n    text-rendering: auto;\r\n    -webkit-font-smoothing: antialiased;\r\n\r\n    content: \"\\f111\";\r\n    color: var(--green);\r\n    font-family: \"Font Awesome 5 Pro\";\r\n    font-weight: 400;\r\n    font-size: 5px;\r\n    margin-right: 4.5px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon {\r\n    position: absolute;\r\n    z-index: 10;\r\n    bottom: 0;\r\n    right: 0;\r\n    width: 45%;\r\n    height: 70%;\r\n    background-color: var(--greenblue);\r\n    -webkit-clip-path: polygon(0 58%, 100% 0%, 100% 100%, 23% 100%);\r\n            clip-path: polygon(0 58%, 100% 0%, 100% 100%, 23% 100%);\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon .enrolments {\r\n    position: absolute;\r\n    top: 50%;\r\n    right: 20px;\r\n    transform: translateY(-50%);\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon .fees {\r\n    position: absolute;\r\n    right: 24px;\r\n    bottom: 13px;\r\n}\r\n\r\n@media (min-width: 1900px) {\r\n    .Frontend .Home .CourseCard .polygon .enrolments {\r\n        right: 40px;\r\n    }\r\n\r\n    .Frontend .Home .CourseCard .polygon .fees {\r\n        right: 44px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .CourseCard .course-card {\r\n    margin-left: 0px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .course-summary {\r\n    left: 0px;\r\n    margin-right: 0px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .course-photo {\r\n    width: 160px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail ul {\r\n    margin: 0;\r\n    padding-top: 4px;\r\n    padding-left: 4px;\r\n    list-style: none;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail li {\r\n    font-weight: 300;\r\n}\r\n\r\n.Frontend .Home .CourseCard .Detail li::before {\r\n    display: inline-block;\r\n    font-style: normal;\r\n    font-variant: normal;\r\n    text-rendering: auto;\r\n    -webkit-font-smoothing: antialiased;\r\n\r\n    content: \"\\f111\";\r\n    color: var(--green);\r\n    font-family: \"Font Awesome 5 Pro\";\r\n    font-weight: 400;\r\n    font-size: 5px;\r\n    margin-right: 4.5px;\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon {\r\n    position: absolute;\r\n    z-index: 10;\r\n    bottom: 0;\r\n    right: 0;\r\n    width: 45%;\r\n    height: 70%;\r\n    background-color: var(--greenblue);\r\n    -webkit-clip-path: polygon(0 58%, 100% 0%, 100% 100%, 23% 100%);\r\n            clip-path: polygon(0 58%, 100% 0%, 100% 100%, 23% 100%);\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon .enrolments {\r\n    position: absolute;\r\n    top: 50%;\r\n    right: 20px;\r\n    transform: translateY(-50%);\r\n}\r\n\r\n.Frontend .Home .CourseCard .polygon .fees {\r\n    position: absolute;\r\n    right: 24px;\r\n    bottom: 13px;\r\n}\r\n\r\n@media (min-width: 800px) {\r\n    .Frontend .Home .CourseCard .course-card {\r\n        margin-left: 70px;\r\n    }\r\n\r\n    .Frontend .Home .CourseCard .course-summary {\r\n        left: -100px;\r\n        margin-right: -100px;\r\n    }\r\n\r\n    .Frontend .Home .CourseCard .course-photo {\r\n        width: 200px;\r\n    }\r\n}\r\n\r\n@media (min-width: 1900px) {\r\n    .Frontend .Home .CourseCard .polygon .enrolments {\r\n        right: 40px;\r\n    }\r\n\r\n    .Frontend .Home .CourseCard .polygon .fees {\r\n        right: 44px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

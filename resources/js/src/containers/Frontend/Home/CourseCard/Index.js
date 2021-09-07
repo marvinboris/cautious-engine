@@ -3,12 +3,12 @@ import React from 'react';
 import './CourseCard.css';
 
 const Info = ({ name, icon, info }) => <div>
-    <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 px-1 px-md-2 px-xxl-3">
+    <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 pr-1 pr-md-2 pr-xxl-3">
         <div className="mb-1 mb-md-2"><i className={"fad fa-" + icon + " text-13 text-md-15 text-xxl-17"} /></div>
 
-        <div className="text-6 text-md-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
+        <div className="text-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
 
-        <div className="text-6 text-md-7 text-xxl-8 text-700 text-montserrat text-truncate">{info}</div>
+        <div className="text-7 text-xxl-8 text-700 text-montserrat text-truncate">{info}</div>
     </div>
 </div>;
 
@@ -46,9 +46,9 @@ export default ({ enrolments, cms, course, lang, countries }) => <div className=
                     </div>
 
                     <div>
-                        <div className="text-700 text-greenblue text-10 text-md-12 text-xxl-14 mb-2 mb-md-3 mb-xxl-4 pb-md-1 pb-xxl-2">{course.name[lang]}</div>
+                        <div className="text-700 text-greenblue text-10 text-md-12 text-xxl-14 mb-2 mb-md-3 mb-xxl-4 pb-md-1 pb-xxl-2 text-left">{course.name[lang]}</div>
 
-                        <div className="d-flex align-items-stretch justify-content-between">
+                        <div className="d-flex align-items-stretch flex-wrap">
                             <Info name={cms.duration} icon="clock text-greenblue" info={course.training + " " + cms.days} />
                             <Info name={cms.enroled} icon="users text-yellow" info={course.enroled} />
                             <Info name={cms.internship} icon="building text-green" info={course.internship + " " + cms.days} />

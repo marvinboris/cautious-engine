@@ -102,13 +102,13 @@ class EnrolmentForm extends Component {
         const regionsOptions = regions.map(item => <option value={item.value} key={JSON.stringify(item)}>{item.name}</option>);
         const backgroundsOptions = backgrounds.map(item => <option value={item.value} key={JSON.stringify(item)}>{item.name}</option>);
 
-        const content = <div className="col-xxl-8 col-md-10">
-            <div className="mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative d-flex align-items-end justify-content-between">
+        const content = <div className="col-xxl-8 col-xl-10">
+            <div className="mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative row mx-0 align-items-end">
                 {keys.map((item, index) => {
                     const element = enrolments.form.sections[item];
                     const isSelected = item === selectedPage;
 
-                    return <div key={JSON.stringify(element)} className={"enrolment-form-item" + (isSelected ? " selected" : "")}>
+                    return <div key={JSON.stringify(element)} className={"col-3 px-0 text-center enrolment-form-item" + (isSelected ? " selected" : "")}>
                         <div className="d-flex flex-column align-items-center">
                             <div className="pb-1 pb-md-2 pb-xxl-3">
                                 <div className="text-montserrat text-10 text-xxl-12 title">{element.title}</div>
