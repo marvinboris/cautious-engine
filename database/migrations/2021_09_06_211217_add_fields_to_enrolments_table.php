@@ -15,10 +15,6 @@ class AddFieldsToEnrolmentsTable extends Migration
     {
         Schema::table('enrolments', function (Blueprint $table) {
             $table->date('birthdate');
-            $table->string('passport');
-            $table->string('last_institute');
-            $table->string('recent_degree');
-            $table->float('degree_score');
             $table->string('ref')->unique();
             $table->float('writing');
             $table->float('speaking');
@@ -41,10 +37,6 @@ class AddFieldsToEnrolmentsTable extends Migration
     {
         Schema::table('enrolments', function (Blueprint $table) {
             $table->dropColumn('birthdate');
-            $table->dropColumn('passport');
-            $table->dropColumn('last_institute');
-            $table->dropColumn('recent_degree');
-            $table->dropColumn('degree_score');
             $table->dropColumn('ref');
             $table->dropColumn('writing');
             $table->dropColumn('speaking');
