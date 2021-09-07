@@ -502,7 +502,23 @@
                                         "welcome": "Welcome to the enrolment",
                                         "details": "Please select a course below and proceed with the pre-registration"
                                     },
-                                    "src": "/images/study-abroad@2x.png"
+                                    "src": "/images/photo_2021-09-07_11-58-47.jpg"
+                                },
+                                {
+                                    "text": {
+                                        "your_career_is_planned": "Your career is planned !",
+                                        "welcome": "Welcome to the enrolment",
+                                        "details": "Please select a course below and proceed with the pre-registration"
+                                    },
+                                    "src": "/images/photo_2021-09-07_11-58-53.jpg"
+                                },
+                                {
+                                    "text": {
+                                        "your_career_is_planned": "Your career is planned !",
+                                        "welcome": "Welcome to the enrolment",
+                                        "details": "Please select a course below and proceed with the pre-registration"
+                                    },
+                                    "src": "/images/photo_2021-09-07_11-58-57.jpg"
                                 }
                             ]
                         },
