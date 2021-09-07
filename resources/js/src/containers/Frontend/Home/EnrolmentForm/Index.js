@@ -109,12 +109,14 @@ class EnrolmentForm extends Component {
                     const isSelected = item === selectedPage;
 
                     return <div key={JSON.stringify(element)} className={"col-3 px-0 text-center enrolment-form-item" + (isSelected ? " selected" : "")}>
-                        <div className="d-flex flex-column align-items-center">
+                        <div className="d-flex flex-column align-items-center position-relative">
+                            {index < keys.length - 1 && <div className="position-absolute w-100 bg-green" style={{ bottom: 17, left: '50%', height: .5, transform: 'translateY(-50%)', zIndex: 2 }} />}
+
                             <div className="pb-1 pb-md-2 pb-xxl-3">
                                 <div className="text-montserrat text-10 text-xxl-12 title">{element.title}</div>
                             </div>
 
-                            <div className="pt-xxl-1 text-700 text-8 text-xxl-10 position-relative">
+                            <div className="circle-container pt-xxl-1 text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative">
                                 <div className="circle cursor-pointer" onClick={() => this.setState({ selectedPage: item })}>{index + 1}</div>
                             </div>
                         </div>

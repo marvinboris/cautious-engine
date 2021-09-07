@@ -1249,15 +1249,24 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "col-3 px-0 text-center enrolment-form-item" + (isSelected ? " selected" : ""),
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-                className: "d-flex flex-column align-items-center",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "d-flex flex-column align-items-center position-relative",
+                children: [index < keys.length - 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "position-absolute w-100 bg-green",
+                  style: {
+                    bottom: 17,
+                    left: '50%',
+                    height: .5,
+                    transform: 'translateY(-50%)',
+                    zIndex: 2
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                   className: "pb-1 pb-md-2 pb-xxl-3",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "text-montserrat text-10 text-xxl-12 title",
                     children: element.title
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                  className: "pt-xxl-1 text-700 text-8 text-xxl-10 position-relative",
+                  className: "circle-container pt-xxl-1 text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "circle cursor-pointer",
                     onClick: function onClick() {
@@ -2235,7 +2244,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .EnrolmentForm .enrolment-form-item .title {\r\n    color: var(--secondary);\r\n    font-weight: 400;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .title {\r\n    color: var(--green);\r\n    font-weight: 700;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle {\r\n    border-radius: 50%;\r\n    width: 34px;\r\n    height: 34px;\r\n    background-color: var(--green-25);\r\n    color: var(--secondary);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .circle {\r\n    color: var(--white);\r\n    background-color: var(--green);\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .EnrolmentForm .enrolment-form-item .title {\r\n    color: var(--secondary);\r\n    font-weight: 400;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .title {\r\n    color: var(--green);\r\n    font-weight: 700;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle-container {\r\n    z-index: 3;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle {\r\n    border-radius: 50%;\r\n    width: 34px;\r\n    height: 34px;\r\n    background-color: var(--green-25);\r\n    color: var(--secondary);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .circle {\r\n    color: var(--white);\r\n    background-color: var(--green);\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

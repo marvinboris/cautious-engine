@@ -8,6 +8,10 @@
     font-weight: 700;
 }
 
+.Frontend .Home .EnrolmentForm .enrolment-form-item .circle-container {
+    z-index: 3;
+}
+
 .Frontend .Home .EnrolmentForm .enrolment-form-item .circle {
     border-radius: 50%;
     width: 34px;
