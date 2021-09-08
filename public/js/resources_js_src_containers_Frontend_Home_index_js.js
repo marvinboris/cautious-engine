@@ -117,7 +117,7 @@ var Block = function Block(_ref2) {
   });
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    className: "UI Course col-xxl-3 col-lg-4 col-md-6 px-5 px-md-3 pb-4",
+    className: "UI Course col-xxl-3 col-lg-4 col-md-6 px-4 px-md-3 pb-4",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "bg-white rounded-30 shadow " + (onClick ? "cursor-pointer" : ""),
       onClick: onClick,
@@ -1176,6 +1176,9 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
       var _this2 = this;
 
       var _this$props = this.props,
+          _this$props$frontend$ = _this$props.frontend.home,
+          loading = _this$props$frontend$.loading,
+          success = _this$props$frontend$.success,
           enrolments = _this$props.enrolments,
           course = _this$props.course,
           methods = _this$props.methods,
@@ -1199,6 +1202,7 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
           terms = _this$state.terms,
           policies = _this$state.policies,
           method_id = _this$state.method_id;
+      var content;
       var countriesOptions = this.props.content.countries.map(function (_ref2) {
         var country = _ref2.country,
             code = _ref2.code,
@@ -1238,8 +1242,32 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
           children: item.name
         }, JSON.stringify(item));
       });
-
-      var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      if (loading) content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "col-xxl-8 col-xl-10 h-100 d-flex justify-content-center align-items-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "spinner-grow text-green"
+        })
+      });else if (success) content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "col-xxl-8 col-xl-10 h-100 d-flex flex-column align-items-center justify-content-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          className: "mb-3 mb-xxl-4 text-80 text-green text-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+            className: "fas fa-check-double"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "text-center text-300 text-12 text-md-14 text-xxl-16",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            className: "text-green",
+            children: enrolments.form.success.your_payment_processed
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "text-secondary",
+            children: [enrolments.form.success.you_will_receive_notification, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "text-blue",
+              children: email
+            })]
+          })]
+        })]
+      });else content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "col-xxl-8 col-xl-10",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative row mx-0 align-items-end",
@@ -1607,9 +1635,8 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
           })]
         })]
       });
-
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-        className: "EnrolmentForm row justify-content-center",
+        className: "EnrolmentForm row justify-content-center h-100",
         encType: "multipart/form-data",
         onSubmit: this.submitHandler,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
@@ -1912,7 +1939,7 @@ var Home = /*#__PURE__*/function (_Component) {
             })]
           }),
           children: course && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-            className: "row justify-content-center",
+            className: "row justify-content-center h-100",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
               className: "col-sm-10 col-md-8 col-lg-6 col-xl-5 overflow-hidden px-4 px-xxl-5 pb-5",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_CourseCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2267,7 +2294,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .EnrolmentForm .enrolment-form-item .title {\r\n    color: var(--secondary);\r\n    font-weight: 400;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .title {\r\n    color: var(--green);\r\n    font-weight: 700;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle-container {\r\n    z-index: 3;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle {\r\n    border-radius: 50%;\r\n    width: 34px;\r\n    height: 34px;\r\n    background-color: var(--green-25);\r\n    color: var(--secondary);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .circle {\r\n    color: var(--white);\r\n    background-color: var(--green);\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Frontend .Home .EnrolmentForm .spinner-grow {\r\n    width: 5rem;\r\n    height: 5rem;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .title {\r\n    color: var(--secondary);\r\n    font-weight: 400;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .title {\r\n    color: var(--green);\r\n    font-weight: 700;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle-container {\r\n    z-index: 3;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item .circle {\r\n    border-radius: 50%;\r\n    width: 34px;\r\n    height: 34px;\r\n    background-color: var(--green-25);\r\n    color: var(--secondary);\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.Frontend .Home .EnrolmentForm .enrolment-form-item.selected .circle {\r\n    color: var(--white);\r\n    background-color: var(--green);\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

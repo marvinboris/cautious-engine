@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Method\Cinetpaycontroller;
+use App\Http\Controllers\Method\MonetbilController;
 use App\Models\Course;
 use App\Models\Enrolment;
 use App\Models\Method;
+use App\Notifications\EnrolmentDone;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -103,25 +105,29 @@ class FrontendController extends Controller
         $input['phone'] = $request->code . $request->phone;
         $input['ref'] = Enrolment::generateNewRef();
 
-        // Enrolment::create($input);
+        $enrolment = Enrolment::create($input);
 
-        $course = Course::find($request->course_id);
+        // $course = Course::find($request->course_id);
 
-        $method = Method::find($request->method_id);
-        $response = null;
+        // $method = Method::find($request->method_id);
+        // $response = null;
 
-        if (strpos($method->slug, 'mobile') !== false) {
-            new CinetpayController();
-            $cinetpay = CinetpayController::generateWidgetData([
-                'amount' => $course->fees,
-                'ref' => $input['ref'],
-                'designation' => $course->name[env('MIX_DEFAULT_LANG', 'en')],
-                'course_id' => $course->id,
-            ]);
-            $response = $cinetpay['response'];
-        }
+        // if (strpos($method->slug, 'mobile') !== false) {
+        //     new MonetbilController();
+        //     $monetbil = MonetbilController::generateWidgetData([
+        //         'amount' => $course->fees,
+        //         'ref' => $input['ref'],
+        //         'designation' => $course->name[env('MIX_DEFAULT_LANG', 'en')],
+        //         'course_id' => $course->id,
+        //     ]);
+        //     $response = $monetbil['response'];
+        // }
+
+        $enrolment->notify(new EnrolmentDone($enrolment));
+
         return response()->json([
-            'response' => $response,
+            // 'response' => $response,
+            'success' => true
         ]);
     }
 }

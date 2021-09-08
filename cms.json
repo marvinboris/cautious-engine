@@ -540,6 +540,10 @@
                                 "fees": "Registration fees"
                             },
                             "form": {
+                                "success": {
+                                    "your_payment_processed": "Your registration was successfully processed",
+                                    "you_will_receive_notification": "Your will shortly receive a notification by e-mail at"
+                                },
                                 "sections": {
                                     "user_identification": {
                                         "title": "User identification",

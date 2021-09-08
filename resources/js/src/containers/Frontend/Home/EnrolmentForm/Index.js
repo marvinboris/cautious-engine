@@ -85,8 +85,12 @@ class EnrolmentForm extends Component {
     }
 
     render() {
-        const { enrolments, course, methods, regions, backgrounds } = this.props;
+        const {
+            frontend: { home: { loading, success } },
+            enrolments, course, methods, regions, backgrounds
+        } = this.props;
         const { selectedPage, background, name, birthdate, region, country, code, phone, email, passport, last_institute, recent_degree, degree_score, reason, terms, policies, method_id } = this.state;
+        let content;
 
         const countriesOptions = this.props.content.countries.map(({ country, code, name }) => <option key={country} value={country} code={code}>{name}</option>);
 
@@ -102,7 +106,21 @@ class EnrolmentForm extends Component {
         const regionsOptions = regions.map(item => <option value={item.value} key={JSON.stringify(item)}>{item.name}</option>);
         const backgroundsOptions = backgrounds.map(item => <option value={item.value} key={JSON.stringify(item)}>{item.name}</option>);
 
-        const content = <div className="col-xxl-8 col-xl-10">
+        if (loading) content = <div className="col-xxl-8 col-xl-10 h-100 d-flex justify-content-center align-items-center">
+            <div className="spinner-grow text-green" />
+        </div>;
+        else if (success) content = <div className="col-xxl-8 col-xl-10 h-100 d-flex flex-column align-items-center justify-content-center">
+            <div className="mb-3 mb-xxl-4 text-80 text-green text-center">
+                <i className="fas fa-check-double" />
+            </div>
+
+            <div className="text-center text-12 text-md-14 text-xxl-16">
+                <div className="text-green text-700">{enrolments.form.success.your_payment_processed}</div>
+
+                <div className="text-secondary text-300">{enrolments.form.success.you_will_receive_notification} <span className="text-blue">{email}</span></div>
+            </div>
+        </div>;
+        else content = <div className="col-xxl-8 col-xl-10">
             <div className="mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative row mx-0 align-items-end">
                 {keys.map((item, index) => {
                     const element = enrolments.form.sections[item];
@@ -279,7 +297,7 @@ class EnrolmentForm extends Component {
             </div>
         </div>;
 
-        return <form className="EnrolmentForm row justify-content-center" encType="multipart/form-data" onSubmit={this.submitHandler}>
+        return <form className="EnrolmentForm row justify-content-center h-100" encType="multipart/form-data" onSubmit={this.submitHandler}>
             <input type="file" id="nid" name="nid" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
             <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
             <input type="file" id="diploma" name="diploma" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
