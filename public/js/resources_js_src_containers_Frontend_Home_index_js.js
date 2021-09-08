@@ -1266,15 +1266,18 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
                     children: element.title
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                  className: "circle-container pt-xxl-1 text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative",
+                  className: "pt-xxl-1",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                    className: "circle cursor-pointer",
-                    onClick: function onClick() {
-                      return _this2.setState({
-                        selectedPage: item
-                      });
-                    },
-                    children: index + 1
+                    className: "circle-container text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                      className: "circle cursor-pointer",
+                      onClick: function onClick() {
+                        return _this2.setState({
+                          selectedPage: item
+                        });
+                      },
+                      children: index + 1
+                    })
                   })
                 })]
               })
@@ -1607,16 +1610,36 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
         className: "EnrolmentForm row justify-content-center",
+        encType: "multipart/form-data",
         onSubmit: this.submitHandler,
-        children: [Object.keys(sections[keys[2]].fields.documents).map(function (key) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-            type: "file",
-            id: key,
-            name: key,
-            className: "d-none",
-            onChange: _this2.inputChangeHandler,
-            accept: ".pdf,.jpeg,.jpg,.png"
-          }, 'input-file-' + key + Math.random());
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          type: "file",
+          id: "nid",
+          name: "nid",
+          className: "d-none",
+          onChange: this.inputChangeHandler,
+          accept: ".pdf,.jpeg,.jpg,.png"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          type: "file",
+          id: "photo",
+          name: "photo",
+          className: "d-none",
+          onChange: this.inputChangeHandler,
+          accept: ".pdf,.jpeg,.jpg,.png"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          type: "file",
+          id: "diploma",
+          name: "diploma",
+          className: "d-none",
+          onChange: this.inputChangeHandler,
+          accept: ".pdf,.jpeg,.jpg,.png"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          type: "file",
+          id: "cv",
+          name: "cv",
+          className: "d-none",
+          onChange: this.inputChangeHandler,
+          accept: ".pdf,.jpeg,.jpg,.png"
         }), content]
       });
     }

@@ -64,10 +64,10 @@ class FrontendController extends Controller
             'comprehension' => 'required|string',
             'reason' => 'required|string',
 
-            'nid' => 'nullable|file',
-            'photo' => 'nullable|image',
-            'diploma' => 'nullable|file',
-            'cv' => 'nullable|file',
+            'nid' => 'required|file',
+            'photo' => 'required|image',
+            'diploma' => 'required|file',
+            'cv' => 'required|file',
 
             'method_id' => 'required|exists:methods,id',
             'terms' => 'required|accepted',
@@ -77,19 +77,19 @@ class FrontendController extends Controller
         $input = $request->except(['code', 'phone', 'nid', 'photo', 'diploma', 'cv', 'terms', 'policies']);
 
         if ($file = $request->file('nid')) {
-            $fileName = time() . $file->getClientOriginalName();
+            $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move('files/enrolments', $fileName);
             $input['nid'] = htmlspecialchars($fileName);
         }
 
         if ($file = $request->file('photo')) {
-            $fileName = time() . $file->getClientOriginalName();
+            $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move('files/enrolments', $fileName);
             $input['photo'] = htmlspecialchars($fileName);
         }
 
         if ($file = $request->file('diploma')) {
-            $fileName = time() . $file->getClientOriginalName();
+            $fileName = time() . '_' . $file->getClientOriginalName();
             $file->move('files/enrolments', $fileName);
             $input['diploma'] = htmlspecialchars($fileName);
         }
@@ -115,7 +115,7 @@ class FrontendController extends Controller
             $cinetpay = CinetpayController::generateWidgetData([
                 'amount' => $course->fees,
                 'ref' => $input['ref'],
-                'designation' => $course->name,
+                'designation' => $course->name[env('MIX_DEFAULT_LANG', 'en')],
                 'course_id' => $course->id,
             ]);
             $response = $cinetpay['response'];

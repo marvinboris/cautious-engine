@@ -1781,6 +1781,7 @@ var Index = /*#__PURE__*/function (_Component) {
             addon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("div", {
               className: "col-xl-6 pt-4 pt-xl-0",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("form", {
+                encType: "multipart/form-data",
                 onSubmit: this.submitHandler,
                 children: [this.state.edit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("input", {
                   type: "hidden",

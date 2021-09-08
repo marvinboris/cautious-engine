@@ -116,8 +116,10 @@ class EnrolmentForm extends Component {
                                 <div className="text-montserrat text-10 text-xxl-12 title">{element.title}</div>
                             </div>
 
-                            <div className="circle-container pt-xxl-1 text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative">
-                                <div className="circle cursor-pointer" onClick={() => this.setState({ selectedPage: item })}>{index + 1}</div>
+                            <div className="pt-xxl-1">
+                                <div className="circle-container text-700 text-8 text-xxl-10 bg-white rounded-circle position-relative">
+                                    <div className="circle cursor-pointer" onClick={() => this.setState({ selectedPage: item })}>{index + 1}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -277,8 +279,11 @@ class EnrolmentForm extends Component {
             </div>
         </div>;
 
-        return <form className="EnrolmentForm row justify-content-center" onSubmit={this.submitHandler}>
-            {Object.keys(sections[keys[2]].fields.documents).map(key => <input key={'input-file-' + key + Math.random()} type="file" id={key} name={key} className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />)}
+        return <form className="EnrolmentForm row justify-content-center" encType="multipart/form-data" onSubmit={this.submitHandler}>
+            <input type="file" id="nid" name="nid" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
+            <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
+            <input type="file" id="diploma" name="diploma" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
+            <input type="file" id="cv" name="cv" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
 
             {content}
         </form>

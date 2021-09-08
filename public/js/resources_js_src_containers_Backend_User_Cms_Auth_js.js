@@ -223,7 +223,6 @@ __webpack_require__.r(__webpack_exports__);
           children: disabled ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             id: id,
             className: innerClassName,
-            encType: "multipart/form-data",
             children: children
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_7__["default"], {
             onSubmit: onSubmit,

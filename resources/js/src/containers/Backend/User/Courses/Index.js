@@ -184,7 +184,7 @@ class Index extends Component {
                         ]}
                         containerClassName="col-xl-6"
                         addon={<div className="col-xl-6 pt-4 pt-xl-0">
-                            <form onSubmit={this.submitHandler}>
+                            <form encType="multipart/form-data" onSubmit={this.submitHandler}>
                                 {this.state.edit && <input type="hidden" name="_method" defaultValue="PATCH" />}
 
                                 <input type="file" id="photo" name="photo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
