@@ -93,7 +93,7 @@ class EnrolmentForm extends Component {
         } = this.props;
         const { selectedPage, background, name, birthdate, region, country, code, phone, email, passport, last_institute, recent_degree, degree_score, reason, terms, policies, method_id } = this.state;
         let content;
-        
+
         const errors = <>
             <Error err={error} />
         </>;
@@ -128,6 +128,9 @@ class EnrolmentForm extends Component {
             </div>
         </div>;
         else content = <div className="col-xxl-8 col-xl-10">
+            {errors}
+            {feedback}
+
             <div className="mb-3 mb-md-4 mb-xxl-5 pb-1 pb-md-2 pb-xxl-3 position-relative row mx-0 align-items-end">
                 {keys.map((item, index) => {
                     const element = enrolments.form.sections[item];
@@ -310,8 +313,6 @@ class EnrolmentForm extends Component {
             <input type="file" id="diploma" name="diploma" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
             <input type="file" id="cv" name="cv" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
 
-            {errors}
-            {feedback}
             {content}
         </form>
     }

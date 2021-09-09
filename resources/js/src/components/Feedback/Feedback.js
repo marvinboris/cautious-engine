@@ -8,5 +8,5 @@ export default ({ message, time }) => {
         setVisible(false);
     }, time);
 
-    return message ? <Alert color={message.type} isOpen={visible}>{message.content}</Alert> : null;
+    return message ? <Alert className="text-12 text-md-14 text-xxl-16" color={message.type} isOpen={visible}>{message.content}</Alert> : null;
 }
