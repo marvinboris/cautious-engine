@@ -88,7 +88,7 @@ class EnrolmentForm extends Component {
 
     render() {
         const {
-            frontend: { home: { loading, message, success } },
+            frontend: { home: { loading, message, error, success } },
             enrolments, course, methods, regions, backgrounds
         } = this.props;
         const { selectedPage, background, name, birthdate, region, country, code, phone, email, passport, last_institute, recent_degree, degree_score, reason, terms, policies, method_id } = this.state;
