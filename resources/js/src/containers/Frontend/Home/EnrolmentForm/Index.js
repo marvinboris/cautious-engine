@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormGroup, Input, Label } from 'reactstrap';
 
+import Error from '../../../../components/Error/Error';
 import Feedback from '../../../../components/Feedback/Feedback';
 import FormInput from '../../../../components/UI/Input/Input';
 import Stars from '../../../../components/UI/Stars';
@@ -92,6 +93,10 @@ class EnrolmentForm extends Component {
         } = this.props;
         const { selectedPage, background, name, birthdate, region, country, code, phone, email, passport, last_institute, recent_degree, degree_score, reason, terms, policies, method_id } = this.state;
         let content;
+        
+        const errors = <>
+            <Error err={error} />
+        </>;
         const feedback = <Feedback message={message} />;
 
         const countriesOptions = this.props.content.countries.map(({ country, code, name }) => <option key={country} value={country} code={code}>{name}</option>);
@@ -305,6 +310,7 @@ class EnrolmentForm extends Component {
             <input type="file" id="diploma" name="diploma" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
             <input type="file" id="cv" name="cv" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
 
+            {errors}
             {feedback}
             {content}
         </form>

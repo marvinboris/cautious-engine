@@ -30,7 +30,7 @@ export const postHome = data => async dispatch => {
             body: form
         });
         const resData = await res.json();
-        if (res.status === 422) throw new Error(Object.values(resData.errors).join('\n'));
+        if (res.status === 422) throw new Error(Object.values(resData.errors).map(error => error.join(' ')).join('\n'));
         else if (res.status !== 200 && res.status !== 201) throw new Error(resData.error.message);
         dispatch(homeSuccess(resData));
     } catch (error) {
