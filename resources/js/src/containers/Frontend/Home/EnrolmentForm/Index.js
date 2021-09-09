@@ -55,7 +55,7 @@ class EnrolmentForm extends Component {
         const { name, value, files, checked } = e.target;
         if (['terms', 'policies'].includes(name)) return this.setState({ [name]: checked });
         if (name === 'country') return this.setState({ country: value, code: this.props.content.countries.find(({ country }) => country === value).code });
-        this.setState({ [name]: files ? files[0] : value })
+        this.setState({ [name]: files ? files[0] : value }, () => console.log(this.state[name]));
     }
 
     fileUpload = key => document.getElementById(key).click()
@@ -116,6 +116,7 @@ class EnrolmentForm extends Component {
         if (loading) content = <div className="col-xxl-8 col-xl-10 h-100 d-flex justify-content-center align-items-center">
             <div className="spinner-grow text-green" />
         </div>;
+
         else if (success) content = <div className="col-xxl-8 col-xl-10 h-100 d-flex flex-column align-items-center justify-content-center">
             <div className="mb-3 mb-xxl-4 text-80 text-green text-center">
                 <i className="fas fa-check-double" />
@@ -127,6 +128,7 @@ class EnrolmentForm extends Component {
                 <div className="text-secondary text-300">{enrolments.form.success.you_will_receive_notification} <span className="text-blue">{email}</span></div>
             </div>
         </div>;
+
         else content = <div className="col-xxl-8 col-xl-10">
             {errors}
             {feedback}
@@ -136,7 +138,7 @@ class EnrolmentForm extends Component {
                     const element = enrolments.form.sections[item];
                     const isSelected = item === selectedPage;
 
-                    return <div key={JSON.stringify(element)} className={"col-3 px-0 text-center enrolment-form-item" + (isSelected ? " selected" : "")}>
+                    return <div key={JSON.stringify(element)} className={"col px-0 text-center enrolment-form-item" + (isSelected ? " selected" : "")}>
                         <div className="d-flex flex-column align-items-center position-relative">
                             {index < keys.length - 1 && <div className="position-absolute w-100 bg-green" style={{ bottom: 17, left: '50%', height: .5, transform: 'translateY(-50%)', zIndex: 2 }} />}
 
@@ -244,16 +246,31 @@ class EnrolmentForm extends Component {
                             </div>
 
                             <div className="text-10 text-xxl-12 text-300">
-                                {document}
+                                {!this.state[key] ? document : <>{sections[keys[2]].fields.uploaded} <span className="text-700">{this.state[key].name}</span></>}
                             </div>
                         </div>
                     </FormGroup>
                 })}
+
+                <input type="hidden" name="method_id" value={method_id} />
+
+                <FormGroup className="col-12">
+                    <FormGroup check className="text-10 text-xxl-12">
+                        <Label check>
+                            <Input type="checkbox" onChange={this.inputChangeHandler} name="terms" checked={terms} />{' ' + sections[keys[2]].fields.terms}
+                        </Label>
+                    </FormGroup>
+                    <FormGroup check className="text-10 text-xxl-12">
+                        <Label check>
+                            <Input type="checkbox" onChange={this.inputChangeHandler} name="policies" checked={policies} />{' ' + sections[keys[2]].fields.policies}
+                        </Label>
+                    </FormGroup>
+                </FormGroup>
             </div>
 
 
 
-            <div className={"row" + (selectedPage === keys[3] ? "" : " d-none")}>
+            {/* <div className={"row" + (selectedPage === keys[3] ? "" : " d-none")}>
                 <div className="col-12 text-montserrat text-10 text-xxl-12 mb-2 mb-md-3 mb-xxl-4">{sections[keys[3]].fields.select_payment_method}</div>
 
                 <div className="col-12 mt--2 mt-xxl-3 bg-greenblue-10 rounded-10 px--3 px-xxl-4 py-1 py-xxl-2 mb-4 mb-xxl-5">
@@ -276,7 +293,7 @@ class EnrolmentForm extends Component {
                         <Input type="checkbox" onChange={this.inputChangeHandler} name="policies" checked={policies} />{' ' + sections[keys[3]].fields.policies}
                     </Label>
                 </FormGroup>
-            </div>
+            </div> */}
 
 
 

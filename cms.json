@@ -587,23 +587,26 @@
                                                 "photo": "Upload photo 4x4",
                                                 "diploma": "Upload certified diploma copy",
                                                 "cv": "Upload CV"
-                                            }
-                                        }
-                                    },
-                                    "finished": {
-                                        "title": "Finished",
-                                        "fields": {
-                                            "select_payment_method": "Select payment method",
-                                            "please_select_payment_method": "Please select a payment method",
+                                            },
+                                            "uploaded": "Uploaded",
                                             "terms": "Accept terms and conditions",
                                             "policies": "Accept Privacy policies"
+                                        },
+                                        "finished": {
+                                            "title": "Finished",
+                                            "fields": {
+                                                "select_payment_method": "Select payment method",
+                                                "please_select_payment_method": "Please select a payment method",
+                                                "terms": "Accept terms and conditions",
+                                                "policies": "Accept Privacy policies"
+                                            }
                                         }
                                     }
                                 },
                                 "nav": {
                                     "previous": "Previous page",
                                     "next": "Next page",
-                                    "finish": "Finish payment"
+                                    "finish": "Submit"
                                 }
                             }
                         }

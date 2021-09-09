@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 var error = function error(_ref) {
   var err = _ref.err;
   return err ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "alert alert-danger",
+    className: "alert alert-danger text-10 text-md-12 text-xxl-14",
     children: err.message ? err.message : err
   }) : null;
 };
@@ -70,6 +70,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     setVisible(false);
   }, time);
   return message ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: "text-10 text-md-12 text-xxl-14",
     color: message.type,
     isOpen: visible,
     children: message.content

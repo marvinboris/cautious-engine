@@ -409,7 +409,7 @@ __webpack_require__.r(__webpack_exports__);
 var error = function error(_ref) {
   var err = _ref.err;
   return err ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "alert alert-danger",
+    className: "alert alert-danger text-10 text-md-12 text-xxl-14",
     children: err.message ? err.message : err
   }) : null;
 };
