@@ -3,7 +3,7 @@ import { Container, Navbar, Collapse, Nav } from 'reactstrap';
 
 import NavigationItem from './NavigationItem/NavigationItem';
 
-export default ({ light = false, font, toggleNavbar, selectItem, selectedItem, cms = {} }) => {
+export default ({ light = false, font, toggleNavbar, cms = {} }) => {
     return (
         <Navbar dark={!light} light={light} expand className="NavigationItems position-static">
             <Container>

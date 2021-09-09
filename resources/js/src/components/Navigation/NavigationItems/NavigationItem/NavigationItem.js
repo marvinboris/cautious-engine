@@ -22,6 +22,6 @@ export default ({ icon, children, href, path, className = '', different, font, c
                     </div>
                 </>
             </div>
-            : <NavLink className={`nav-link text-300 text-16 text-md-17 text-xxl-18 ${'text-' + font} ${className}`} to={href} onClick={toggleNavbar} exact={exact} isActive={isActive} activeClassName={!different ? "text- active text-700" : ""}>{icon && <i className={icon + " text-yellow mr-1"} />}{children}<FontAwesomeIcon icon={faCircle} className="circle text-yellow text-6" /></NavLink>}
+            : <NavLink className={`nav-link text-300 text-16 text-md-17 text-xxl-18 ${'text-' + font} ${className}`} to={href} onClick={toggleNavbar} exact={exact} isActive={isActive} activeClassName={!different ? "text- active text-700" : ""}>{icon && <i className={icon + " text-lightgreen mr-1"} />}{children}<FontAwesomeIcon icon={faCircle} className="circle text-lightgreen text-6" /></NavLink>}
     </NavItem>;
 }
