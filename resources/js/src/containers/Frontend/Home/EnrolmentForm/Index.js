@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormGroup, Input, Label } from 'reactstrap';
 
+import Feedback from '../../../../components/Feedback/Feedback';
 import FormInput from '../../../../components/UI/Input/Input';
 import Stars from '../../../../components/UI/Stars';
 
@@ -77,7 +78,7 @@ class EnrolmentForm extends Component {
 
 
     componentDidMount() {
-        this.setState({ selectedPage: Object.keys(this.props.enrolments.form.sections)[0] });
+        this.setState({ selectedPage: Object.keys(this.props.enrolments.form.sections)[0], method_id: this.props.methods[0].id });
     }
 
     componentDidUpdate() {
@@ -86,11 +87,12 @@ class EnrolmentForm extends Component {
 
     render() {
         const {
-            frontend: { home: { loading, success } },
+            frontend: { home: { loading, message, success } },
             enrolments, course, methods, regions, backgrounds
         } = this.props;
         const { selectedPage, background, name, birthdate, region, country, code, phone, email, passport, last_institute, recent_degree, degree_score, reason, terms, policies, method_id } = this.state;
         let content;
+        const feedback = <Feedback message={message} />;
 
         const countriesOptions = this.props.content.countries.map(({ country, code, name }) => <option key={country} value={country} code={code}>{name}</option>);
 
@@ -148,12 +150,12 @@ class EnrolmentForm extends Component {
                 <FormInput type="text" className="col-md-6" icon="books" value={course.name[lang]} placeholder={sections[keys[0]].fields.selected_course} readonly />
                 <input type="hidden" name="course_id" value={course.id} />
 
-                <FormInput type="text" className="col-md-6" icon="user" onChange={this.inputChangeHandler} name="name" value={name} placeholder={sections[keys[0]].fields.name} required />
-                <FormInput type="select" className="col-md-6" icon="location" onChange={this.inputChangeHandler} name="region" value={region} placeholder={sections[keys[0]].fields.region} required>
+                <FormInput type="text" className="col-md-6" icon="user" onChange={this.inputChangeHandler} name="name" value={name} placeholder={sections[keys[0]].fields.name} />
+                <FormInput type="select" className="col-md-6" icon="location" onChange={this.inputChangeHandler} name="region" value={region} placeholder={sections[keys[0]].fields.region}>
                     <option value="">{sections[keys[0]].fields.select_region}</option>
                     {regionsOptions}
                 </FormInput>
-                <FormInput type="date" className="col-md-6" icon="calendar" onChange={this.inputChangeHandler} name="birthdate" value={birthdate} placeholder={sections[keys[0]].fields.birthdate} required />
+                <FormInput type="date" className="col-md-6" icon="calendar" onChange={this.inputChangeHandler} name="birthdate" value={birthdate} placeholder={sections[keys[0]].fields.birthdate} />
 
                 <FormInput type="select" className="col-md-6" addon={<div>
                     <div className="rounded-circle mx-auto overflow-hidden position-relative d-flex justify-content-center align-items-center" style={{ width: 18, height: 18 }}>
@@ -164,19 +166,19 @@ class EnrolmentForm extends Component {
                     {countriesOptions}
                 </FormInput>
                 <input type="hidden" value={code} name="code" />
-                <FormInput type="tel" className="col-md-6" addon={<div className="text-center text-light" style={{ margin: '0 -10px' }}>+{code}</div>} onChange={this.inputChangeHandler} name="phone" value={phone} placeholder={sections[keys[0]].fields.phone} required />
+                <FormInput type="tel" className="col-md-6" addon={<div className="text-center text-light" style={{ margin: '0 -10px' }}>+{code}</div>} onChange={this.inputChangeHandler} name="phone" value={phone} placeholder={sections[keys[0]].fields.phone} />
 
-                <FormInput type="email" className="col-md-6" icon="envelope" onChange={this.inputChangeHandler} name="email" value={email} placeholder={sections[keys[0]].fields.email} required />
-                <FormInput type="text" className="col-md-6" icon="passport" onChange={this.inputChangeHandler} name="passport" value={passport} placeholder={sections[keys[0]].fields.passport} required />
+                <FormInput type="email" className="col-md-6" icon="envelope" onChange={this.inputChangeHandler} name="email" value={email} placeholder={sections[keys[0]].fields.email} />
+                <FormInput type="text" className="col-md-6" icon="passport" onChange={this.inputChangeHandler} name="passport" value={passport} placeholder={sections[keys[0]].fields.passport} />
 
-                <FormInput type="select" className="col-md-6" icon="diploma" onChange={this.inputChangeHandler} name="background" value={background} placeholder={sections[keys[0]].fields.background} required>
+                <FormInput type="select" className="col-md-6" icon="diploma" onChange={this.inputChangeHandler} name="background" value={background} placeholder={sections[keys[0]].fields.background}>
                     <option value="">{sections[keys[0]].fields.select_background}</option>
                     {backgroundsOptions}
                 </FormInput>
 
-                <FormInput type="text" className="col-md-6" icon="university" onChange={this.inputChangeHandler} name="last_institute" value={last_institute} placeholder={sections[keys[0]].fields.last_institute} required />
-                <FormInput type="text" className="col-md-6" icon="diploma" onChange={this.inputChangeHandler} name="recent_degree" value={recent_degree} placeholder={sections[keys[0]].fields.recent_degree} required />
-                <FormInput type="number" className="col-md-6" icon="star-half" onChange={this.inputChangeHandler} name="degree_score" value={degree_score} placeholder={sections[keys[0]].fields.degree_score} required />
+                <FormInput type="text" className="col-md-6" icon="university" onChange={this.inputChangeHandler} name="last_institute" value={last_institute} placeholder={sections[keys[0]].fields.last_institute} />
+                <FormInput type="text" className="col-md-6" icon="diploma" onChange={this.inputChangeHandler} name="recent_degree" value={recent_degree} placeholder={sections[keys[0]].fields.recent_degree} />
+                <FormInput type="number" className="col-md-6" icon="star-half" onChange={this.inputChangeHandler} name="degree_score" value={degree_score} placeholder={sections[keys[0]].fields.degree_score} />
             </div>
 
 
@@ -215,7 +217,7 @@ class EnrolmentForm extends Component {
                 })}
 
                 <FormGroup className="col-12">
-                    <Input type="textarea" className="text-10 text-md-12 text-xxl-14 text-secondary border-0 p-2 p-md-3 p-xxl-4" onChange={this.inputChangeHandler} name="reason" value={reason} placeholder={sections[keys[1]].fields.reason} required />
+                    <Input type="textarea" className="text-10 text-md-12 text-xxl-14 text-secondary border-0 p-2 p-md-3 p-xxl-4" onChange={this.inputChangeHandler} name="reason" value={reason} placeholder={sections[keys[1]].fields.reason} />
                 </FormGroup>
             </div>
 
@@ -303,6 +305,7 @@ class EnrolmentForm extends Component {
             <input type="file" id="diploma" name="diploma" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
             <input type="file" id="cv" name="cv" className="d-none" onChange={this.inputChangeHandler} accept=".pdf,.jpeg,.jpg,.png" />
 
+            {feedback}
             {content}
         </form>
     }
