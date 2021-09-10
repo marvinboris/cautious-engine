@@ -54,7 +54,7 @@ class FrontendController extends Controller
             'code' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|email',
-            'passport' => 'required|string',
+            'passport' => 'nullable|string',
             'background' => 'required|string',
             'last_institute' => 'required|string',
             'recent_degree' => 'required|string',
@@ -66,9 +66,9 @@ class FrontendController extends Controller
             'comprehension' => 'required|string',
             'reason' => 'required|string',
 
-            'nid' => 'required|file',
+            'nid' => 'nullable|file',
             'photo' => 'required|image',
-            'diploma' => 'required|file',
+            'diploma' => 'nullable|file',
             'cv' => 'required|file',
 
             'method_id' => 'required|exists:methods,id',
@@ -104,6 +104,7 @@ class FrontendController extends Controller
 
         $input['phone'] = $request->code . $request->phone;
         $input['ref'] = Enrolment::generateNewRef();
+        if (!$request->has('passport')) $input['passport'] = "RAS";
 
         $enrolment = Enrolment::create($input);
 
