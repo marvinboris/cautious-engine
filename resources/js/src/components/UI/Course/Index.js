@@ -3,7 +3,7 @@ import React from 'react';
 import './Course.css';
 
 const Info = ({ name, icon, info }) => <div className="d-flex flex-column align-items-stretch text-center pt-1 pt-md-2 pb-2 pb-md-3">
-    <div className="mb-1 mb-xxl-2"><i className={"fad fa-" + icon + " text-17"} /></div>
+    <div className="mb-1 mb-xxl-2"><i className={"fas fa-" + icon + " text-17"} /></div>
 
     <div className="text-12 text-xxl-14 mb-1 mb-xxl-2 text-500 text-montserrat">{name}</div>
 

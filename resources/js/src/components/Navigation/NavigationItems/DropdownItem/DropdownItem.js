@@ -61,7 +61,7 @@ const DropdownItem = ({ id, icon, children, dropdown, items, href, path, select,
                         <span className="text">{children}</span>
                     </div>
 
-                    <i className={`text-orange fad ${isSelected ? 'fa-minus' : 'fa-plus'}`} />
+                    <i className={`text-orange fas ${isSelected ? 'fa-minus' : 'fa-plus'}`} />
                 </Button>
 
                 <Collapse isOpen={isSelected} className={`pl-3 bg-${"gray-0"}`}>

@@ -2,7 +2,7 @@ require('./bootstrap');
 
 $(function () {
     $.getScript('/js/jquery.star-rating-svg.js');
-    $.getScript("https://kit.fontawesome.com/762c591422.js");
+    $.getScript("https://kit.fontawesome.com/132ff047cd.js");
 
     window.CORS = "https://api.allorigins.win/get?url=";
     window.PREFIX = '/api/';

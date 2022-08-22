@@ -85,7 +85,7 @@ class Layout extends Component {
                 <div className="toolbar-height row m-0 align-items-stretch border-bottom border-light sticky-top bg-white">
                     <div className="col-8 px-3 px-md-4 px-xxl-5 d-flex align-items-center">
                         <div className="text-blue text-30">
-                            <i onClick={this.toggle} className="fad fa-th-large text-greenblue cursor-pointer" />
+                            <i onClick={this.toggle} className="fas fa-th-large text-greenblue cursor-pointer" />
                         </div>
 
                         <div className="ml-auto mr-3 mr-md-4 mr-xxl-5 pr-1 pr-md-2 pr-xxl-3">

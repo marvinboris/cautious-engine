@@ -4,7 +4,7 @@ import './CourseCard.css';
 
 const Info = ({ name, icon, info }) => <div>
     <div className="rounded-10 text-center pt-1 pt-md-2 pb-2 pb-md-3 pr-1 pr-md-2 pr-xxl-3">
-        <div className="mb-1 mb-md-2"><i className={"fad fa-" + icon + " text-13 text-md-15 text-xxl-17"} /></div>
+        <div className="mb-1 mb-md-2"><i className={"fas fa-" + icon + " text-13 text-md-15 text-xxl-17"} /></div>
 
         <div className="text-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat">{name}</div>
 

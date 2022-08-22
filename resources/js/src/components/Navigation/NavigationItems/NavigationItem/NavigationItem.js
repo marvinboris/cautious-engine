@@ -10,7 +10,7 @@ export default ({ icon, children, href, path, className = '', different, font, c
     return <NavItem className="NavigationItem">
         {content
             ? <div className={"nav-link text-300 text-16 text-md-17 text-xxl-18 text-" + font + " " + className + (location.pathname.includes(path) ? " active text-700" : "")} onMouseEnter={toggle} onMouseLeave={toggle} style={{ cursor: 'pointer' }}>
-                {icon && <i className={icon + " mr-1"} />}<span className="mr-1">{children}</span><i className={"fad fa-angle-down angle text-10 text-md-12 text-xxl-14 " + (isOpen ? "open" : "")} />
+                {icon && <i className={icon + " mr-1"} />}<span className="mr-1">{children}</span><i className={"fas fa-angle-down angle text-10 text-md-12 text-xxl-14 " + (isOpen ? "open" : "")} />
 
                 <>
                     <div className="position-absolute d-none d-md-block w-100" style={{ top: '100%', left: 0 }}>

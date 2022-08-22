@@ -108,7 +108,7 @@ var Info = function Info(_ref) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "mb-1 mb-xxl-2",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-        className: "fad fa-" + icon + " text-17"
+        className: "fas fa-" + icon + " text-17"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "text-12 text-xxl-14 mb-1 mb-xxl-2 text-500 text-montserrat",
@@ -901,7 +901,7 @@ var Info = function Info(_ref) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "mb-1 mb-md-2",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-          className: "fad fa-" + icon + " text-13 text-md-15 text-xxl-17"
+          className: "fas fa-" + icon + " text-13 text-md-15 text-xxl-17"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "text-7 text-xxl-8 mb-1 mb-md-2 text-500 text-montserrat",
@@ -1678,7 +1678,7 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
               onClick: this.previous,
               className: "btn btn-red btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
               children: [enrolments.form.nav.previous, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                className: "fad fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute",
+                className: "fas fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute",
                 style: {
                   top: '50%',
                   left: 0,
@@ -1693,7 +1693,7 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
               onClick: this.next,
               className: "btn btn-green btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
               children: [enrolments.form.nav.next, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
+                className: "fas fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
                 style: {
                   top: '50%',
                   right: 0,
@@ -1706,7 +1706,7 @@ var EnrolmentForm = /*#__PURE__*/function (_Component) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
               className: "btn btn-greenblue btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4",
               children: [enrolments.form.nav.finish, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-                className: "fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
+                className: "fas fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute",
                 style: {
                   top: '50%',
                   right: 0,

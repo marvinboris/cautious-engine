@@ -9,7 +9,7 @@ export default ({ light = false, font, toggleNavbar, cms = {} }) => {
             <Container>
                 <Collapse navbar>
                     <Nav className="d-block d-xl-flex align-items-center" navbar>
-                        <NavigationItem toggleNavbar={toggleNavbar} font={font} href="/" icon="fad fa-home">{cms.menu.home}</NavigationItem>
+                        <NavigationItem toggleNavbar={toggleNavbar} font={font} href="/" icon="fas fa-home">{cms.menu.home}</NavigationItem>
                         <NavigationItem toggleNavbar={toggleNavbar} font={font} href="/results">{cms.menu.results}</NavigationItem>
                         <NavigationItem toggleNavbar={toggleNavbar} font={font} href="/faq">{cms.menu.faq}</NavigationItem>
                     </Nav>

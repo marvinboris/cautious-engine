@@ -123,7 +123,7 @@ class App extends Component {
     }
 
     render() {
-        const { content: { cms, currencies, countries }, auth: { role } } = this.props;
+        const { content: { cms, countries }, auth: { role } } = this.props;
         const isAuthenticated = localStorage.getItem('token') !== null;
 
         let routes = (
@@ -256,7 +256,7 @@ class App extends Component {
             );
         }
 
-        const dataReady = cms !== undefined && currencies !== undefined && countries !== undefined && ((isAuthenticated && role !== undefined) || !isAuthenticated);
+        const dataReady = cms !== undefined && countries !== undefined && ((isAuthenticated && role !== undefined) || !isAuthenticated);
 
         return dataReady ? routes : <Spinner />;
     }

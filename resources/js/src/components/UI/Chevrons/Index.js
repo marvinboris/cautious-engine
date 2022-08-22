@@ -25,7 +25,7 @@ export default ({ id }) => {
 
     return <div className="UI Chevrons text-15 text-md-17 text-xxl-19 text-blue px-2 px-md-3 px-xxl-4">
         <div className="pr-2 pr-md-3 pr-xxl-4">
-            <i className="fad fa-chevron-double-left"
+            <i className="fas fa-chevron-double-left"
                 onMouseDown={activateLeft}
                 onMouseUp={deactivateLeft}
                 onMouseLeave={deactivateLeft}
@@ -36,7 +36,7 @@ export default ({ id }) => {
         </div>
 
         <div>
-            <i className="fad fa-chevron-double-right"
+            <i className="fas fa-chevron-double-right"
                 onMouseDown={activateRight}
                 onMouseUp={deactivateRight}
                 onMouseLeave={deactivateRight}

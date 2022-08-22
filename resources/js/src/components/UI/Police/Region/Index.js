@@ -15,7 +15,7 @@ export default ({ name, info, phone, position, central_police_stations }) => <di
                     <a href={"tel:" + phone} className="rounded-pill text-decoration-none text-reset bg-white py-1 pl-1 pr-4 d-flex align-items-center">
                         <div className="mr-2">
                             <div className="bg-blue rounded-circle d-flex justify-content-center align-items-center text-white" style={{ width: 40, height: 40 }}>
-                                <i className="fad fa-phone-plus text-10 text-md-12 text-xxl-14" />
+                                <i className="fas fa-phone-plus text-10 text-md-12 text-xxl-14" />
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@ export default ({ name, info, phone, position, central_police_stations }) => <di
                                                     <a href={"tel:" + police_station.phone} className="rounded-pill text-decoration-none text-reset bg-white py-1 pl-1 pr-4 d-flex align-items-center">
                                                         <div className="mr-2">
                                                             <div className="bg-blue rounded-circle d-flex justify-content-center align-items-center text-white" style={{ width: 40, height: 40 }}>
-                                                                <i className="fad fa-phone-plus text-10 text-md-12 text-xxl-14" />
+                                                                <i className="fas fa-phone-plus text-10 text-md-12 text-xxl-14" />
                                                             </div>
                                                         </div>
 

@@ -302,7 +302,7 @@ class EnrolmentForm extends Component {
                     <button type="button" onClick={this.previous} className="btn btn-red btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4">
                         {enrolments.form.nav.previous}
 
-                        <i className="fad fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute" style={{ top: '50%', left: 0, transform: 'translateY(-50%)' }} />
+                        <i className="fas fa-long-arrow-left ml-3 ml-md-4 ml-xxl-5 position-absolute" style={{ top: '50%', left: 0, transform: 'translateY(-50%)' }} />
                     </button>
                 </div>}
 
@@ -310,7 +310,7 @@ class EnrolmentForm extends Component {
                     <button type="button" onClick={this.next} className="btn btn-green btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4">
                         {enrolments.form.nav.next}
 
-                        <i className="fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute" style={{ top: '50%', right: 0, transform: 'translateY(-50%)' }} />
+                        <i className="fas fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute" style={{ top: '50%', right: 0, transform: 'translateY(-50%)' }} />
                     </button>
                 </div>}
 
@@ -318,7 +318,7 @@ class EnrolmentForm extends Component {
                     <button className="btn btn-greenblue btn-block position-relative text-10 text-md-12 text-xxl-14 text-700 py-2 py-md-3 py-xxl-4">
                         {enrolments.form.nav.finish}
 
-                        <i className="fad fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute" style={{ top: '50%', right: 0, transform: 'translateY(-50%)' }} />
+                        <i className="fas fa-long-arrow-right mr-3 mr-md-4 mr-xxl-5 position-absolute" style={{ top: '50%', right: 0, transform: 'translateY(-50%)' }} />
                     </button>
                 </div>}
             </div>
