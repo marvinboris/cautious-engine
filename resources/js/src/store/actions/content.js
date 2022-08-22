@@ -17,24 +17,28 @@ export const getContent = () => async (dispatch, getState) => {
         const res = await fetch(`${prefix}content/${lang}`);
         const resData = await res.json();
 
-        let { currencies, countries } = getState().content;
+        try {
+            let { countries } = getState().content;
 
-        if (!currencies || !countries) {
-            const currenciesRes = await fetch(CORS + 'https://raw.githubusercontent.com/mhs/world-currencies/master/currencies.json', { method: 'GET', mode: 'cors' });
-            currencies = await currenciesRes.json();
+            if (!countries) {
+                const phoneRes = await fetch(CORS + 'http://country.io/phone.json', { method: 'GET', mode: 'cors' });
+                const namesRes = await fetch(CORS + 'http://country.io/names.json', { method: 'GET', mode: 'cors' });
 
-            const phoneRes = await fetch(CORS + 'http://country.io/phone.json', { method: 'GET', mode: 'cors' });
-            const namesRes = await fetch(CORS + 'http://country.io/names.json', { method: 'GET', mode: 'cors' });
+                let phone = await phoneRes.json();
+                let names = await namesRes.json();
 
-            const phone = await phoneRes.json();
-            const names = await namesRes.json();
+                phone = JSON.parse(phone.contents);
+                names = JSON.parse(names.contents);
 
-            countries = Object.keys(phone).map(key => ({ country: key, code: phone[key], name: names[key] }));
+                countries = Object.keys(phone).map(key => ({ country: key, code: phone[key], name: names[key] }));
 
-            currencies = currencies.sort((a, b) => a.name.localeCompare(b.name));
-            countries = countries.sort((a, b) => a.name.localeCompare(b.name));
+                countries = countries.sort((a, b) => a.name.localeCompare(b.name));
 
-            return dispatch(contentSuccess({ ...resData, currencies, countries }));
+                return dispatch(contentSuccess({ ...resData, countries }));
+            }
+        } catch (error) {
+            console.log(error);
+            return dispatch(contentSuccess({ ...resData, countries: [] }));
         }
 
         dispatch(contentSuccess(resData));
